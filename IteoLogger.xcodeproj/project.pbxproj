@@ -7,9 +7,69 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		603AB84A25CD6CE40026D0F3 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB84925CD6CE40026D0F3 /* Person.swift */; };
+		603AB84E25CD6CFE0026D0F3 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB84D25CD6CFE0026D0F3 /* Car.swift */; };
+		603AB86425CD6F7E0026D0F3 /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB86325CD6F7E0026D0F3 /* Animal.swift */; };
+		603AB87125CD82850026D0F3 /* LogsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB86A25CD82850026D0F3 /* LogsRouter.swift */; };
+		603AB87225CD82850026D0F3 /* LogsControllerCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB86B25CD82850026D0F3 /* LogsControllerCreator.swift */; };
+		603AB87325CD82850026D0F3 /* LogsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB86C25CD82850026D0F3 /* LogsWorker.swift */; };
+		603AB87425CD82850026D0F3 /* LogsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 603AB86D25CD82850026D0F3 /* LogsController.xib */; };
+		603AB87525CD82850026D0F3 /* LogsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB86E25CD82850026D0F3 /* LogsPresenter.swift */; };
+		603AB87625CD82850026D0F3 /* LogsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB86F25CD82850026D0F3 /* LogsController.swift */; };
+		603AB87725CD82850026D0F3 /* LogsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB87025CD82850026D0F3 /* LogsInteractor.swift */; };
+		603AB87E25CD82D30026D0F3 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB87D25CD82D30026D0F3 /* BaseViewController.swift */; };
+		603AB88225CD83120026D0F3 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB88125CD83120026D0F3 /* BasePresenter.swift */; };
+		603AB88825CD83AA0026D0F3 /* AlertPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB88725CD83AA0026D0F3 /* AlertPresentable.swift */; };
+		603AB88C25CD83BB0026D0F3 /* SpinnerPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB88B25CD83BB0026D0F3 /* SpinnerPresentable.swift */; };
+		603AB89725CD84150026D0F3 /* SpinnerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB89525CD84150026D0F3 /* SpinnerController.swift */; };
+		603AB89825CD84150026D0F3 /* SpinnerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 603AB89625CD84150026D0F3 /* SpinnerController.xib */; };
+		603AB8A025CD8B730026D0F3 /* Bundle+Framework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB89F25CD8B730026D0F3 /* Bundle+Framework.swift */; };
+		603AB8A425CD8EAF0026D0F3 /* LogsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB8A325CD8EAF0026D0F3 /* LogsViewModel.swift */; };
+		603AB8B025CD8F230026D0F3 /* PauseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB8AA25CD8ECA0026D0F3 /* PauseCell.swift */; };
+		603AB8B125CD8F230026D0F3 /* PauseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 603AB8A825CD8ECA0026D0F3 /* PauseCell.xib */; };
+		603AB8B225CD8F230026D0F3 /* LogCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 603AB8A925CD8ECA0026D0F3 /* LogCell.xib */; };
+		603AB8B325CD8F230026D0F3 /* LogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB8AB25CD8ECA0026D0F3 /* LogCell.swift */; };
+		603AB8B925CD8F310026D0F3 /* LogSectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB8B625CD8F310026D0F3 /* LogSectionItem.swift */; };
+		6041AC5A25D13EF900830765 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6041AC5925D13EF900830765 /* Media.xcassets */; };
+		6041AC6025D1695500830765 /* URL+LogsPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6041AC5F25D1695500830765 /* URL+LogsPath.swift */; };
+		6041AC6625D18F6900830765 /* LogFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6041AC6525D18F6900830765 /* LogFilter.swift */; };
+		6098D0F725D523CC000A2962 /* FilterSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6098D0F625D523CC000A2962 /* FilterSectionHeader.swift */; };
+		6098D0FB25D523D5000A2962 /* FilterSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6098D0FA25D523D5000A2962 /* FilterSectionHeader.xib */; };
+		6098D0FF25D5245E000A2962 /* XibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6098D0FE25D5245E000A2962 /* XibView.swift */; };
+		6098D10325D52E5E000A2962 /* LogSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6098D10225D52E5E000A2962 /* LogSectionHeader.xib */; };
+		6098D10725D52E65000A2962 /* LogSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6098D10625D52E65000A2962 /* LogSectionHeader.swift */; };
+		6098D10D25D53A56000A2962 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6098D10C25D53A56000A2962 /* README.md */; };
+		60CF5A6B25CD69A300F0645D /* HomeSceneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CF5A6A25CD69A300F0645D /* HomeSceneViewModel.swift */; };
+		60E2D2DF25D29DDA0034FA6C /* FiltersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E2D2D325D29CCE0034FA6C /* FiltersPresenter.swift */; };
+		60E2D2E025D29DDA0034FA6C /* FiltersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E2D2D625D29CCE0034FA6C /* FiltersController.swift */; };
+		60E2D2E125D29DDA0034FA6C /* FiltersRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E2D2D125D29CCE0034FA6C /* FiltersRouter.swift */; };
+		60E2D2E225D29DDA0034FA6C /* FiltersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E2D2D725D29CCE0034FA6C /* FiltersViewModel.swift */; };
+		60E2D2E325D29DDA0034FA6C /* FiltersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E2D2D825D29CCE0034FA6C /* FiltersInteractor.swift */; };
+		60E2D2E425D29DDA0034FA6C /* FiltersController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60E2D2D425D29CCE0034FA6C /* FiltersController.xib */; };
+		60E2D2E525D29DDA0034FA6C /* FiltersControllerCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E2D2D225D29CCE0034FA6C /* FiltersControllerCreator.swift */; };
+		60E2D2E625D29DDA0034FA6C /* FiltersWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E2D2D525D29CCE0034FA6C /* FiltersWorker.swift */; };
+		60E2D2EA25D29F840034FA6C /* FilterSectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E2D2E925D29F430034FA6C /* FilterSectionItem.swift */; };
+		60E2D2F725D29FB80034FA6C /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E2D2EE25D29F9E0034FA6C /* FilterCell.swift */; };
+		60E2D2F825D29FB80034FA6C /* FilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60E2D2ED25D29F9E0034FA6C /* FilterCell.xib */; };
 		60ECC5BD25CC00E90088C4B0 /* IteoLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60ECC5B325CC00E90088C4B0 /* IteoLogger.framework */; };
 		60ECC5C225CC00E90088C4B0 /* IteoLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ECC5C125CC00E90088C4B0 /* IteoLoggerTests.swift */; };
 		60ECC5C425CC00E90088C4B0 /* IteoLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 60ECC5B625CC00E90088C4B0 /* IteoLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		60ECC5D125CC01780088C4B0 /* IteoLoggerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ECC5D025CC01780088C4B0 /* IteoLoggerItem.swift */; };
+		60ECC5D625CC01830088C4B0 /* IteoLoggerModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ECC5D425CC01830088C4B0 /* IteoLoggerModule.swift */; };
+		60ECC5D725CC01830088C4B0 /* IteoLoggerLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ECC5D525CC01830088C4B0 /* IteoLoggerLevel.swift */; };
+		60ECC5DC25CC023A0088C4B0 /* DateFormatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ECC5DB25CC023A0088C4B0 /* DateFormatManager.swift */; };
+		60ECC5E925CC02CE0088C4B0 /* IteoLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ECC5E825CC02CE0088C4B0 /* IteoLogger.swift */; };
+		60ECC5F325CC04920088C4B0 /* AnyArray+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ECC5F225CC04920088C4B0 /* AnyArray+String.swift */; };
+		60ECC5FE25CC09D40088C4B0 /* IteoLoggerItemConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ECC5FD25CC09D40088C4B0 /* IteoLoggerItemConsumer.swift */; };
+		60ECC60425CC09F00088C4B0 /* IteoLoggerConsoleItemConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ECC60325CC09F00088C4B0 /* IteoLoggerConsoleItemConsumer.swift */; };
+		60ECC60825CC0A130088C4B0 /* IteoLoggerStorageItemConsumer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ECC60725CC0A130088C4B0 /* IteoLoggerStorageItemConsumer.swift */; };
+		60ECC61625CC14A70088C4B0 /* IteoLoggerExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ECC61525CC14A70088C4B0 /* IteoLoggerExampleApp.swift */; };
+		60ECC61825CC14A70088C4B0 /* HomeSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ECC61725CC14A70088C4B0 /* HomeSceneView.swift */; };
+		60ECC61A25CC14A80088C4B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60ECC61925CC14A80088C4B0 /* Assets.xcassets */; };
+		60ECC61D25CC14A80088C4B0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60ECC61C25CC14A80088C4B0 /* Preview Assets.xcassets */; };
+		60ECC62625CC219B0088C4B0 /* IteoLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60ECC5B325CC00E90088C4B0 /* IteoLogger.framework */; };
+		60ECC62725CC219B0088C4B0 /* IteoLogger.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 60ECC5B325CC00E90088C4B0 /* IteoLogger.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		60ECC62E25CC21C70088C4B0 /* LogButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ECC62D25CC21C70088C4B0 /* LogButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -20,15 +80,96 @@
 			remoteGlobalIDString = 60ECC5B225CC00E90088C4B0;
 			remoteInfo = IteoLogger;
 		};
+		60ECC62825CC219B0088C4B0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 60ECC5AA25CC00E90088C4B0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 60ECC5B225CC00E90088C4B0;
+			remoteInfo = IteoLogger;
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		60ECC62A25CC219C0088C4B0 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				60ECC62725CC219B0088C4B0 /* IteoLogger.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		603AB84925CD6CE40026D0F3 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		603AB84D25CD6CFE0026D0F3 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		603AB86325CD6F7E0026D0F3 /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
+		603AB86A25CD82850026D0F3 /* LogsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsRouter.swift; sourceTree = "<group>"; };
+		603AB86B25CD82850026D0F3 /* LogsControllerCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsControllerCreator.swift; sourceTree = "<group>"; };
+		603AB86C25CD82850026D0F3 /* LogsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsWorker.swift; sourceTree = "<group>"; };
+		603AB86D25CD82850026D0F3 /* LogsController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogsController.xib; sourceTree = "<group>"; };
+		603AB86E25CD82850026D0F3 /* LogsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsPresenter.swift; sourceTree = "<group>"; };
+		603AB86F25CD82850026D0F3 /* LogsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsController.swift; sourceTree = "<group>"; };
+		603AB87025CD82850026D0F3 /* LogsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsInteractor.swift; sourceTree = "<group>"; };
+		603AB87D25CD82D30026D0F3 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		603AB88125CD83120026D0F3 /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
+		603AB88725CD83AA0026D0F3 /* AlertPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresentable.swift; sourceTree = "<group>"; };
+		603AB88B25CD83BB0026D0F3 /* SpinnerPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerPresentable.swift; sourceTree = "<group>"; };
+		603AB89525CD84150026D0F3 /* SpinnerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerController.swift; sourceTree = "<group>"; };
+		603AB89625CD84150026D0F3 /* SpinnerController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpinnerController.xib; sourceTree = "<group>"; };
+		603AB89F25CD8B730026D0F3 /* Bundle+Framework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Framework.swift"; sourceTree = "<group>"; };
+		603AB8A325CD8EAF0026D0F3 /* LogsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsViewModel.swift; sourceTree = "<group>"; };
+		603AB8A825CD8ECA0026D0F3 /* PauseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PauseCell.xib; sourceTree = "<group>"; };
+		603AB8A925CD8ECA0026D0F3 /* LogCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogCell.xib; sourceTree = "<group>"; };
+		603AB8AA25CD8ECA0026D0F3 /* PauseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseCell.swift; sourceTree = "<group>"; };
+		603AB8AB25CD8ECA0026D0F3 /* LogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogCell.swift; sourceTree = "<group>"; };
+		603AB8B625CD8F310026D0F3 /* LogSectionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogSectionItem.swift; sourceTree = "<group>"; };
+		6041AC5925D13EF900830765 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		6041AC5F25D1695500830765 /* URL+LogsPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+LogsPath.swift"; sourceTree = "<group>"; };
+		6041AC6525D18F6900830765 /* LogFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogFilter.swift; sourceTree = "<group>"; };
+		6098D0F625D523CC000A2962 /* FilterSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSectionHeader.swift; sourceTree = "<group>"; };
+		6098D0FA25D523D5000A2962 /* FilterSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterSectionHeader.xib; sourceTree = "<group>"; };
+		6098D0FE25D5245E000A2962 /* XibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibView.swift; sourceTree = "<group>"; };
+		6098D10225D52E5E000A2962 /* LogSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogSectionHeader.xib; sourceTree = "<group>"; };
+		6098D10625D52E65000A2962 /* LogSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogSectionHeader.swift; sourceTree = "<group>"; };
+		6098D10C25D53A56000A2962 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		60CF5A6A25CD69A300F0645D /* HomeSceneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSceneViewModel.swift; sourceTree = "<group>"; };
+		60E2D2D125D29CCE0034FA6C /* FiltersRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersRouter.swift; sourceTree = "<group>"; };
+		60E2D2D225D29CCE0034FA6C /* FiltersControllerCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersControllerCreator.swift; sourceTree = "<group>"; };
+		60E2D2D325D29CCE0034FA6C /* FiltersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersPresenter.swift; sourceTree = "<group>"; };
+		60E2D2D425D29CCE0034FA6C /* FiltersController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FiltersController.xib; sourceTree = "<group>"; };
+		60E2D2D525D29CCE0034FA6C /* FiltersWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersWorker.swift; sourceTree = "<group>"; };
+		60E2D2D625D29CCE0034FA6C /* FiltersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersController.swift; sourceTree = "<group>"; };
+		60E2D2D725D29CCE0034FA6C /* FiltersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersViewModel.swift; sourceTree = "<group>"; };
+		60E2D2D825D29CCE0034FA6C /* FiltersInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersInteractor.swift; sourceTree = "<group>"; };
+		60E2D2E925D29F430034FA6C /* FilterSectionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSectionItem.swift; sourceTree = "<group>"; };
+		60E2D2ED25D29F9E0034FA6C /* FilterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterCell.xib; sourceTree = "<group>"; };
+		60E2D2EE25D29F9E0034FA6C /* FilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
 		60ECC5B325CC00E90088C4B0 /* IteoLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IteoLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60ECC5B625CC00E90088C4B0 /* IteoLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IteoLogger.h; sourceTree = "<group>"; };
 		60ECC5B725CC00E90088C4B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60ECC5BC25CC00E90088C4B0 /* IteoLoggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IteoLoggerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		60ECC5C125CC00E90088C4B0 /* IteoLoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IteoLoggerTests.swift; sourceTree = "<group>"; };
 		60ECC5C325CC00E90088C4B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60ECC5D025CC01780088C4B0 /* IteoLoggerItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IteoLoggerItem.swift; sourceTree = "<group>"; };
+		60ECC5D425CC01830088C4B0 /* IteoLoggerModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IteoLoggerModule.swift; sourceTree = "<group>"; };
+		60ECC5D525CC01830088C4B0 /* IteoLoggerLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IteoLoggerLevel.swift; sourceTree = "<group>"; };
+		60ECC5DB25CC023A0088C4B0 /* DateFormatManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatManager.swift; sourceTree = "<group>"; };
+		60ECC5E825CC02CE0088C4B0 /* IteoLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IteoLogger.swift; sourceTree = "<group>"; };
+		60ECC5F225CC04920088C4B0 /* AnyArray+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AnyArray+String.swift"; sourceTree = "<group>"; };
+		60ECC5FD25CC09D40088C4B0 /* IteoLoggerItemConsumer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IteoLoggerItemConsumer.swift; sourceTree = "<group>"; };
+		60ECC60325CC09F00088C4B0 /* IteoLoggerConsoleItemConsumer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IteoLoggerConsoleItemConsumer.swift; sourceTree = "<group>"; };
+		60ECC60725CC0A130088C4B0 /* IteoLoggerStorageItemConsumer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IteoLoggerStorageItemConsumer.swift; sourceTree = "<group>"; };
+		60ECC61325CC14A70088C4B0 /* IteoLoggerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IteoLoggerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		60ECC61525CC14A70088C4B0 /* IteoLoggerExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IteoLoggerExampleApp.swift; sourceTree = "<group>"; };
+		60ECC61725CC14A70088C4B0 /* HomeSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSceneView.swift; sourceTree = "<group>"; };
+		60ECC61925CC14A80088C4B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		60ECC61C25CC14A80088C4B0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		60ECC61E25CC14A80088C4B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60ECC62D25CC21C70088C4B0 /* LogButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,15 +188,143 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		60ECC61025CC14A70088C4B0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60ECC62625CC219B0088C4B0 /* IteoLogger.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		603AB85125CD6D170026D0F3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				603AB84925CD6CE40026D0F3 /* Person.swift */,
+				603AB84D25CD6CFE0026D0F3 /* Car.swift */,
+				603AB86325CD6F7E0026D0F3 /* Animal.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		603AB85425CD6D260026D0F3 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				60ECC62D25CC21C70088C4B0 /* LogButton.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		603AB85725CD6D300026D0F3 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				603AB85E25CD6D5C0026D0F3 /* Home */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		603AB85E25CD6D5C0026D0F3 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				60ECC61725CC14A70088C4B0 /* HomeSceneView.swift */,
+				60CF5A6A25CD69A300F0645D /* HomeSceneViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		603AB86725CD825A0026D0F3 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				603AB87C25CD82C60026D0F3 /* Shared */,
+				603AB86825CD82620026D0F3 /* Logs */,
+				603AB86925CD82690026D0F3 /* Filters */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		603AB86825CD82620026D0F3 /* Logs */ = {
+			isa = PBXGroup;
+			children = (
+				603AB8A725CD8EC00026D0F3 /* Views */,
+				603AB86B25CD82850026D0F3 /* LogsControllerCreator.swift */,
+				603AB86D25CD82850026D0F3 /* LogsController.xib */,
+				603AB86F25CD82850026D0F3 /* LogsController.swift */,
+				603AB8A325CD8EAF0026D0F3 /* LogsViewModel.swift */,
+				603AB87025CD82850026D0F3 /* LogsInteractor.swift */,
+				603AB86C25CD82850026D0F3 /* LogsWorker.swift */,
+				603AB86E25CD82850026D0F3 /* LogsPresenter.swift */,
+				603AB86A25CD82850026D0F3 /* LogsRouter.swift */,
+			);
+			path = Logs;
+			sourceTree = "<group>";
+		};
+		603AB86925CD82690026D0F3 /* Filters */ = {
+			isa = PBXGroup;
+			children = (
+				60E2D2D925D29CCE0034FA6C /* Views */,
+				60E2D2D225D29CCE0034FA6C /* FiltersControllerCreator.swift */,
+				60E2D2D425D29CCE0034FA6C /* FiltersController.xib */,
+				60E2D2D625D29CCE0034FA6C /* FiltersController.swift */,
+				60E2D2D725D29CCE0034FA6C /* FiltersViewModel.swift */,
+				60E2D2D825D29CCE0034FA6C /* FiltersInteractor.swift */,
+				60E2D2D525D29CCE0034FA6C /* FiltersWorker.swift */,
+				60E2D2D325D29CCE0034FA6C /* FiltersPresenter.swift */,
+				60E2D2D125D29CCE0034FA6C /* FiltersRouter.swift */,
+			);
+			path = Filters;
+			sourceTree = "<group>";
+		};
+		603AB87C25CD82C60026D0F3 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				603AB87D25CD82D30026D0F3 /* BaseViewController.swift */,
+				603AB88125CD83120026D0F3 /* BasePresenter.swift */,
+				603AB88725CD83AA0026D0F3 /* AlertPresentable.swift */,
+				603AB88B25CD83BB0026D0F3 /* SpinnerPresentable.swift */,
+				603AB89525CD84150026D0F3 /* SpinnerController.swift */,
+				603AB89625CD84150026D0F3 /* SpinnerController.xib */,
+				6098D0FE25D5245E000A2962 /* XibView.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		603AB8A725CD8EC00026D0F3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				603AB8B625CD8F310026D0F3 /* LogSectionItem.swift */,
+				6098D10625D52E65000A2962 /* LogSectionHeader.swift */,
+				6098D10225D52E5E000A2962 /* LogSectionHeader.xib */,
+				603AB8AB25CD8ECA0026D0F3 /* LogCell.swift */,
+				603AB8A925CD8ECA0026D0F3 /* LogCell.xib */,
+				603AB8AA25CD8ECA0026D0F3 /* PauseCell.swift */,
+				603AB8A825CD8ECA0026D0F3 /* PauseCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		60E2D2D925D29CCE0034FA6C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				60E2D2E925D29F430034FA6C /* FilterSectionItem.swift */,
+				60E2D2EE25D29F9E0034FA6C /* FilterCell.swift */,
+				60E2D2ED25D29F9E0034FA6C /* FilterCell.xib */,
+				6098D0F625D523CC000A2962 /* FilterSectionHeader.swift */,
+				6098D0FA25D523D5000A2962 /* FilterSectionHeader.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		60ECC5A925CC00E90088C4B0 = {
 			isa = PBXGroup;
 			children = (
+				6098D10C25D53A56000A2962 /* README.md */,
 				60ECC5B525CC00E90088C4B0 /* IteoLogger */,
 				60ECC5C025CC00E90088C4B0 /* IteoLoggerTests */,
+				60ECC61425CC14A70088C4B0 /* IteoLoggerExample */,
 				60ECC5B425CC00E90088C4B0 /* Products */,
+				60ECC62525CC219B0088C4B0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +333,7 @@
 			children = (
 				60ECC5B325CC00E90088C4B0 /* IteoLogger.framework */,
 				60ECC5BC25CC00E90088C4B0 /* IteoLoggerTests.xctest */,
+				60ECC61325CC14A70088C4B0 /* IteoLoggerExample.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -71,8 +341,15 @@
 		60ECC5B525CC00E90088C4B0 /* IteoLogger */ = {
 			isa = PBXGroup;
 			children = (
+				60ECC5E825CC02CE0088C4B0 /* IteoLogger.swift */,
+				60ECC5FC25CC09BE0088C4B0 /* Consumers */,
+				60ECC5CF25CC01650088C4B0 /* Models */,
+				60ECC5DA25CC02270088C4B0 /* Managers */,
+				60ECC5E125CC02A60088C4B0 /* Extensions */,
+				603AB86725CD825A0026D0F3 /* Scenes */,
 				60ECC5B625CC00E90088C4B0 /* IteoLogger.h */,
 				60ECC5B725CC00E90088C4B0 /* Info.plist */,
+				6041AC5925D13EF900830765 /* Media.xcassets */,
 			);
 			path = IteoLogger;
 			sourceTree = "<group>";
@@ -84,6 +361,74 @@
 				60ECC5C325CC00E90088C4B0 /* Info.plist */,
 			);
 			path = IteoLoggerTests;
+			sourceTree = "<group>";
+		};
+		60ECC5CF25CC01650088C4B0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				60ECC5D025CC01780088C4B0 /* IteoLoggerItem.swift */,
+				60ECC5D525CC01830088C4B0 /* IteoLoggerLevel.swift */,
+				60ECC5D425CC01830088C4B0 /* IteoLoggerModule.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		60ECC5DA25CC02270088C4B0 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				60ECC5DB25CC023A0088C4B0 /* DateFormatManager.swift */,
+				6041AC6525D18F6900830765 /* LogFilter.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		60ECC5E125CC02A60088C4B0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				60ECC5F225CC04920088C4B0 /* AnyArray+String.swift */,
+				603AB89F25CD8B730026D0F3 /* Bundle+Framework.swift */,
+				6041AC5F25D1695500830765 /* URL+LogsPath.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		60ECC5FC25CC09BE0088C4B0 /* Consumers */ = {
+			isa = PBXGroup;
+			children = (
+				60ECC5FD25CC09D40088C4B0 /* IteoLoggerItemConsumer.swift */,
+				60ECC60325CC09F00088C4B0 /* IteoLoggerConsoleItemConsumer.swift */,
+				60ECC60725CC0A130088C4B0 /* IteoLoggerStorageItemConsumer.swift */,
+			);
+			path = Consumers;
+			sourceTree = "<group>";
+		};
+		60ECC61425CC14A70088C4B0 /* IteoLoggerExample */ = {
+			isa = PBXGroup;
+			children = (
+				603AB85425CD6D260026D0F3 /* UI */,
+				603AB85725CD6D300026D0F3 /* Scenes */,
+				603AB85125CD6D170026D0F3 /* Models */,
+				60ECC61525CC14A70088C4B0 /* IteoLoggerExampleApp.swift */,
+				60ECC61925CC14A80088C4B0 /* Assets.xcassets */,
+				60ECC61E25CC14A80088C4B0 /* Info.plist */,
+				60ECC61B25CC14A80088C4B0 /* Preview Content */,
+			);
+			path = IteoLoggerExample;
+			sourceTree = "<group>";
+		};
+		60ECC61B25CC14A80088C4B0 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				60ECC61C25CC14A80088C4B0 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		60ECC62525CC219B0088C4B0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +481,25 @@
 			productReference = 60ECC5BC25CC00E90088C4B0 /* IteoLoggerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		60ECC61225CC14A70088C4B0 /* IteoLoggerExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 60ECC61F25CC14A80088C4B0 /* Build configuration list for PBXNativeTarget "IteoLoggerExample" */;
+			buildPhases = (
+				60ECC60F25CC14A70088C4B0 /* Sources */,
+				60ECC61025CC14A70088C4B0 /* Frameworks */,
+				60ECC61125CC14A70088C4B0 /* Resources */,
+				60ECC62A25CC219C0088C4B0 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				60ECC62925CC219B0088C4B0 /* PBXTargetDependency */,
+			);
+			name = IteoLoggerExample;
+			productName = IteoLoggerExample;
+			productReference = 60ECC61325CC14A70088C4B0 /* IteoLoggerExample.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -147,8 +511,12 @@
 				TargetAttributes = {
 					60ECC5B225CC00E90088C4B0 = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
 					};
 					60ECC5BB25CC00E90088C4B0 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					60ECC61225CC14A70088C4B0 = {
 						CreatedOnToolsVersion = 12.4;
 					};
 				};
@@ -168,6 +536,7 @@
 			targets = (
 				60ECC5B225CC00E90088C4B0 /* IteoLogger */,
 				60ECC5BB25CC00E90088C4B0 /* IteoLoggerTests */,
+				60ECC61225CC14A70088C4B0 /* IteoLoggerExample */,
 			);
 		};
 /* End PBXProject section */
@@ -177,6 +546,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6041AC5A25D13EF900830765 /* Media.xcassets in Resources */,
+				60E2D2E425D29DDA0034FA6C /* FiltersController.xib in Resources */,
+				6098D10D25D53A56000A2962 /* README.md in Resources */,
+				603AB87425CD82850026D0F3 /* LogsController.xib in Resources */,
+				603AB8B125CD8F230026D0F3 /* PauseCell.xib in Resources */,
+				6098D0FB25D523D5000A2962 /* FilterSectionHeader.xib in Resources */,
+				6098D10325D52E5E000A2962 /* LogSectionHeader.xib in Resources */,
+				603AB8B225CD8F230026D0F3 /* LogCell.xib in Resources */,
+				603AB89825CD84150026D0F3 /* SpinnerController.xib in Resources */,
+				60E2D2F825D29FB80034FA6C /* FilterCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +566,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		60ECC61125CC14A70088C4B0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60ECC61D25CC14A80088C4B0 /* Preview Assets.xcassets in Resources */,
+				60ECC61A25CC14A80088C4B0 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -194,6 +582,45 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6098D0FF25D5245E000A2962 /* XibView.swift in Sources */,
+				603AB88225CD83120026D0F3 /* BasePresenter.swift in Sources */,
+				60ECC5DC25CC023A0088C4B0 /* DateFormatManager.swift in Sources */,
+				603AB8B325CD8F230026D0F3 /* LogCell.swift in Sources */,
+				603AB8A025CD8B730026D0F3 /* Bundle+Framework.swift in Sources */,
+				60E2D2E125D29DDA0034FA6C /* FiltersRouter.swift in Sources */,
+				603AB8B025CD8F230026D0F3 /* PauseCell.swift in Sources */,
+				60E2D2E325D29DDA0034FA6C /* FiltersInteractor.swift in Sources */,
+				60ECC60825CC0A130088C4B0 /* IteoLoggerStorageItemConsumer.swift in Sources */,
+				603AB87325CD82850026D0F3 /* LogsWorker.swift in Sources */,
+				60ECC5F325CC04920088C4B0 /* AnyArray+String.swift in Sources */,
+				6098D0F725D523CC000A2962 /* FilterSectionHeader.swift in Sources */,
+				60ECC5FE25CC09D40088C4B0 /* IteoLoggerItemConsumer.swift in Sources */,
+				60E2D2E225D29DDA0034FA6C /* FiltersViewModel.swift in Sources */,
+				60ECC5E925CC02CE0088C4B0 /* IteoLogger.swift in Sources */,
+				603AB88C25CD83BB0026D0F3 /* SpinnerPresentable.swift in Sources */,
+				60E2D2E525D29DDA0034FA6C /* FiltersControllerCreator.swift in Sources */,
+				603AB87725CD82850026D0F3 /* LogsInteractor.swift in Sources */,
+				603AB89725CD84150026D0F3 /* SpinnerController.swift in Sources */,
+				60ECC5D625CC01830088C4B0 /* IteoLoggerModule.swift in Sources */,
+				603AB87225CD82850026D0F3 /* LogsControllerCreator.swift in Sources */,
+				603AB88825CD83AA0026D0F3 /* AlertPresentable.swift in Sources */,
+				603AB8B925CD8F310026D0F3 /* LogSectionItem.swift in Sources */,
+				603AB87525CD82850026D0F3 /* LogsPresenter.swift in Sources */,
+				60E2D2E025D29DDA0034FA6C /* FiltersController.swift in Sources */,
+				60ECC5D725CC01830088C4B0 /* IteoLoggerLevel.swift in Sources */,
+				603AB87125CD82850026D0F3 /* LogsRouter.swift in Sources */,
+				60E2D2F725D29FB80034FA6C /* FilterCell.swift in Sources */,
+				6041AC6625D18F6900830765 /* LogFilter.swift in Sources */,
+				60ECC5D125CC01780088C4B0 /* IteoLoggerItem.swift in Sources */,
+				60E2D2EA25D29F840034FA6C /* FilterSectionItem.swift in Sources */,
+				60E2D2E625D29DDA0034FA6C /* FiltersWorker.swift in Sources */,
+				6098D10725D52E65000A2962 /* LogSectionHeader.swift in Sources */,
+				60E2D2DF25D29DDA0034FA6C /* FiltersPresenter.swift in Sources */,
+				6041AC6025D1695500830765 /* URL+LogsPath.swift in Sources */,
+				603AB87E25CD82D30026D0F3 /* BaseViewController.swift in Sources */,
+				603AB87625CD82850026D0F3 /* LogsController.swift in Sources */,
+				60ECC60425CC09F00088C4B0 /* IteoLoggerConsoleItemConsumer.swift in Sources */,
+				603AB8A425CD8EAF0026D0F3 /* LogsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +632,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		60ECC60F25CC14A70088C4B0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				603AB84A25CD6CE40026D0F3 /* Person.swift in Sources */,
+				60CF5A6B25CD69A300F0645D /* HomeSceneViewModel.swift in Sources */,
+				603AB84E25CD6CFE0026D0F3 /* Car.swift in Sources */,
+				60ECC61825CC14A70088C4B0 /* HomeSceneView.swift in Sources */,
+				603AB86425CD6F7E0026D0F3 /* Animal.swift in Sources */,
+				60ECC61625CC14A70088C4B0 /* IteoLoggerExampleApp.swift in Sources */,
+				60ECC62E25CC21C70088C4B0 /* LogButton.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -212,6 +653,11 @@
 			isa = PBXTargetDependency;
 			target = 60ECC5B225CC00E90088C4B0 /* IteoLogger */;
 			targetProxy = 60ECC5BE25CC00E90088C4B0 /* PBXContainerItemProxy */;
+		};
+		60ECC62925CC219B0088C4B0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 60ECC5B225CC00E90088C4B0 /* IteoLogger */;
+			targetProxy = 60ECC62825CC219B0088C4B0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -341,6 +787,7 @@
 		60ECC5C825CC00E90088C4B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = B78XDNYG5Q;
@@ -349,6 +796,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = IteoLogger/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -357,6 +805,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.iteo.IteoLogger;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -365,6 +815,7 @@
 		60ECC5C925CC00E90088C4B0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = B78XDNYG5Q;
@@ -373,6 +824,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = IteoLogger/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -381,6 +833,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.iteo.IteoLogger;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -389,6 +842,7 @@
 		60ECC5CB25CC00E90088C4B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B78XDNYG5Q;
 				INFOPLIST_FILE = IteoLoggerTests/Info.plist;
@@ -407,6 +861,7 @@
 		60ECC5CC25CC00E90088C4B0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B78XDNYG5Q;
 				INFOPLIST_FILE = IteoLoggerTests/Info.plist;
@@ -416,6 +871,50 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.iteo.IteoLoggerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		60ECC62025CC14A80088C4B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"IteoLoggerExample/Preview Content\"";
+				DEVELOPMENT_TEAM = B78XDNYG5Q;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = IteoLoggerExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.iteo.IteoLoggerExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		60ECC62125CC14A80088C4B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"IteoLoggerExample/Preview Content\"";
+				DEVELOPMENT_TEAM = B78XDNYG5Q;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = IteoLoggerExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.iteo.IteoLoggerExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -448,6 +947,15 @@
 			buildConfigurations = (
 				60ECC5CB25CC00E90088C4B0 /* Debug */,
 				60ECC5CC25CC00E90088C4B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		60ECC61F25CC14A80088C4B0 /* Build configuration list for PBXNativeTarget "IteoLoggerExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				60ECC62025CC14A80088C4B0 /* Debug */,
+				60ECC62125CC14A80088C4B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
