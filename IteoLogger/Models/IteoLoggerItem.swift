@@ -21,7 +21,7 @@ extension IteoLoggerItem {
     
     func toString(_ format: String, dateFormatter: DateFormatManager) -> String {
         
-        let currentTime = Date()
+        let currentTime = date
         let date = dateFormatter.string(from: currentTime, format: .dateOnly)
         let time = dateFormatter.string(from: currentTime, format: .timeOnly)
         

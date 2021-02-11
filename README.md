@@ -6,6 +6,7 @@ IteoLogger is a smart logger created in Swift, with a nice interface.
 - [Preview](#preview)
 - [Requirements](#requirements)
 - [Installation](#installation)
+- [Usage](#usage)
 - [Credits](#credits)
 - [License](#license)
 
@@ -21,9 +22,9 @@ IteoLogger is a smart logger created in Swift, with a nice interface.
 - [x] Hold press on a log item to copy it to the clipboard
 
 ## Preview
-
-![Logs Scene](https://raw.githubusercontent.com/psredzinski/IteoLogger/master/Preview/log_scene.png)
-![Filters Scene](https://raw.githubusercontent.com/psredzinski/IteoLogger/master/Preview/filters_scene.png)
+Logs Scene             |  Filters Scene
+:-------------------------:|:-------------------------:
+![](https://raw.githubusercontent.com/psredzinski/IteoLogger/master/Preview/log_scene.png)  |  ![](https://raw.githubusercontent.com/psredzinski/IteoLogger/master/Preview/filters_scene.png)
 
 ## Requirements
 
@@ -40,6 +41,25 @@ IteoLogger is a smart logger created in Swift, with a nice interface.
 ```ruby
 pod 'IteoLogger', :git => 'https://github.com/psredzinski/IteoLogger.git'
 ```
+
+## Usage
+
+Create *IteoLogger instance with consumers:
+
+```swift
+let logger = IteoLogger(consumers: [
+    IteoLoggerConsoleItemConsumer(),
+    IteoLoggerStorageItemConsumer(logsDirectoryName: "your_logs_directory")
+])
+```
+
+Create a custom button / hidden gesture somewhere in your app, and call:
+
+```swift
+logger.displayLogs(logsDirectoryName: "your_logs_directory")
+```
+
+to display Logs scene.
 
 ## Credits
 

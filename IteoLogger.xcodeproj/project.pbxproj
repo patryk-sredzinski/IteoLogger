@@ -39,6 +39,7 @@
 		6098D10325D52E5E000A2962 /* LogSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6098D10225D52E5E000A2962 /* LogSectionHeader.xib */; };
 		6098D10725D52E65000A2962 /* LogSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6098D10625D52E65000A2962 /* LogSectionHeader.swift */; };
 		6098D10D25D53A56000A2962 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6098D10C25D53A56000A2962 /* README.md */; };
+		6098D16125D54224000A2962 /* IteoLogger.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 6098D16025D54224000A2962 /* IteoLogger.podspec */; };
 		60CF5A6B25CD69A300F0645D /* HomeSceneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CF5A6A25CD69A300F0645D /* HomeSceneViewModel.swift */; };
 		60E2D2DF25D29DDA0034FA6C /* FiltersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E2D2D325D29CCE0034FA6C /* FiltersPresenter.swift */; };
 		60E2D2E025D29DDA0034FA6C /* FiltersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E2D2D625D29CCE0034FA6C /* FiltersController.swift */; };
@@ -136,6 +137,7 @@
 		6098D10225D52E5E000A2962 /* LogSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogSectionHeader.xib; sourceTree = "<group>"; };
 		6098D10625D52E65000A2962 /* LogSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogSectionHeader.swift; sourceTree = "<group>"; };
 		6098D10C25D53A56000A2962 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		6098D16025D54224000A2962 /* IteoLogger.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = IteoLogger.podspec; sourceTree = "<group>"; };
 		60CF5A6A25CD69A300F0645D /* HomeSceneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSceneViewModel.swift; sourceTree = "<group>"; };
 		60E2D2D125D29CCE0034FA6C /* FiltersRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersRouter.swift; sourceTree = "<group>"; };
 		60E2D2D225D29CCE0034FA6C /* FiltersControllerCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersControllerCreator.swift; sourceTree = "<group>"; };
@@ -319,6 +321,7 @@
 		60ECC5A925CC00E90088C4B0 = {
 			isa = PBXGroup;
 			children = (
+				6098D16025D54224000A2962 /* IteoLogger.podspec */,
 				6098D10C25D53A56000A2962 /* README.md */,
 				60ECC5B525CC00E90088C4B0 /* IteoLogger */,
 				60ECC5C025CC00E90088C4B0 /* IteoLoggerTests */,
@@ -546,6 +549,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6098D16125D54224000A2962 /* IteoLogger.podspec in Resources */,
 				6041AC5A25D13EF900830765 /* Media.xcassets in Resources */,
 				60E2D2E425D29DDA0034FA6C /* FiltersController.xib in Resources */,
 				6098D10D25D53A56000A2962 /* README.md in Resources */,
