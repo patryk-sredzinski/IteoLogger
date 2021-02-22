@@ -11,7 +11,7 @@
 import UIKit
 
 protocol LogsRouter {
-    func displaySharingController(_ logString: String)
+    func displaySharingController(_ logHeader: String, _ logFileUrl: URL)
     func displayFilters(_ filters: LogFilter,
                         availableModules: Set<IteoLoggerModule>,
                         availableLevels: Set<IteoLoggerLevel>,
@@ -24,8 +24,8 @@ final class LogsRouterImpl {
 
 extension LogsRouterImpl: LogsRouter {
 
-    func displaySharingController(_ logString: String) {
-        let activityController = UIActivityViewController(activityItems: [logString], applicationActivities: nil)
+    func displaySharingController(_ logHeader: String, _ logFileUrl: URL) {
+        let activityController = UIActivityViewController(activityItems: [logHeader, logFileUrl], applicationActivities: nil)
         controller?.present(activityController, animated: true, completion: nil)
     }
     

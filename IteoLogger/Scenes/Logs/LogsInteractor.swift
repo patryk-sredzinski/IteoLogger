@@ -76,11 +76,11 @@ extension LogsInteractorImpl: LogsInteractor {
     func shareLogs(sessions: [LogSectionItem]) {
         presenter.toggleSpinner(true)
         backgroundQueue.async { [weak self] in
-            let shareString = self?.worker.prepareShareString(sessions: sessions)
+            let logData = self?.worker.prepareShareData(sessions: sessions)
             DispatchQueue.main.async { [weak self] in
                 self?.presenter.toggleSpinner(false)
-                guard let shareString = shareString else { return }
-                self?.router.displaySharingController(shareString)
+                guard let logHeader = logData?.header, let logUrl = logData?.fileUrl else { return }
+                self?.router.displaySharingController(logHeader, logUrl)
             }
         }
     }

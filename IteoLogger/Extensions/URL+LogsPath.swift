@@ -20,5 +20,11 @@ extension FileManager {
         return logsDirectoryUrl
         
     }
+    
+    func getTemporaryFileUrl(_ name: String) throws -> URL {
+        let documentPath = try url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+        let temporaryFileUrl = documentPath.appendingPathComponent(name, isDirectory: false)
+        return temporaryFileUrl
+    }
 
 }

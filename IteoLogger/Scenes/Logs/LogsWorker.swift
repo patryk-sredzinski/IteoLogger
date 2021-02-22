@@ -22,8 +22,8 @@ protocol LogsWorker {
     func loadedSessionsCount() -> Int
     func loadLogs(at index: Int, filter: LogFilter) -> [IteoLoggerItem]
     func deleteLogs()
-    func prepareShareString(sessions: [LogSectionItem]) -> String
-    
+    func prepareShareData(sessions: [LogSectionItem]) -> (header: String, fileUrl: URL)
+
 }
 
 final class LogsWorkerImpl {
@@ -72,7 +72,7 @@ extension LogsWorkerImpl: LogsWorker {
         availableSessionPaths = nil
     }
     
-    func prepareShareString(sessions: [LogSectionItem]) -> String {
+    func prepareShareData(sessions: [LogSectionItem]) -> (header: String, fileUrl: URL) {
         var logString = ""
         sessions.forEach { sessionItem in
             logString += "\n"
@@ -85,11 +85,22 @@ extension LogsWorkerImpl: LogsWorker {
                 }
             }
         }
-        let logSize = Int64(logString.data(using: .utf8)?.count ?? 0)
-        let dateString = dateFormatter.string(from: Date(), format: .fullDate)
+        let logData = logString.data(using: .utf8)
+        let logSize = Int64(logData?.count ?? 0)
+        let shareDateString = dateFormatter.string(from: Date(), format: .fullDate)
+        let startDateString = sessions.last?.date ?? shareDateString
         let byteString = byteFormatter.string(fromByteCount: logSize)
-        logString = "Logs generated at \(dateString), \(sessions.count) sessions, size: \(byteString)\n\(logString)"
-        return logString
+        let logHeader = "Logs generated at \(shareDateString), since: \(startDateString), \(sessions.count) sessions, size: \(byteString)"
+       
+        let fileUrl = getTemporaryFileUrl(name: "\(shareDateString) | \(startDateString) | \(sessions.count) sessions.log")
+        
+        do {
+            try logData?.write(to: fileUrl)
+        } catch {
+            return (logHeader, fileUrl)
+        }
+         
+        return (logHeader, fileUrl)
     }
 }
 
@@ -151,6 +162,16 @@ private extension LogsWorkerImpl {
         let uniqueModules = Set(logs.map { $0.module })
         uniqueModules.forEach {
             availableModules.insert($0)
+        }
+    }
+    
+    private func getTemporaryFileUrl(name: String) -> URL {
+        do {
+            let temporaryFileUrl = try fileManager.getTemporaryFileUrl(name)
+            return temporaryFileUrl
+        } catch {
+            assertionFailure(error.localizedDescription)
+            return URL(fileURLWithPath: "")
         }
     }
 
