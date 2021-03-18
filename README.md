@@ -42,6 +42,12 @@ Logs Scene             |  Filters Scene
 pod 'IteoLogger', :git => 'https://github.com/psredzinski/IteoLogger.git'
 ```
 
+### Swift Package Manager
+
+[SPM](https://swift.org/package-manager/) is Apple's decentralized dependency manager to integrate libraries to your Swift projects.
+
+In order to install IteoLogger with SPM go to `File` -> `Swift Packages` -> `Add Package Dependency...` -> Select your Project -> enter [This](https://github.com/psredzinski/IteoLogger) URL -> On Rules screen leave `Version` checkbox -> Pick targets you want to add package to -> Hit Finish and you are done.
+
 ## Usage
 
 Create *IteoLogger instance with consumers:
