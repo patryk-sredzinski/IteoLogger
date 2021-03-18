@@ -7,6 +7,7 @@
 
 import UIKit
 
+@objc(PauseCell)
 final class PauseCell: UITableViewCell {
     
     static let reuseIdentifier = String(describing: PauseCell.self)

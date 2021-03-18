@@ -7,6 +7,7 @@
 
 import UIKit
 
+@objc(FilterSectionHeader)
 final class FilterSectionHeader: XibHeaderFooterView {
     
     static let reuseIdentifier = String(describing: FilterSectionHeader.self)

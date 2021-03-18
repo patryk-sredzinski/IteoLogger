@@ -1,5 +1,5 @@
 //
-//  LogCell.swift
+//  FilterCell.swift
 //  IteoLogger
 //
 //  Created by Patryk Średziński on 18/01/2021.
@@ -7,64 +7,57 @@
 
 import UIKit
 
-final class LogCell: UITableViewCell {
+@objc(FilterCell)
+final class FilterCell: UITableViewCell {
 
-    static let reuseIdentifier = String(describing: LogCell.self)
+    static let reuseIdentifier = String(describing: FilterCell.self)
     
     @IBOutlet private var cellContainer: UIView!
-    @IBOutlet private var levelContainer: UIView!
     @IBOutlet private var prefixLabel: UILabel!
     @IBOutlet private var moduleContainer: UIView!
     @IBOutlet private var moduleLabel: UILabel!
-    @IBOutlet private var dateLabel: UILabel!
-    @IBOutlet private var logLabel: UILabel!
-    @IBOutlet private var logIndexLabel: UILabel!
-    
-    private var longTapAction: SimpleAction?
+    @IBOutlet private var switchControl: UISwitch!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setupDoubleTapGesture()
         roundCell()
         roundModuleContainer()
     }
     
-    func setup(with item: IteoLoggerItem, longTapAction: SimpleAction?, isExpanded: Bool) {
+    func setup(with level: IteoLoggerLevel, selected: Bool) {
+
+        let levelPrefix = level.icon
+        let levelBackgroundColor = level.color
+        let levelLabelColor = level.color.brightness > 0.5 ? UIColor.black : UIColor.white
+        let levelName = level.rawValue
+
+        prefixLabel.text = levelPrefix
+        moduleContainer.backgroundColor = levelBackgroundColor
+        moduleLabel.textColor = levelLabelColor
+        moduleLabel.text = levelName
         
-        let indexValue = "#\(item.index)"
-        let levelColor = item.level.color
-        let modulePrefix = item.module.prefix
-        let moduleBackgroundColor = item.module.backgroundColor
-        let moduleLabelColor = item.module.labelColor
-        let moduleName = item.module.name
-        let dateString = DateFormatManager.shared.string(from: item.date, format: .fullDate)
-        let logString = item.output
-        
-        logIndexLabel.text = indexValue
-        levelContainer.backgroundColor = levelColor
+        switchControl.isOn = selected
+    }
+    
+    func setup(with module: IteoLoggerModule, selected: Bool) {
+
+        let modulePrefix = module.prefix
+        let moduleBackgroundColor = module.backgroundColor
+        let moduleLabelColor = module.labelColor
+        let moduleName = module.name
+
         prefixLabel.text = modulePrefix
         moduleContainer.backgroundColor = moduleBackgroundColor
         moduleLabel.textColor = moduleLabelColor
         moduleLabel.text = moduleName
-        dateLabel.text = dateString
-        logLabel.text = logString
-        logLabel.numberOfLines = isExpanded ? 0 : 3
-        self.longTapAction = longTapAction
+    
+        switchControl.isOn = selected
     }
-
+    
 }
 
-private extension LogCell {
-    
-    private func setupDoubleTapGesture() {
-        let gestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(longPressGestureAction))
-        self.contentView.addGestureRecognizer(gestureRecognizer)
-    }
-    
-    @objc private func longPressGestureAction() {
-        longTapAction?()
-    }
-    
+private extension FilterCell {
+   
     private func roundCell() {
         roundLayer(cellContainer.layer)
     }

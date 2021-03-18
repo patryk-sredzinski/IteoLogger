@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LogSectionHeader" customModule="IteoLogger" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LogSectionHeader">
             <connections>
                 <outlet property="dateLabel" destination="lrm-G0-AdF" id="LZ9-LT-GjO"/>
                 <outlet property="titleLabel" destination="VmK-Ru-Nsn" id="v6q-wU-nj7"/>
