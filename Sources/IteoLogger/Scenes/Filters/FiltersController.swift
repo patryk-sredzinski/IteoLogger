@@ -24,7 +24,7 @@ final class FiltersController: BaseViewController {
     init(viewModel: FiltersViewModel, interactor: FiltersInteractor) {
         self.viewModel = viewModel
         self.interactor = interactor
-        super.init(nibName: nil, bundle: .module)
+        super.init(nibName: nil, bundle: .framework)
     }
     
     required init?(coder: NSCoder) {
@@ -45,7 +45,7 @@ private extension FiltersController {
     }
     
     private func setupTableView() {
-        let nibFilterCell = UINib(nibName: FilterCell.reuseIdentifier, bundle: .module)
+        let nibFilterCell = UINib(nibName: FilterCell.reuseIdentifier, bundle: .framework)
         tableView.register(nibFilterCell, forCellReuseIdentifier: FilterCell.reuseIdentifier)
         tableView.register(FilterSectionHeader.self, forHeaderFooterViewReuseIdentifier: FilterSectionHeader.reuseIdentifier)
     }

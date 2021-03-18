@@ -32,7 +32,7 @@ final class LogsController: BaseViewController {
         self.interactor = interactor
         self.shareFormat = shareFormat
         self.dateFormatter = dateFormatter
-        super.init(nibName: nil, bundle: .module)
+        super.init(nibName: nil, bundle: .framework)
     }
     
     required init?(coder: NSCoder) {
@@ -54,8 +54,8 @@ private extension LogsController {
     }
     
     private func setupTableView() {
-        let nibLogCell = UINib(nibName: LogCell.reuseIdentifier, bundle: .module)
-        let nibPauseCell = UINib(nibName: PauseCell.reuseIdentifier, bundle: .module)
+        let nibLogCell = UINib(nibName: LogCell.reuseIdentifier, bundle: .framework)
+        let nibPauseCell = UINib(nibName: PauseCell.reuseIdentifier, bundle: .framework)
         tableView.register(nibLogCell, forCellReuseIdentifier: LogCell.reuseIdentifier)
         tableView.register(nibPauseCell, forCellReuseIdentifier: PauseCell.reuseIdentifier)
         tableView.register(LogSectionHeader.self, forHeaderFooterViewReuseIdentifier: LogSectionHeader.reuseIdentifier)
