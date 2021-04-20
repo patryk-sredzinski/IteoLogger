@@ -131,6 +131,7 @@
 		6041AC5925D13EF900830765 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		6041AC5F25D1695500830765 /* URL+LogsPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+LogsPath.swift"; sourceTree = "<group>"; };
 		6041AC6525D18F6900830765 /* LogFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogFilter.swift; sourceTree = "<group>"; };
+		605FF342262EC35400163172 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		6098D0F625D523CC000A2962 /* FilterSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSectionHeader.swift; sourceTree = "<group>"; };
 		6098D0FA25D523D5000A2962 /* FilterSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterSectionHeader.xib; sourceTree = "<group>"; };
 		6098D0FE25D5245E000A2962 /* IteoLoggerXibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IteoLoggerXibView.swift; sourceTree = "<group>"; };
@@ -321,6 +322,7 @@
 		60ECC5A925CC00E90088C4B0 = {
 			isa = PBXGroup;
 			children = (
+				605FF342262EC35400163172 /* Package.swift */,
 				6098D16025D54224000A2962 /* IteoLogger.podspec */,
 				6098D10C25D53A56000A2962 /* README.md */,
 				60ECC5B525CC00E90088C4B0 /* IteoLogger */,
