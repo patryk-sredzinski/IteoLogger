@@ -6,7 +6,6 @@ import PackageDescription
 let package = Package(
     name: "IteoLogger",
     platforms: [.iOS(.v11)],
-    exclude: ["IteoLogger/Info.plist"],
     products: [
         .library(
             name: "IteoLogger",
@@ -16,10 +15,12 @@ let package = Package(
         .target(
             name: "IteoLogger",
             dependencies: [],
-            path: "IteoLogger"),
+            path: "IteoLogger",
+            exclude: ["IteoLogger/Info.plist"]),
         .testTarget(
             name: "IteoLoggerTests",
             dependencies: ["IteoLogger"],
-            path: "IteoLoggerTests"),
+            path: "IteoLoggerTests",
+            exclude: ["IteoLoggerTests/Info.plist"]),
     ]
 )
