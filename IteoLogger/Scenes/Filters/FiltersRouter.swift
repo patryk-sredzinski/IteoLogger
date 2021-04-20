@@ -19,7 +19,7 @@ protocol FiltersRouter {
 }
 
 final class FiltersRouterImpl {
-    weak var controller: BaseViewController?
+    weak var controller: IteoLoggerBaseViewController?
     weak var delegate: FiltersRouterDelegate?
 }
 

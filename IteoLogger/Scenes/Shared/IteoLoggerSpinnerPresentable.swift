@@ -1,5 +1,5 @@
 //
-//  SpinnerPresentable.swift
+//  IteoLoggerSpinnerPresentable.swift
 //  IteoLogger
 //
 //  Created by Patryk Średziński on 05/02/2021.
@@ -7,13 +7,13 @@
 
 import UIKit
 
-protocol SpinnerPresentable: UIViewController {
+protocol IteoLoggerSpinnerPresentable: UIViewController {
     
     func toggleSpinner(_ state: Bool)
 
 }
 
-extension SpinnerPresentable {
+extension IteoLoggerSpinnerPresentable {
 
     func toggleSpinner(_ state: Bool) {
         if !Thread.isMainThread {
@@ -29,13 +29,13 @@ extension SpinnerPresentable {
 
 
 
-private extension SpinnerPresentable {
+private extension IteoLoggerSpinnerPresentable {
 
     func setSpinnerVisible(_ state: Bool) {
         if state {
-            SpinnerController.showOn(controller: self)
+            IteoLoggerSpinnerController.showOn(controller: self)
         } else {
-            SpinnerController.hideFrom(controller: self)
+            IteoLoggerSpinnerController.hideFrom(controller: self)
         }
         UISelectionFeedbackGenerator().selectionChanged()
     }

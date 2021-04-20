@@ -1,5 +1,5 @@
 //
-//  AlertPresentable.swift
+//  IteoLoggerAlertPresentable.swift
 //  IteoLogger
 //
 //  Created by Patryk Średziński on 05/02/2021.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol AlertPresentable: UIViewController {
+protocol IteoLoggerAlertPresentable: UIViewController {
     
     func showAlert(title: String?,
                    body: String?,
@@ -18,7 +18,7 @@ protocol AlertPresentable: UIViewController {
 
 }
 
-extension AlertPresentable {
+extension IteoLoggerAlertPresentable {
     
     func showAlert(title: String? = nil,
                    body: String? = nil,

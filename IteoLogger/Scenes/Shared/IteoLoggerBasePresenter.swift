@@ -7,11 +7,11 @@
 
 typealias SimpleAction = () -> Void
 
-protocol SpinnerPresenter {
+protocol IteoLoggerSpinnerPresenter {
     func toggleSpinner(_ state: Bool)
 }
 
-protocol AlertPresenter {
+protocol IteoLoggerAlertPresenter {
     func showAlert(title: String?,
                    body: String?,
                    leftTitle: String?,
@@ -21,7 +21,7 @@ protocol AlertPresenter {
     func showError(_ error: Error)
 }
 
-class BasePresenter<T: SpinnerPresentable & AlertPresentable>: SpinnerPresenter, AlertPresenter {
+class IteoLoggerBasePresenter<T: IteoLoggerSpinnerPresentable & IteoLoggerAlertPresentable>: IteoLoggerSpinnerPresenter, IteoLoggerAlertPresenter {
     
     weak var controller: T?
 

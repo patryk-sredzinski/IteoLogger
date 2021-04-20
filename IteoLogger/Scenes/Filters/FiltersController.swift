@@ -10,11 +10,11 @@
 
 import UIKit
 
-protocol FiltersPresentable: SpinnerPresentable & AlertPresentable {
+protocol FiltersPresentable: IteoLoggerSpinnerPresentable & IteoLoggerAlertPresentable {
     func reloadFilter(dataSource: [FilterSectionItem], toggleLevelsText: String, toggleModulesText: String)
 }
 
-final class FiltersController: BaseViewController {
+final class FiltersController: IteoLoggerBaseViewController {
     
     @IBOutlet private var tableView: UITableView!
     

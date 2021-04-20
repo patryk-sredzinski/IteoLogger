@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class LogSectionHeader: XibHeaderFooterView {
+final class LogSectionHeader: IteoLoggerXibHeaderFooterView {
     
     static let reuseIdentifier = String(describing: LogSectionHeader.self)
     

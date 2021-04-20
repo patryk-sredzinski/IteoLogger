@@ -1,5 +1,5 @@
 //
-//  XibView.swift
+//  IteoLoggerXibView.swift
 //  IteoLogger
 //
 //  Created by Patryk Średziński on 11/02/2021.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class XibView: UIView {
+class IteoLoggerXibView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -26,7 +26,7 @@ class XibView: UIView {
     
 }
 
-class XibHeaderFooterView: UITableViewHeaderFooterView {
+class IteoLoggerXibHeaderFooterView: UITableViewHeaderFooterView {
 
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)

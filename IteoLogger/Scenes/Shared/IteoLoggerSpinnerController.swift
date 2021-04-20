@@ -1,5 +1,5 @@
 //
-//  SpinnerController.swift
+//  IteoLoggerSpinnerController.swift
 //  IteoLogger
 //
 //  Created by Patryk Średziński on 05/02/2021.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class SpinnerController: UIViewController {
+final class IteoLoggerSpinnerController: UIViewController {
     
     @IBOutlet private var blurView: UIVisualEffectView!
     
@@ -15,7 +15,7 @@ final class SpinnerController: UIViewController {
     
     static func showOn(controller: UIViewController) {
         
-        let spinnerController = SpinnerController(nibName: nil, bundle: .framework)
+        let spinnerController = IteoLoggerSpinnerController(nibName: nil, bundle: .framework)
         spinnerController.view.alpha = 0
         controller.view.addSubview(spinnerController.view)
         spinnerController.view.translatesAutoresizingMaskIntoConstraints = false
@@ -34,7 +34,7 @@ final class SpinnerController: UIViewController {
     
     static func hideFrom(controller: UIViewController) {
         
-        guard let spinnerController = controller.children.first(where: { ($0 as? SpinnerController)?.isDisappearing == false }) as? SpinnerController else { return }
+        guard let spinnerController = controller.children.first(where: { ($0 as? IteoLoggerSpinnerController)?.isDisappearing == false }) as? IteoLoggerSpinnerController else { return }
         spinnerController.isDisappearing = true
 
         UIView.animate(withDuration: .animationDuration, delay: 0, options: .beginFromCurrentState, animations: {

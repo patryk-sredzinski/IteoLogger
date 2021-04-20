@@ -17,12 +17,12 @@
 		603AB87525CD82850026D0F3 /* LogsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB86E25CD82850026D0F3 /* LogsPresenter.swift */; };
 		603AB87625CD82850026D0F3 /* LogsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB86F25CD82850026D0F3 /* LogsController.swift */; };
 		603AB87725CD82850026D0F3 /* LogsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB87025CD82850026D0F3 /* LogsInteractor.swift */; };
-		603AB87E25CD82D30026D0F3 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB87D25CD82D30026D0F3 /* BaseViewController.swift */; };
-		603AB88225CD83120026D0F3 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB88125CD83120026D0F3 /* BasePresenter.swift */; };
-		603AB88825CD83AA0026D0F3 /* AlertPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB88725CD83AA0026D0F3 /* AlertPresentable.swift */; };
-		603AB88C25CD83BB0026D0F3 /* SpinnerPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB88B25CD83BB0026D0F3 /* SpinnerPresentable.swift */; };
-		603AB89725CD84150026D0F3 /* SpinnerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB89525CD84150026D0F3 /* SpinnerController.swift */; };
-		603AB89825CD84150026D0F3 /* SpinnerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 603AB89625CD84150026D0F3 /* SpinnerController.xib */; };
+		603AB87E25CD82D30026D0F3 /* IteoLoggerBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB87D25CD82D30026D0F3 /* IteoLoggerBaseViewController.swift */; };
+		603AB88225CD83120026D0F3 /* IteoLoggerBasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB88125CD83120026D0F3 /* IteoLoggerBasePresenter.swift */; };
+		603AB88825CD83AA0026D0F3 /* IteoLoggerAlertPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB88725CD83AA0026D0F3 /* IteoLoggerAlertPresentable.swift */; };
+		603AB88C25CD83BB0026D0F3 /* IteoLoggerSpinnerPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB88B25CD83BB0026D0F3 /* IteoLoggerSpinnerPresentable.swift */; };
+		603AB89725CD84150026D0F3 /* IteoLoggerSpinnerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB89525CD84150026D0F3 /* IteoLoggerSpinnerController.swift */; };
+		603AB89825CD84150026D0F3 /* IteoLoggerSpinnerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 603AB89625CD84150026D0F3 /* IteoLoggerSpinnerController.xib */; };
 		603AB8A025CD8B730026D0F3 /* Bundle+Framework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB89F25CD8B730026D0F3 /* Bundle+Framework.swift */; };
 		603AB8A425CD8EAF0026D0F3 /* LogsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB8A325CD8EAF0026D0F3 /* LogsViewModel.swift */; };
 		603AB8B025CD8F230026D0F3 /* PauseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB8AA25CD8ECA0026D0F3 /* PauseCell.swift */; };
@@ -35,7 +35,7 @@
 		6041AC6625D18F6900830765 /* LogFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6041AC6525D18F6900830765 /* LogFilter.swift */; };
 		6098D0F725D523CC000A2962 /* FilterSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6098D0F625D523CC000A2962 /* FilterSectionHeader.swift */; };
 		6098D0FB25D523D5000A2962 /* FilterSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6098D0FA25D523D5000A2962 /* FilterSectionHeader.xib */; };
-		6098D0FF25D5245E000A2962 /* XibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6098D0FE25D5245E000A2962 /* XibView.swift */; };
+		6098D0FF25D5245E000A2962 /* IteoLoggerXibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6098D0FE25D5245E000A2962 /* IteoLoggerXibView.swift */; };
 		6098D10325D52E5E000A2962 /* LogSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6098D10225D52E5E000A2962 /* LogSectionHeader.xib */; };
 		6098D10725D52E65000A2962 /* LogSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6098D10625D52E65000A2962 /* LogSectionHeader.swift */; };
 		6098D10D25D53A56000A2962 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6098D10C25D53A56000A2962 /* README.md */; };
@@ -115,12 +115,12 @@
 		603AB86E25CD82850026D0F3 /* LogsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsPresenter.swift; sourceTree = "<group>"; };
 		603AB86F25CD82850026D0F3 /* LogsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsController.swift; sourceTree = "<group>"; };
 		603AB87025CD82850026D0F3 /* LogsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsInteractor.swift; sourceTree = "<group>"; };
-		603AB87D25CD82D30026D0F3 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		603AB88125CD83120026D0F3 /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
-		603AB88725CD83AA0026D0F3 /* AlertPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPresentable.swift; sourceTree = "<group>"; };
-		603AB88B25CD83BB0026D0F3 /* SpinnerPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerPresentable.swift; sourceTree = "<group>"; };
-		603AB89525CD84150026D0F3 /* SpinnerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerController.swift; sourceTree = "<group>"; };
-		603AB89625CD84150026D0F3 /* SpinnerController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpinnerController.xib; sourceTree = "<group>"; };
+		603AB87D25CD82D30026D0F3 /* IteoLoggerBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IteoLoggerBaseViewController.swift; sourceTree = "<group>"; };
+		603AB88125CD83120026D0F3 /* IteoLoggerBasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IteoLoggerBasePresenter.swift; sourceTree = "<group>"; };
+		603AB88725CD83AA0026D0F3 /* IteoLoggerAlertPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IteoLoggerAlertPresentable.swift; sourceTree = "<group>"; };
+		603AB88B25CD83BB0026D0F3 /* IteoLoggerSpinnerPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IteoLoggerSpinnerPresentable.swift; sourceTree = "<group>"; };
+		603AB89525CD84150026D0F3 /* IteoLoggerSpinnerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IteoLoggerSpinnerController.swift; sourceTree = "<group>"; };
+		603AB89625CD84150026D0F3 /* IteoLoggerSpinnerController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IteoLoggerSpinnerController.xib; sourceTree = "<group>"; };
 		603AB89F25CD8B730026D0F3 /* Bundle+Framework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Framework.swift"; sourceTree = "<group>"; };
 		603AB8A325CD8EAF0026D0F3 /* LogsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsViewModel.swift; sourceTree = "<group>"; };
 		603AB8A825CD8ECA0026D0F3 /* PauseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PauseCell.xib; sourceTree = "<group>"; };
@@ -133,7 +133,7 @@
 		6041AC6525D18F6900830765 /* LogFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogFilter.swift; sourceTree = "<group>"; };
 		6098D0F625D523CC000A2962 /* FilterSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSectionHeader.swift; sourceTree = "<group>"; };
 		6098D0FA25D523D5000A2962 /* FilterSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterSectionHeader.xib; sourceTree = "<group>"; };
-		6098D0FE25D5245E000A2962 /* XibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibView.swift; sourceTree = "<group>"; };
+		6098D0FE25D5245E000A2962 /* IteoLoggerXibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IteoLoggerXibView.swift; sourceTree = "<group>"; };
 		6098D10225D52E5E000A2962 /* LogSectionHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogSectionHeader.xib; sourceTree = "<group>"; };
 		6098D10625D52E65000A2962 /* LogSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogSectionHeader.swift; sourceTree = "<group>"; };
 		6098D10C25D53A56000A2962 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -281,13 +281,13 @@
 		603AB87C25CD82C60026D0F3 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				603AB87D25CD82D30026D0F3 /* BaseViewController.swift */,
-				603AB88125CD83120026D0F3 /* BasePresenter.swift */,
-				603AB88725CD83AA0026D0F3 /* AlertPresentable.swift */,
-				603AB88B25CD83BB0026D0F3 /* SpinnerPresentable.swift */,
-				603AB89525CD84150026D0F3 /* SpinnerController.swift */,
-				603AB89625CD84150026D0F3 /* SpinnerController.xib */,
-				6098D0FE25D5245E000A2962 /* XibView.swift */,
+				603AB87D25CD82D30026D0F3 /* IteoLoggerBaseViewController.swift */,
+				603AB88125CD83120026D0F3 /* IteoLoggerBasePresenter.swift */,
+				603AB88725CD83AA0026D0F3 /* IteoLoggerAlertPresentable.swift */,
+				603AB88B25CD83BB0026D0F3 /* IteoLoggerSpinnerPresentable.swift */,
+				603AB89525CD84150026D0F3 /* IteoLoggerSpinnerController.swift */,
+				603AB89625CD84150026D0F3 /* IteoLoggerSpinnerController.xib */,
+				6098D0FE25D5245E000A2962 /* IteoLoggerXibView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -558,7 +558,7 @@
 				6098D0FB25D523D5000A2962 /* FilterSectionHeader.xib in Resources */,
 				6098D10325D52E5E000A2962 /* LogSectionHeader.xib in Resources */,
 				603AB8B225CD8F230026D0F3 /* LogCell.xib in Resources */,
-				603AB89825CD84150026D0F3 /* SpinnerController.xib in Resources */,
+				603AB89825CD84150026D0F3 /* IteoLoggerSpinnerController.xib in Resources */,
 				60E2D2F825D29FB80034FA6C /* FilterCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -586,8 +586,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6098D0FF25D5245E000A2962 /* XibView.swift in Sources */,
-				603AB88225CD83120026D0F3 /* BasePresenter.swift in Sources */,
+				6098D0FF25D5245E000A2962 /* IteoLoggerXibView.swift in Sources */,
+				603AB88225CD83120026D0F3 /* IteoLoggerBasePresenter.swift in Sources */,
 				60ECC5DC25CC023A0088C4B0 /* DateFormatManager.swift in Sources */,
 				603AB8B325CD8F230026D0F3 /* LogCell.swift in Sources */,
 				603AB8A025CD8B730026D0F3 /* Bundle+Framework.swift in Sources */,
@@ -601,13 +601,13 @@
 				60ECC5FE25CC09D40088C4B0 /* IteoLoggerItemConsumer.swift in Sources */,
 				60E2D2E225D29DDA0034FA6C /* FiltersViewModel.swift in Sources */,
 				60ECC5E925CC02CE0088C4B0 /* IteoLogger.swift in Sources */,
-				603AB88C25CD83BB0026D0F3 /* SpinnerPresentable.swift in Sources */,
+				603AB88C25CD83BB0026D0F3 /* IteoLoggerSpinnerPresentable.swift in Sources */,
 				60E2D2E525D29DDA0034FA6C /* FiltersControllerCreator.swift in Sources */,
 				603AB87725CD82850026D0F3 /* LogsInteractor.swift in Sources */,
-				603AB89725CD84150026D0F3 /* SpinnerController.swift in Sources */,
+				603AB89725CD84150026D0F3 /* IteoLoggerSpinnerController.swift in Sources */,
 				60ECC5D625CC01830088C4B0 /* IteoLoggerModule.swift in Sources */,
 				603AB87225CD82850026D0F3 /* LogsControllerCreator.swift in Sources */,
-				603AB88825CD83AA0026D0F3 /* AlertPresentable.swift in Sources */,
+				603AB88825CD83AA0026D0F3 /* IteoLoggerAlertPresentable.swift in Sources */,
 				603AB8B925CD8F310026D0F3 /* LogSectionItem.swift in Sources */,
 				603AB87525CD82850026D0F3 /* LogsPresenter.swift in Sources */,
 				60E2D2E025D29DDA0034FA6C /* FiltersController.swift in Sources */,
@@ -621,7 +621,7 @@
 				6098D10725D52E65000A2962 /* LogSectionHeader.swift in Sources */,
 				60E2D2DF25D29DDA0034FA6C /* FiltersPresenter.swift in Sources */,
 				6041AC6025D1695500830765 /* URL+LogsPath.swift in Sources */,
-				603AB87E25CD82D30026D0F3 /* BaseViewController.swift in Sources */,
+				603AB87E25CD82D30026D0F3 /* IteoLoggerBaseViewController.swift in Sources */,
 				603AB87625CD82850026D0F3 /* LogsController.swift in Sources */,
 				60ECC60425CC09F00088C4B0 /* IteoLoggerConsoleItemConsumer.swift in Sources */,
 				603AB8A425CD8EAF0026D0F3 /* LogsViewModel.swift in Sources */,

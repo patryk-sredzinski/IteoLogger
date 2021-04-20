@@ -10,12 +10,12 @@
 
 import UIKit
 
-protocol LogsPresenter: SpinnerPresenter, AlertPresenter {
+protocol LogsPresenter: IteoLoggerSpinnerPresenter, IteoLoggerAlertPresenter {
     func buildSection(index: Int, logs: [IteoLoggerItem])
     func reloadLogs()
 }
 
-final class LogsPresenterImpl<T: LogsPresentable>: BasePresenter<T> {
+final class LogsPresenterImpl<T: LogsPresentable>: IteoLoggerBasePresenter<T> {
     
     private let dateFormatter: DateFormatManager
     

@@ -10,12 +10,12 @@
 
 import UIKit
 
-protocol LogsPresentable: SpinnerPresentable & AlertPresentable {
+protocol LogsPresentable: IteoLoggerSpinnerPresentable & IteoLoggerAlertPresentable {
     func resetLogs()
     func appendNewSection(section: LogSectionItem)
 }
 
-final class LogsController: BaseViewController {
+final class LogsController: IteoLoggerBaseViewController {
     
     @IBOutlet private var tableView: UITableView!
     @IBOutlet private var loadedSessionsCountLabel: UILabel!

@@ -10,13 +10,13 @@
 
 import UIKit
 
-protocol FiltersPresenter: SpinnerPresenter, AlertPresenter {
+protocol FiltersPresenter: IteoLoggerSpinnerPresenter, IteoLoggerAlertPresenter {
     func reloadFilters(_ filter: LogFilter,
                        availableModules: Set<IteoLoggerModule>,
                        availableLevels: Set<IteoLoggerLevel>)
 }
 
-final class FiltersPresenterImpl<T: FiltersPresentable>: BasePresenter<T> {
+final class FiltersPresenterImpl<T: FiltersPresentable>: IteoLoggerBasePresenter<T> {
     
 }
 

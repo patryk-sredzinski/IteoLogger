@@ -19,7 +19,7 @@ protocol LogsRouter {
 }
 
 final class LogsRouterImpl {
-    weak var controller: BaseViewController?
+    weak var controller: IteoLoggerBaseViewController?
 }
 
 extension LogsRouterImpl: LogsRouter {
