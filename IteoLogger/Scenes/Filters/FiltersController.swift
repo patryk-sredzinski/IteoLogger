@@ -36,6 +36,7 @@ final class FiltersController: BaseViewController {
         setupView()
         interactor.reloadFilters()
     }
+    
 }
 
 private extension FiltersController {
@@ -66,6 +67,10 @@ private extension FiltersController {
         case .modules:
             return viewModel.toggleModulesText
         }
+    }
+    
+    @IBAction private func closeTapped() {
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction private func clearAllFilters(_ sender: UIButton) {

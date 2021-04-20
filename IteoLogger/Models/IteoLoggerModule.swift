@@ -46,6 +46,7 @@ public struct IteoLoggerModule: Codable, Equatable, Hashable {
     public static let graphics          = IteoLoggerModule("Graphics", prefix: "🌆")
     public static let motion            = IteoLoggerModule("Motion", prefix: "🚴")
     public static let push              = IteoLoggerModule("Push", prefix: "⚡️")
+    public static let language          = IteoLoggerModule("Language", prefix: "👅")
     public static let unknown           = IteoLoggerModule("LOG", prefix: "🖊")
 
     public init(_ name: String, prefix: String = "✏️") {

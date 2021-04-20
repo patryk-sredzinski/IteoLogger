@@ -61,6 +61,10 @@ private extension LogsController {
         tableView.register(LogSectionHeader.self, forHeaderFooterViewReuseIdentifier: LogSectionHeader.reuseIdentifier)
     }
     
+    @IBAction private func closeTapped() {
+        dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction private func refreshTapped() {
         interactor.reloadLogs()
     }

@@ -24,12 +24,29 @@
                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ujB-sS-G1U">
                     <rect key="frame" x="8" y="52" width="359" height="40"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j0e-8e-CH4">
-                            <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                        <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="900" verticalHuggingPriority="900" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CR8-zV-k8F">
+                            <rect key="frame" x="0.0" y="0.0" width="41" height="40"/>
                             <color key="backgroundColor" white="0.94999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstAttribute="width" secondItem="j0e-8e-CH4" secondAttribute="height" multiplier="1:1" id="NAm-M9-OFn"/>
-                            </constraints>
+                            <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="16"/>
+                            <color key="tintColor" red="1" green="0.39607843139999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                            <state key="normal" image="close"/>
+                            <state key="highlighted">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="16"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="closeTapped" destination="-1" eventType="touchUpInside" id="cwy-NX-KTu"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="900" verticalHuggingPriority="900" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j0e-8e-CH4">
+                            <rect key="frame" x="49" y="0.0" width="41.333333333333343" height="40"/>
+                            <color key="backgroundColor" white="0.94999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="16"/>
                             <color key="tintColor" red="1" green="0.396078431372549" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
@@ -47,8 +64,8 @@
                                 <action selector="refreshTapped" destination="-1" eventType="touchUpInside" id="u9n-8x-8me"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pKd-vF-v6w">
-                            <rect key="frame" x="48" y="0.0" width="40" height="40"/>
+                        <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="900" verticalHuggingPriority="900" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pKd-vF-v6w">
+                            <rect key="frame" x="98.333333333333329" y="0.0" width="41.333333333333329" height="40"/>
                             <color key="backgroundColor" white="0.94999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="16"/>
                             <color key="tintColor" red="1" green="0.396078431372549" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -68,21 +85,25 @@
                             </connections>
                         </button>
                         <view contentMode="scaleToFill" horizontalHuggingPriority="10" verticalHuggingPriority="10" horizontalCompressionResistancePriority="10" verticalCompressionResistancePriority="10" translatesAutoresizingMaskIntoConstraints="NO" id="eGC-wA-ea4">
-                            <rect key="frame" x="96" y="0.0" width="63.333333333333343" height="40"/>
+                            <rect key="frame" x="147.66666666666666" y="0.0" width="11.666666666666657" height="40"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQn-HJ-jdj">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="900" verticalHuggingPriority="900" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Logs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQn-HJ-jdj">
                             <rect key="frame" x="167.33333333333334" y="0.0" width="24.333333333333343" height="40"/>
                             <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="11"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" horizontalHuggingPriority="10" verticalHuggingPriority="10" horizontalCompressionResistancePriority="10" verticalCompressionResistancePriority="10" translatesAutoresizingMaskIntoConstraints="NO" id="y4s-7i-vUa">
-                            <rect key="frame" x="199.66666666666666" y="0.0" width="63.333333333333343" height="40"/>
+                            <rect key="frame" x="199.66666666666666" y="0.0" width="11.333333333333343" height="40"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zld-vB-GLs">
-                            <rect key="frame" x="271" y="0.0" width="40" height="40"/>
+                        <view contentMode="scaleToFill" horizontalHuggingPriority="10" verticalHuggingPriority="10" horizontalCompressionResistancePriority="10" verticalCompressionResistancePriority="10" translatesAutoresizingMaskIntoConstraints="NO" id="VLA-nt-QmO">
+                            <rect key="frame" x="219" y="0.0" width="41.333333333333314" height="40"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" horizontalHuggingPriority="900" verticalHuggingPriority="900" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zld-vB-GLs">
+                            <rect key="frame" x="268.33333333333331" y="0.0" width="41.333333333333314" height="40"/>
                             <color key="backgroundColor" white="0.94999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="16"/>
                             <color key="tintColor" red="1" green="0.396078431372549" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -101,8 +122,8 @@
                                 <action selector="filtersTapped" destination="-1" eventType="touchUpInside" id="jGk-vH-up5"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NM4-32-tOK">
-                            <rect key="frame" x="319" y="0.0" width="40" height="40"/>
+                        <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" horizontalHuggingPriority="900" verticalHuggingPriority="900" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NM4-32-tOK">
+                            <rect key="frame" x="317.66666666666669" y="0.0" width="41.333333333333314" height="40"/>
                             <color key="backgroundColor" white="0.94999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="16"/>
                             <color key="tintColor" red="1" green="0.396078431372549" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -125,9 +146,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="HT7-Ja-suQ"/>
                         <constraint firstItem="y4s-7i-vUa" firstAttribute="width" secondItem="eGC-wA-ea4" secondAttribute="width" id="K67-Vn-9if"/>
-                        <constraint firstItem="pKd-vF-v6w" firstAttribute="width" secondItem="j0e-8e-CH4" secondAttribute="width" id="Zeh-Y8-JXe"/>
-                        <constraint firstItem="Zld-vB-GLs" firstAttribute="width" secondItem="j0e-8e-CH4" secondAttribute="width" id="hJB-gc-cOY"/>
-                        <constraint firstItem="NM4-32-tOK" firstAttribute="width" secondItem="j0e-8e-CH4" secondAttribute="width" id="wOi-LF-uBO"/>
+                        <constraint firstItem="VLA-nt-QmO" firstAttribute="width" secondItem="Zld-vB-GLs" secondAttribute="width" priority="800" id="gI5-i1-k0e"/>
                     </constraints>
                 </stackView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No logs available" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Esk-7H-zbN">
@@ -213,6 +232,7 @@
         </view>
     </objects>
     <resources>
+        <image name="close" width="21" height="21"/>
         <image name="delete" width="21.333333969116211" height="21.333333969116211"/>
         <image name="down" width="21.333333969116211" height="21.333333969116211"/>
         <image name="filters" width="21.333333969116211" height="21.333333969116211"/>
