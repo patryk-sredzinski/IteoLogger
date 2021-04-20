@@ -6,6 +6,7 @@ import PackageDescription
 let package = Package(
     name: "IteoLogger",
     platforms: [.iOS(.v11)],
+    exclude: ["IteoLogger/Info.plist"],
     products: [
         .library(
             name: "IteoLogger",
