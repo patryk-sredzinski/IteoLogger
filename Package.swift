@@ -16,11 +16,11 @@ let package = Package(
             name: "IteoLogger",
             dependencies: [],
             path: "IteoLogger",
-            exclude: ["IteoLogger/Info.plist"]),
+            exclude: ["IteoLogger/IteoLogger/Info.aplist"]),
         .testTarget(
             name: "IteoLoggerTests",
             dependencies: ["IteoLogger"],
             path: "IteoLoggerTests",
-            exclude: ["IteoLoggerTests/Info.plist"]),
+            exclude: ["IteoLogger/IteoLoggerTests/Info.plist"]),
     ]
 )
