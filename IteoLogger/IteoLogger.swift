@@ -13,23 +13,23 @@ public extension IteoLogger {
     static let defaultLogsDirectoryName = "IteoLoggerLogData"
     static let defaultConsoleFormat = "[level] [[time]] - [module_prefix] [module_name]: [output]"
     static let defaultShareFormat = "[level] [[date] [time]] - [module_prefix] [module_name]: [output]"
-
+    
     func log(_ items: Any?...) {
         log(level: .info, module: .unknown, items: items)
     }
-
+    
     func log(_ module: IteoLoggerModule, _ items: Any?...) {
         log(level: .info, module: module, items: items)
     }
-
+    
     func log(_ level: IteoLoggerLevel, _ items: Any?...) {
         log(level: level, module: .unknown, items: items)
     }
-
+    
     func log(_ module: IteoLoggerModule, _ level: IteoLoggerLevel, _ items: Any?...) {
         log(level: level, module: module, items: items)
     }
-
+    
     func log(_ level: IteoLoggerLevel, _ module: IteoLoggerModule, _ items: Any?...) {
         log(level: level, module: module, items: items)
     }
@@ -39,14 +39,24 @@ public extension IteoLogger {
             assertionFailure("IteoLoggerStorageItemConsumer is not added to the logger, so there's no point of displaying logs page")
             return
         }
-        guard let window = UIApplication.shared.keyWindow,
-              let rootController = window.rootViewController else {
-            assertionFailure("Can't find root view controller")
+        var rootController: UIViewController?
+        if let window = UIApplication.shared.keyWindow, let rootViewController = window.rootViewController {
+            rootController = rootViewController
+        } else if #available(iOS 13.0, *) {
+            let scenes = UIApplication.shared.connectedScenes
+            if let windowScene = scenes.first(where: { $0 is UIWindowScene }) as? UIWindowScene,
+               let window = windowScene.windows.first,
+               let rootViewController = window.rootViewController {
+                rootController = rootViewController
+            }
+        }
+        guard let rootViewController = rootController else {
+            assertionFailure("Could not find root controller")
             return
         }
-        rootController.present(LogsControllerCreator().getController(logsDirectoryName: logsDirectoryName, shareFormat: shareFormat),
-                               animated: true,
-                               completion: nil)
+        rootViewController.present(LogsControllerCreator().getController(logsDirectoryName: logsDirectoryName, shareFormat: shareFormat),
+                                   animated: true,
+                                   completion: nil)
     }
     
 }
