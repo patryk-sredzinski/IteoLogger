@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -29,7 +29,7 @@
                             <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="16"/>
                             <color key="tintColor" red="1" green="0.39607843139999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                            <state key="normal" image="close"/>
+                            <state key="normal" image="IteoLogger/close"/>
                             <state key="highlighted">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
@@ -49,7 +49,7 @@
                             <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="16"/>
                             <color key="tintColor" red="1" green="0.39607843139999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                            <state key="normal" image="delete"/>
+                            <state key="normal" image="IteoLogger/delete"/>
                             <state key="highlighted">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
@@ -87,7 +87,7 @@
                             <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="16"/>
                             <color key="tintColor" red="1" green="0.39607843139999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                            <state key="normal" image="check"/>
+                            <state key="normal" image="IteoLogger/check"/>
                             <state key="highlighted">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
@@ -135,9 +135,9 @@
         </view>
     </objects>
     <resources>
-        <image name="check" width="21.333333969116211" height="21.333333969116211"/>
-        <image name="close" width="21" height="21"/>
-        <image name="delete" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="IteoLogger/check" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="IteoLogger/close" width="21" height="21"/>
+        <image name="IteoLogger/delete" width="21.333333969116211" height="21.333333969116211"/>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
