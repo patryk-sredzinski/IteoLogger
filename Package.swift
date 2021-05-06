@@ -19,10 +19,9 @@ let package = Package(
             exclude: [
                 "Info.plist",
                 "Preview/",
-                "IteoLoggerExample/"
-            ],
-            resources: [
-                .process("Media.xcassets/")
+                "IteoLoggerExample/",
+                "IteoLoggerTests/",
+                "IteoLogger.podspec"
             ]),
     ]
 )
