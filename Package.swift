@@ -18,7 +18,8 @@ let package = Package(
             path: "IteoLogger",
             exclude: [
                 "Info.plist",
-                "Preview/"
+                "Preview/",
+                "IteoLoggerExample/"
             ],
             resources: [
                 .process("Media.xcassets/")
