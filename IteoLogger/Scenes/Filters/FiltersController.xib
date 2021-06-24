@@ -24,12 +24,12 @@
                     <rect key="frame" x="8" y="52" width="359" height="40"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="900" verticalHuggingPriority="900" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6eI-Aj-4xe">
-                            <rect key="frame" x="0.0" y="0.0" width="41" height="40"/>
+                            <rect key="frame" x="0.0" y="0.0" width="37.333333333333336" height="40"/>
                             <color key="backgroundColor" white="0.94999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="16"/>
                             <color key="tintColor" red="1" green="0.39607843139999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                            <state key="normal" image="IteoLogger/close"/>
+                            <state key="normal" image="xmark" catalog="system"/>
                             <state key="highlighted">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
@@ -44,12 +44,12 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="900" verticalHuggingPriority="900" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egS-5Z-eiy">
-                            <rect key="frame" x="49" y="0.0" width="41.333333333333343" height="40"/>
+                            <rect key="frame" x="45.333333333333343" y="0.0" width="39" height="40"/>
                             <color key="backgroundColor" white="0.94999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="16"/>
                             <color key="tintColor" red="1" green="0.39607843139999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                            <state key="normal" image="IteoLogger/delete"/>
+                            <state key="normal" image="trash" catalog="system"/>
                             <state key="highlighted">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
@@ -64,7 +64,7 @@
                             </connections>
                         </button>
                         <view contentMode="scaleToFill" horizontalHuggingPriority="10" verticalHuggingPriority="10" horizontalCompressionResistancePriority="10" verticalCompressionResistancePriority="10" translatesAutoresizingMaskIntoConstraints="NO" id="rVa-5b-qKg">
-                            <rect key="frame" x="98.333333333333329" y="0.0" width="56.999999999999986" height="40"/>
+                            <rect key="frame" x="92.333333333333329" y="0.0" width="62.999999999999986" height="40"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="900" verticalHuggingPriority="900" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Filters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Il0-AX-K9s">
@@ -74,20 +74,20 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" horizontalHuggingPriority="10" verticalHuggingPriority="10" horizontalCompressionResistancePriority="10" verticalCompressionResistancePriority="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZbF-dy-C9v">
-                            <rect key="frame" x="203.33333333333334" y="0.0" width="57.000000000000028" height="40"/>
+                            <rect key="frame" x="203.33333333333334" y="0.0" width="63.000000000000028" height="40"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <view contentMode="scaleToFill" horizontalHuggingPriority="10" verticalHuggingPriority="10" horizontalCompressionResistancePriority="10" verticalCompressionResistancePriority="10" translatesAutoresizingMaskIntoConstraints="NO" id="pjZ-WM-2yC">
-                            <rect key="frame" x="268.33333333333331" y="0.0" width="41.333333333333314" height="40"/>
+                            <rect key="frame" x="274.33333333333331" y="0.0" width="38.333333333333314" height="40"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="900" verticalHuggingPriority="900" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FVP-Zc-AIp">
-                            <rect key="frame" x="317.66666666666669" y="0.0" width="41.333333333333314" height="40"/>
+                            <rect key="frame" x="320.66666666666669" y="0.0" width="38.333333333333314" height="40"/>
                             <color key="backgroundColor" white="0.94999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="16"/>
                             <color key="tintColor" red="1" green="0.39607843139999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                            <state key="normal" image="IteoLogger/check"/>
+                            <state key="normal" image="checkmark" catalog="system"/>
                             <state key="highlighted">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
@@ -135,9 +135,9 @@
         </view>
     </objects>
     <resources>
-        <image name="IteoLogger/check" width="21.333333969116211" height="21.333333969116211"/>
-        <image name="IteoLogger/close" width="21" height="21"/>
-        <image name="IteoLogger/delete" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="checkmark" catalog="system" width="128" height="114"/>
+        <image name="trash" catalog="system" width="121" height="128"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

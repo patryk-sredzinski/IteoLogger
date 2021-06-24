@@ -10,7 +10,7 @@
 
 import UIKit
 
-protocol FiltersRouterDelegate: class {
+protocol FiltersRouterDelegate: AnyObject {
     func saveFilters(_ filters: LogFilter)
 }
 

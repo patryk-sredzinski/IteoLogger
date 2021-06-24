@@ -25,12 +25,12 @@
                     <rect key="frame" x="8" y="52" width="359" height="40"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="900" verticalHuggingPriority="900" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CR8-zV-k8F">
-                            <rect key="frame" x="0.0" y="0.0" width="41" height="40"/>
+                            <rect key="frame" x="0.0" y="0.0" width="37.333333333333336" height="40"/>
                             <color key="backgroundColor" white="0.94999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="16"/>
                             <color key="tintColor" red="1" green="0.39607843139999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                            <state key="normal" image="IteoLogger/close"/>
+                            <state key="normal" image="xmark" catalog="system"/>
                             <state key="highlighted">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
@@ -45,12 +45,12 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="900" verticalHuggingPriority="900" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j0e-8e-CH4">
-                            <rect key="frame" x="49" y="0.0" width="41.333333333333343" height="40"/>
+                            <rect key="frame" x="45.333333333333343" y="0.0" width="37.666666666666657" height="40"/>
                             <color key="backgroundColor" white="0.94999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="16"/>
                             <color key="tintColor" red="1" green="0.396078431372549" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                            <state key="normal" image="IteoLogger/reload"/>
+                            <state key="normal" image="arrow.clockwise" catalog="system"/>
                             <state key="highlighted">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
@@ -65,12 +65,12 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="900" verticalHuggingPriority="900" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pKd-vF-v6w">
-                            <rect key="frame" x="98.333333333333329" y="0.0" width="41.333333333333329" height="40"/>
+                            <rect key="frame" x="91" y="0.0" width="39" height="40"/>
                             <color key="backgroundColor" white="0.94999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="16"/>
                             <color key="tintColor" red="1" green="0.396078431372549" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                            <state key="normal" image="IteoLogger/delete"/>
+                            <state key="normal" image="trash" catalog="system"/>
                             <state key="highlighted">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
@@ -85,30 +85,30 @@
                             </connections>
                         </button>
                         <view contentMode="scaleToFill" horizontalHuggingPriority="10" verticalHuggingPriority="10" horizontalCompressionResistancePriority="10" verticalCompressionResistancePriority="10" translatesAutoresizingMaskIntoConstraints="NO" id="eGC-wA-ea4">
-                            <rect key="frame" x="147.66666666666666" y="0.0" width="11.666666666666657" height="40"/>
+                            <rect key="frame" x="138" y="0.0" width="14" height="40"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="900" verticalHuggingPriority="900" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Logs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQn-HJ-jdj">
-                            <rect key="frame" x="167.33333333333334" y="0.0" width="24.333333333333343" height="40"/>
+                            <rect key="frame" x="160" y="0.0" width="24.333333333333343" height="40"/>
                             <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="11"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" horizontalHuggingPriority="10" verticalHuggingPriority="10" horizontalCompressionResistancePriority="10" verticalCompressionResistancePriority="10" translatesAutoresizingMaskIntoConstraints="NO" id="y4s-7i-vUa">
-                            <rect key="frame" x="199.66666666666666" y="0.0" width="11.333333333333343" height="40"/>
+                            <rect key="frame" x="192.33333333333334" y="0.0" width="13.666666666666657" height="40"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
                         <view contentMode="scaleToFill" horizontalHuggingPriority="10" verticalHuggingPriority="10" horizontalCompressionResistancePriority="10" verticalCompressionResistancePriority="10" translatesAutoresizingMaskIntoConstraints="NO" id="VLA-nt-QmO">
-                            <rect key="frame" x="219" y="0.0" width="41.333333333333314" height="40"/>
+                            <rect key="frame" x="214" y="0.0" width="45" height="40"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" horizontalHuggingPriority="900" verticalHuggingPriority="900" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zld-vB-GLs">
-                            <rect key="frame" x="268.33333333333331" y="0.0" width="41.333333333333314" height="40"/>
+                        <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="900" verticalHuggingPriority="900" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zld-vB-GLs">
+                            <rect key="frame" x="267" y="0.0" width="45" height="40"/>
                             <color key="backgroundColor" white="0.94999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="16"/>
                             <color key="tintColor" red="1" green="0.396078431372549" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                            <state key="normal" image="IteoLogger/filters"/>
+                            <state key="normal" image="list.bullet.indent" catalog="system"/>
                             <state key="highlighted">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
@@ -122,13 +122,13 @@
                                 <action selector="filtersTapped" destination="-1" eventType="touchUpInside" id="jGk-vH-up5"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" horizontalHuggingPriority="900" verticalHuggingPriority="900" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NM4-32-tOK">
-                            <rect key="frame" x="317.66666666666669" y="0.0" width="41.333333333333314" height="40"/>
+                        <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="900" verticalHuggingPriority="900" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NM4-32-tOK">
+                            <rect key="frame" x="320" y="0.0" width="39" height="40"/>
                             <color key="backgroundColor" white="0.94999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="16"/>
                             <color key="tintColor" red="1" green="0.396078431372549" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                            <state key="normal" image="IteoLogger/share"/>
+                            <state key="normal" image="square.and.arrow.up" catalog="system"/>
                             <state key="highlighted">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
@@ -176,7 +176,7 @@
                                 <constraint firstAttribute="width" secondItem="dLw-2A-qVx" secondAttribute="height" multiplier="1:1" id="osh-YP-OPS"/>
                             </constraints>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <state key="normal" image="IteoLogger/up"/>
+                            <state key="normal" image="chevron.up" catalog="system"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -194,7 +194,7 @@
                                 <constraint firstAttribute="width" secondItem="YBL-K7-8WZ" secondAttribute="height" multiplier="1:1" id="XX1-TZ-keH"/>
                             </constraints>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <state key="normal" image="IteoLogger/down"/>
+                            <state key="normal" image="chevron.down" catalog="system"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -232,13 +232,13 @@
         </view>
     </objects>
     <resources>
-        <image name="IteoLogger/close" width="21" height="21"/>
-        <image name="IteoLogger/delete" width="21.333333969116211" height="21.333333969116211"/>
-        <image name="IteoLogger/down" width="21.333333969116211" height="21.333333969116211"/>
-        <image name="IteoLogger/filters" width="21.333333969116211" height="21.333333969116211"/>
-        <image name="IteoLogger/reload" width="21.333333969116211" height="21.333333969116211"/>
-        <image name="IteoLogger/share" width="21.333333969116211" height="21.333333969116211"/>
-        <image name="IteoLogger/up" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
+        <image name="chevron.down" catalog="system" width="128" height="72"/>
+        <image name="chevron.up" catalog="system" width="128" height="72"/>
+        <image name="list.bullet.indent" catalog="system" width="128" height="74"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+        <image name="trash" catalog="system" width="121" height="128"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

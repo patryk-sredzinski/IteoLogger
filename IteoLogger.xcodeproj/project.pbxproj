@@ -30,7 +30,6 @@
 		603AB8B225CD8F230026D0F3 /* LogCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 603AB8A925CD8ECA0026D0F3 /* LogCell.xib */; };
 		603AB8B325CD8F230026D0F3 /* LogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB8AB25CD8ECA0026D0F3 /* LogCell.swift */; };
 		603AB8B925CD8F310026D0F3 /* LogSectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB8B625CD8F310026D0F3 /* LogSectionItem.swift */; };
-		6041AC5A25D13EF900830765 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6041AC5925D13EF900830765 /* Media.xcassets */; };
 		6041AC6025D1695500830765 /* URL+LogsPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6041AC5F25D1695500830765 /* URL+LogsPath.swift */; };
 		6041AC6625D18F6900830765 /* LogFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6041AC6525D18F6900830765 /* LogFilter.swift */; };
 		6098D0F725D523CC000A2962 /* FilterSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6098D0F625D523CC000A2962 /* FilterSectionHeader.swift */; };
@@ -128,7 +127,6 @@
 		603AB8AA25CD8ECA0026D0F3 /* PauseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseCell.swift; sourceTree = "<group>"; };
 		603AB8AB25CD8ECA0026D0F3 /* LogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogCell.swift; sourceTree = "<group>"; };
 		603AB8B625CD8F310026D0F3 /* LogSectionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogSectionItem.swift; sourceTree = "<group>"; };
-		6041AC5925D13EF900830765 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		6041AC5F25D1695500830765 /* URL+LogsPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+LogsPath.swift"; sourceTree = "<group>"; };
 		6041AC6525D18F6900830765 /* LogFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogFilter.swift; sourceTree = "<group>"; };
 		605FF342262EC35400163172 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
@@ -354,7 +352,6 @@
 				603AB86725CD825A0026D0F3 /* Scenes */,
 				60ECC5B625CC00E90088C4B0 /* IteoLogger.h */,
 				60ECC5B725CC00E90088C4B0 /* Info.plist */,
-				6041AC5925D13EF900830765 /* Media.xcassets */,
 			);
 			path = IteoLogger;
 			sourceTree = "<group>";
@@ -552,7 +549,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6098D16125D54224000A2962 /* IteoLogger.podspec in Resources */,
-				6041AC5A25D13EF900830765 /* Media.xcassets in Resources */,
 				60E2D2E425D29DDA0034FA6C /* FiltersController.xib in Resources */,
 				6098D10D25D53A56000A2962 /* README.md in Resources */,
 				603AB87425CD82850026D0F3 /* LogsController.xib in Resources */,
@@ -808,6 +804,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.iteo.IteoLogger;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -836,6 +833,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.iteo.IteoLogger;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
