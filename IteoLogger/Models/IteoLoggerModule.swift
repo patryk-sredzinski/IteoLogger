@@ -15,6 +15,8 @@ public struct IteoLoggerModule: Codable, Equatable, Hashable {
     public static let network           = IteoLoggerModule("Network", prefix: "🌐")
     public static let networkRequest    = IteoLoggerModule("Request", prefix: "📤")
     public static let networkResponse   = IteoLoggerModule("Response", prefix: "📥")
+    public static let webSocket         = IteoLoggerModule("WebSocket", prefix: "🔌")
+    public static let voip              = IteoLoggerModule("VoIP", prefix: "📞")
     public static let webView           = IteoLoggerModule("WebView", prefix: "🖼")
     public static let userDefaults      = IteoLoggerModule("UserDefaults", prefix: "💾")
     public static let keyChain          = IteoLoggerModule("KeyChain", prefix: "🔑")
