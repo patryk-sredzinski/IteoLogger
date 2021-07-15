@@ -52,6 +52,11 @@ public struct IteoLoggerModule: Codable, Equatable, Hashable {
     public static let configuration     = IteoLoggerModule("Configuration", prefix: "🎛")
     public static let environment       = IteoLoggerModule("Environment", prefix: "🌳")
     public static let deeplink          = IteoLoggerModule("Deeplink", prefix: "⛓")
+    public static let call              = IteoLoggerModule("Call", prefix: "📞")
+    public static let contact           = IteoLoggerModule("Contact", prefix: "📖")
+    public static let person            = IteoLoggerModule("Person", prefix: "🙎🏻‍♂️")
+    public static let refresh           = IteoLoggerModule("Refresh", prefix: "🔁")
+    public static let status            = IteoLoggerModule("Status", prefix: "🟢")
     public static let unknown           = IteoLoggerModule("LOG", prefix: "🖊")
 
     public init(_ name: String, prefix: String = "✏️") {
