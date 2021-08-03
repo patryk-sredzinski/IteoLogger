@@ -14,22 +14,27 @@ final public class IteoLoggerStorageItemConsumer: IteoLoggerItemConsumer {
     private let fileManager: FileManager
     private let dateFormatter = DateFormatManager.shared
     private let currentSessionFileName: String
+    private let savingQueue: DispatchQueue
     
     public init(logsDirectoryName: String,
          jsonEncoder: JSONEncoder = JSONEncoder(),
-         fileManager: FileManager = FileManager.default) {
+         fileManager: FileManager = FileManager.default,
+         savingQueue: DispatchQueue = DispatchQueue(label: "saving_queue", qos: .utility, attributes: [], autoreleaseFrequency: .inherit, target: nil)) {
         self.logsDirectoryName = logsDirectoryName
         self.jsonEncoder = jsonEncoder
         self.fileManager = fileManager
+        self.savingQueue = savingQueue
         self.currentSessionFileName = "\(dateFormatter.string(from: Date(), format: .logFormat))".appending(".log")
     }
     
     public func consumeLog(_ logItem: IteoLoggerItem) {
-        do {
-            let logUrl = try fileManager.getLogsUrl(logsDirectoryName).appendingPathComponent(currentSessionFileName)
-            try append(logItem, filePath: logUrl)
-        } catch {
-            assertionFailure("Failed to store IteoLoggerItem in .log file: \(error)")
+        savingQueue.async { [self] in
+            do {
+                let logUrl = try fileManager.getLogsUrl(logsDirectoryName).appendingPathComponent(currentSessionFileName)
+                try append(logItem, filePath: logUrl)
+            } catch {
+                assertionFailure("Failed to store IteoLoggerItem in .log file: \(error)")
+            }
         }
     }
     
