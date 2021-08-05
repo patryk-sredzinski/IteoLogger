@@ -32,12 +32,11 @@ final class LogsInteractorImpl {
 
     init(presenter: LogsPresenter,
          worker: LogsWorker,
-         router: LogsRouter,
-         filter: LogFilter) {
+         router: LogsRouter) {
         self.presenter = presenter
         self.worker = worker
         self.router = router
-        self.filter = filter
+        self.filter = worker.loadFilters()
     }
 }
 

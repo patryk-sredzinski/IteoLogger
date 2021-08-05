@@ -19,6 +19,7 @@ protocol LogsWorker {
     var availableModules: Set<IteoLoggerModule> { get }
     var availableLevels: Set<IteoLoggerLevel> { get }
 
+    func loadFilters() -> LogFilter
     func loadedSessionsCount() -> Int
     func loadLogs(at index: Int, filter: LogFilter) -> [IteoLoggerItem]
     func deleteLogs()
@@ -34,7 +35,8 @@ final class LogsWorkerImpl {
     private let fileManager: FileManager
     private let dateFormatter = DateFormatManager.shared
     private let byteFormatter: ByteCountFormatter
-    
+    private let userDefaults: UserDefaults
+
     private var availableSessionPaths: [String]?
     private(set) var availableModules = Set<IteoLoggerModule>()
     private(set) var availableLevels = Set<IteoLoggerLevel>()
@@ -43,18 +45,28 @@ final class LogsWorkerImpl {
          shareFormat: String,
          jsonDecoder: JSONDecoder = JSONDecoder(),
          fileManager: FileManager = FileManager.default,
-         byteFormatter: ByteCountFormatter = ByteCountFormatter()) {
+         byteFormatter: ByteCountFormatter = ByteCountFormatter(),
+         userDefaults: UserDefaults = UserDefaults.standard) {
         self.logsDirectoryName = logsDirectoryName
         self.shareFormat = shareFormat
         self.jsonDecoder = jsonDecoder
         self.fileManager = fileManager
         self.byteFormatter = byteFormatter
+        self.userDefaults = userDefaults
     }
     
 }
 
 extension LogsWorkerImpl: LogsWorker {
-    
+
+    func loadFilters() -> LogFilter {
+        if let data = userDefaults.data(forKey: LogFilter.userDefaultsKey),
+           let filter = try? jsonDecoder.decode(LogFilter.self, from: data) {
+            return filter
+        }
+        return LogFilter()
+    }
+
     func loadedSessionsCount() -> Int {
         return (availableSessionPaths ?? []).count
     }

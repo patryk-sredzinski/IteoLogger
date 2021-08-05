@@ -28,7 +28,7 @@ public struct IteoLoggerModule: Codable, Equatable, Hashable {
     public static let calendar          = IteoLoggerModule("Calendar", prefix: "📅")
     public static let time              = IteoLoggerModule("Time", prefix: "⏰")
     public static let cache             = IteoLoggerModule("Cache", prefix: "💽")
-    public static let bug               = IteoLoggerModule("Error", prefix: "🪲")
+    public static let bug               = IteoLoggerModule("Bug", prefix: "🪲")
     public static let video             = IteoLoggerModule("Video", prefix: "🎬")
     public static let audio             = IteoLoggerModule("Audio", prefix: "🎵")
     public static let random            = IteoLoggerModule("Random", prefix: "🎲")
@@ -57,6 +57,9 @@ public struct IteoLoggerModule: Codable, Equatable, Hashable {
     public static let person            = IteoLoggerModule("Person", prefix: "🙎🏻‍♂️")
     public static let refresh           = IteoLoggerModule("Refresh", prefix: "🔁")
     public static let status            = IteoLoggerModule("Status", prefix: "🟢")
+    public static let logout            = IteoLoggerModule("Logout", prefix: "♿️")
+    public static let appState          = IteoLoggerModule("AppState", prefix: "🚀")
+
     public static let unknown           = IteoLoggerModule("LOG", prefix: "🖊")
 
     public init(_ name: String, prefix: String = "✏️") {

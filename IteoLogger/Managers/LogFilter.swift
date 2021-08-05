@@ -7,8 +7,10 @@
 
 import Foundation
 
-struct LogFilter {
-   
+struct LogFilter: Codable {
+
+    static var userDefaultsKey = "log_filter"
+
     var levels = Set<IteoLoggerLevel>()
     var modules = Set<IteoLoggerModule>()
     

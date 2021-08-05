@@ -14,7 +14,7 @@ struct FiltersControllerCreator {
 
     func getController(filter: LogFilter, availableModules: Set<IteoLoggerModule>, availableLevels: Set<IteoLoggerLevel>, delegate: FiltersRouterDelegate?) -> FiltersController {
 
-        let worker = FiltersWorkerImpl()
+        let worker = FiltersWorkerImpl(userDefaults: .standard, decoder: JSONDecoder(), encoder: JSONEncoder())
         let router = FiltersRouterImpl()
         let presenter = FiltersPresenterImpl<FiltersController>()
         let interactor = FiltersInteractorImpl(presenter: presenter, worker: worker, router: router,
