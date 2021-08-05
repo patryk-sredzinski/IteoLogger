@@ -15,11 +15,10 @@ struct LogsControllerCreator {
     func getController(logsDirectoryName: String, shareFormat: String) -> LogsController {
 
         let dateFormatter = DateFormatManager.shared
-        let filter = LogFilter()
         let worker = LogsWorkerImpl(logsDirectoryName: logsDirectoryName, shareFormat: shareFormat)
         let router = LogsRouterImpl()
         let presenter = LogsPresenterImpl<LogsController>()
-        let interactor = LogsInteractorImpl(presenter: presenter, worker: worker, router: router, filter: filter)
+        let interactor = LogsInteractorImpl(presenter: presenter, worker: worker, router: router)
         let viewModel = LogsViewModel()
         let controller = LogsController(viewModel: viewModel, interactor: interactor, shareFormat: shareFormat, dateFormatter: dateFormatter)
 

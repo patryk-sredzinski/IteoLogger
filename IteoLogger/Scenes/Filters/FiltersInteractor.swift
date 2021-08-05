@@ -87,6 +87,11 @@ final class FiltersInteractorImpl {
     
     func saveFilters() {
         router.saveFilters(filter)
+        do {
+            try worker.saveFilters(filter)
+        } catch {
+            presenter.showError(error)
+        }
     }
     
 }
