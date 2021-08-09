@@ -6,7 +6,9 @@
 //
 
 import Foundation
-
+/**
+Default consumer that saves logs in phone directory, available to be read and displayed in *LoggerPage*.
+*/
 final public class IteoLoggerStorageItemConsumer: IteoLoggerItemConsumer {
     
     private let logsDirectoryName: String
@@ -15,7 +17,16 @@ final public class IteoLoggerStorageItemConsumer: IteoLoggerItemConsumer {
     private let dateFormatter = DateFormatManager.shared
     private let currentSessionFileName: String
     private let savingQueue: DispatchQueue
-    
+
+    /**
+     Initializes storage  consumer in specified directory.
+     - Parameters:
+        - logsDirectoryName: custom directory where logs should be stored
+        - jsonEncoder: custom JSONEncoder, in case you'd like to store logs differently
+        - fileManager: you can use custom *FileManager•
+        - savingQueue: queue on which you'd like to have all saving operatiobs
+     - Returns: a new storage consumer.
+    */
     public init(logsDirectoryName: String,
          jsonEncoder: JSONEncoder = JSONEncoder(),
          fileManager: FileManager = FileManager.default,

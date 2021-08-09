@@ -1,0 +1,11 @@
+framework module IteoLogger {
+  umbrella header "IteoLogger.h"
+
+  export *
+  module * { export * }
+}
+
+module IteoLogger.Swift {
+    header "IteoLogger-Swift.h"
+    requires objc
+}

@@ -7,16 +7,24 @@
 
 import Foundation
 
-public enum IteoLoggerLevel: String, Codable, Hashable, CaseIterable, Identifiable {
-    
-    public var id: String { rawValue }
-    
+/**
+Levels that determine what kind of log it is.
+*/
+public enum IteoLoggerLevel: String, Codable, Hashable, CaseIterable {
+
+    /// marked with: 📕
     case error
+
+    /// marked with: 📙
     case warning
+
+    /// marked with: 📗
     case success
+
+    /// marked with: 📘
     case info
     
-    var icon: String {
+    internal var icon: String {
         switch self {
         case .error:
             return "📕"
