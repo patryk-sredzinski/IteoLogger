@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>IteoLogger  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+    <script src="js/lunr.min.js" defer></script>
+    <script src="js/typeahead.jquery.js" defer></script>
+    <script src="js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a title="IteoLogger  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">IteoLogger 1.0.5 Docs</a> (100% documented)</p>
+        <p class="header-right">
+          <form role="search" action="search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">IteoLogger Reference</a>
+        <img id="carat" src="img/carat.png" />
+        IteoLogger  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/IteoLogger.html">IteoLogger</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/IteoLoggerConsoleItemConsumer.html">IteoLoggerConsoleItemConsumer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/IteoLoggerStorageItemConsumer.html">IteoLoggerStorageItemConsumer</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Enums/IteoLoggerLevel.html">IteoLoggerLevel</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols/IteoLoggerItemConsumer.html">IteoLoggerItemConsumer</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs/IteoLoggerItem.html">IteoLoggerItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/IteoLoggerModule.html">IteoLoggerModule</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <p><img src="https://raw.githubusercontent.com/psredzinski/IteoLogger/master/Preview/iteo_logo.png" alt="IteoLogger: Elegant Logger in Swift"></p>
+
+<p>IteoLogger is a smart logger created in Swift, with a nice interface.</p>
+
+<ul>
+<li><a href="#features">Features</a></li>
+<li><a href="#preview">Preview</a></li>
+<li><a href="#requirements">Requirements</a></li>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#usage">Usage</a></li>
+<li><a href="#credits">Credits</a></li>
+<li><a href="#license">License</a></li>
+</ul>
+<h2 id='features' class='heading'>Features</h2>
+
+<ul>
+<li>[x] Logging with 4 basic levels: *info, *success, *warning, *error</li>
+<li>[x] Groupping logs with modules (with a name and an emoji prefix)</li>
+<li>[x] Option to create your own modules in your app</li>
+<li>[x] An option to toggle possibility to log to xcode console with your own format</li>
+<li>[x] An option to log to your device storage</li>
+<li>[x] Logs scene that displays all stored logs</li>
+<li>[x] Filtering logs on Logs scene</li>
+<li>[x] Hold press on a log item to copy it to the clipboard</li>
+</ul>
+<h2 id='preview' class='heading'>Preview</h2>
+
+<table><thead>
+<tr>
+<th style="text-align: center">Logs Scene</th>
+<th style="text-align: center">Filters Scene</th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: center"><img src="https://raw.githubusercontent.com/psredzinski/IteoLogger/master/Preview/log_scene.png" alt=""></td>
+<td style="text-align: center"><img src="https://raw.githubusercontent.com/psredzinski/IteoLogger/master/Preview/filters_scene.png" alt=""></td>
+</tr>
+</tbody></table>
+<h2 id='requirements' class='heading'>Requirements</h2>
+
+<ul>
+<li>iOS 11.0+</li>
+<li>Xcode 11+</li>
+<li>Swift 5.1+</li>
+</ul>
+<h2 id='installation' class='heading'>Installation</h2>
+<h3 id='cocoapods' class='heading'>CocoaPods</h3>
+
+<p><a href="https://cocoapods.org">CocoaPods</a> is a dependency manager for Cocoa projects. For usage and installation instructions, visit their website. To integrate IteoLogger into your Xcode project using CocoaPods, specify it in your <code>Podfile</code>:</p>
+<pre class="highlight ruby"><code><span class="n">pod</span> <span class="s1">'IteoLogger'</span><span class="p">,</span> <span class="ss">:git</span> <span class="o">=&gt;</span> <span class="s1">'https://github.com/psredzinski/IteoLogger.git'</span>
+</code></pre>
+<h3 id='swift-package-manager' class='heading'>Swift Package Manager</h3>
+
+<p><a href="https://swift.org/package-manager/">SPM</a> is Apple&rsquo;s decentralized dependency manager to integrate libraries to your Swift projects.</p>
+
+<p>In order to install IteoLogger with SPM go to <code>File</code> -&gt; <code>Swift Packages</code> -&gt; <code>Add Package Dependency...</code> -&gt; Select your Project -&gt; enter <a href="https://github.com/psredzinski/IteoLogger">This</a> URL -&gt; On Rules screen leave <code>Version</code> checkbox -&gt; Pick targets you want to add package to -&gt; Hit Finish and you are done.</p>
+<h2 id='usage' class='heading'>Usage</h2>
+
+<p>Create *IteoLogger instance with consumers:</p>
+<pre class="highlight swift"><code><span class="k">let</span> <span class="nv">logger</span> <span class="o">=</span> <span class="kt">IteoLogger</span><span class="p">(</span><span class="nv">consumers</span><span class="p">:</span> <span class="p">[</span>
+    <span class="kt">IteoLoggerConsoleItemConsumer</span><span class="p">(),</span>
+    <span class="kt">IteoLoggerStorageItemConsumer</span><span class="p">(</span><span class="nv">logsDirectoryName</span><span class="p">:</span> <span class="s">"your_logs_directory"</span><span class="p">)</span>
+<span class="p">])</span>
+</code></pre>
+
+<p>Create a custom button / hidden gesture somewhere in your app, and call:</p>
+<pre class="highlight swift"><code><span class="n">logger</span><span class="o">.</span><span class="nf">displayLogs</span><span class="p">(</span><span class="nv">logsDirectoryName</span><span class="p">:</span> <span class="s">"your_logs_directory"</span><span class="p">)</span>
+</code></pre>
+
+<p>to display Logs scene.</p>
+<h2 id='credits' class='heading'>Credits</h2>
+
+<p>IteoLogger is owned and maintained by the <a href="http://iteo.com">iteo</a>. You can follow them on Facebook at <a href="https://www.facebook.com/iteo.apps">https://www.facebook.com/iteo.apps</a>.</p>
+<h2 id='license' class='heading'>License</h2>
+
+<p>IteoLogger is released under the MIT license.</p>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2021 <a class="link" href="https://github.com/psredzinski/IteoLogger" target="_blank" rel="external">Patryk Średziński</a>. All rights reserved. (Last updated: 2021-08-09)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.7</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

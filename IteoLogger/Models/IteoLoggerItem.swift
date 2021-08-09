@@ -7,17 +7,29 @@
 
 import Foundation
 
+/**
+Main class. Used across the whole SDK.
+*/
 public struct IteoLoggerItem: Codable {
-    
-    let index: UInt
-    let date: Date
-    let module: IteoLoggerModule
-    let level: IteoLoggerLevel
-    let output: String
+
+    /// Automatically incremented index
+    public let index: UInt
+
+    /// Date when the log has been created
+    public let date: Date
+
+    /// Module used to filter and group logs
+    public let module: IteoLoggerModule
+
+    /// One of four available levels (info, success, warning, error) used to filter and group logs
+    public let level: IteoLoggerLevel
+
+    /// Stringified log output
+    public let output: String
     
 }
 
-extension IteoLoggerItem {
+internal extension IteoLoggerItem {
     
     func toString(_ format: String, dateFormatter: DateFormatManager) -> String {
         
