@@ -1,0 +1,13 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [{
+    'type': 'directory',
+    'name': "/Users/patryksredzinski/Projects/IteoLogger/build/Release-iphoneos/IteoLogger.framework/Modules"
+    'contents': [{
+      'type': 'file',
+      'name': "module.modulemap",
+      'external-contents': "/Users/patryksredzinski/Projects/IteoLogger/build/IteoLogger.build/Release-iphoneos/IteoLogger.build/unextended-module.modulemap",
+    }]
+  }]
+}
