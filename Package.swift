@@ -18,10 +18,10 @@ let package = Package(
             path: "IteoLogger",
             exclude: [
                 "Info.plist",
-                "Preview/",
-                "IteoLoggerExample/",
-                "IteoLoggerTests/",
-                "IteoLogger.podspec"
+                "../Preview/",
+                "../IteoLoggerExample/",
+                "../IteoLoggerTests/",
+                "../IteoLogger.podspec"
             ]),
     ]
 )
