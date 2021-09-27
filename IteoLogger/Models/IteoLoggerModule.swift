@@ -168,7 +168,7 @@ public struct IteoLoggerModule: Codable, Equatable, Hashable {
     /// LOG - 🖊
     public static let unknown           = IteoLoggerModule("LOG" ,prefix: "🖊")
 
-    internal let prefix: String
-    internal let name: String
+    public let prefix: String
+    public let name: String
 
 }
