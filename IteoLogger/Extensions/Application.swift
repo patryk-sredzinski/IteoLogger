@@ -10,7 +10,7 @@ import UIKit
 extension UIApplication {
 
     static let versionBuild: String = {
-        guard let version = appVersion(), let build = appBuild() else { return "CAN'T GET APPLICATOON VERSION" }
+        guard let version = appVersion(), let build = appBuild() else { return "CAN'T GET APPLICATION VERSION" }
         return version == build ? "v\(version)" : "v\(version)(\(build))"
     }()
 
