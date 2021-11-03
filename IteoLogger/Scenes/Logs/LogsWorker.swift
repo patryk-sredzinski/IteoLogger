@@ -86,15 +86,16 @@ extension LogsWorkerImpl: LogsWorker {
     
     func prepareShareData(sessions: [LogSectionItem]) -> (header: String, fileUrl: URL) {
         var logString = ""
+        
+        logString += "DEVICE: \(UIDevice.modelName)"
+        logString += "\n"
+        logString += "SYSTEM VERSION: \(UIDevice.current.systemVersion)"
+        logString += "\n"
+        logString += "APPLICATION VERSION: \(UIApplication.versionBuild)"
+
         sessions.forEach { sessionItem in
             logString += "\n"
             logString += "SESSION #\(sessionItem.index) - \(sessionItem.date)"
-            logString += "\n"
-            logString += "DEVICE: \(UIDevice.modelName)"
-            logString += "\n"
-            logString += "SYSTEM VERSION: \(UIDevice.current.systemVersion)"
-            logString += "\n"
-            logString += "APPLICATION VERSION: \(UIApplication.versionBuild)"
             logString += "\n"
 
             sessionItem.items.forEach { cellItem in
