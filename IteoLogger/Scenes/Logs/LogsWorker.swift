@@ -90,8 +90,13 @@ extension LogsWorkerImpl: LogsWorker {
             logString += "\n"
             logString += "SESSION #\(sessionItem.index) - \(sessionItem.date)"
             logString += "\n"
-            logString += "DEVICE \(UIDevice.modelName)"
+            logString += "DEVICE: \(UIDevice.modelName)"
             logString += "\n"
+            logString += "SYSTEM VERSION: \(UIDevice.current.systemVersion)"
+            logString += "\n"
+            logString += "APPLICATION VERSION: \(UIApplication.versionBuild)"
+            logString += "\n"
+
             sessionItem.items.forEach { cellItem in
                 if case .log(let item) = cellItem {
                     logString += item.toString(shareFormat, dateFormatter: DateFormatManager.shared)
