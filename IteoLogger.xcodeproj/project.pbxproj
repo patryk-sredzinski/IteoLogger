@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5BBC6356272AC7B9008ADA26 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBC6355272AC7B9008ADA26 /* Device.swift */; };
+		5BDC566E2732818F00BB941C /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC566D2732818F00BB941C /* Application.swift */; };
 		603AB84A25CD6CE40026D0F3 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB84925CD6CE40026D0F3 /* Person.swift */; };
 		603AB84E25CD6CFE0026D0F3 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB84D25CD6CFE0026D0F3 /* Car.swift */; };
 		603AB86425CD6F7E0026D0F3 /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB86325CD6F7E0026D0F3 /* Animal.swift */; };
@@ -104,6 +106,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5BBC6355272AC7B9008ADA26 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		5BDC566D2732818F00BB941C /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		603AB84925CD6CE40026D0F3 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		603AB84D25CD6CFE0026D0F3 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		603AB86325CD6F7E0026D0F3 /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
@@ -390,6 +394,8 @@
 				60ECC5F225CC04920088C4B0 /* AnyArray+String.swift */,
 				603AB89F25CD8B730026D0F3 /* Bundle+Framework.swift */,
 				6041AC5F25D1695500830765 /* URL+LogsPath.swift */,
+				5BBC6355272AC7B9008ADA26 /* Device.swift */,
+				5BDC566D2732818F00BB941C /* Application.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -623,6 +629,8 @@
 				603AB87625CD82850026D0F3 /* LogsController.swift in Sources */,
 				60ECC60425CC09F00088C4B0 /* IteoLoggerConsoleItemConsumer.swift in Sources */,
 				603AB8A425CD8EAF0026D0F3 /* LogsViewModel.swift in Sources */,
+				5BDC566E2732818F00BB941C /* Application.swift in Sources */,
+				5BBC6356272AC7B9008ADA26 /* Device.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
