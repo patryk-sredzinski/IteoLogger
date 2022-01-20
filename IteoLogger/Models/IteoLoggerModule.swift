@@ -75,6 +75,24 @@ public struct IteoLoggerModule: Codable, Equatable, Hashable {
     /// Bug - 🪲
     public static let bug               = IteoLoggerModule("Bug" ,prefix: "🪲")
 
+    /// Camera - 📸
+    public static let camera           = IteoLoggerModule("Camera", prefix: "📸")
+
+    /// Focus - 🌫
+    public static let focus             = IteoLoggerModule("Focus", prefix: "🌫")
+
+    /// Exposure - ☀️
+    public static let exposure          = IteoLoggerModule("Exposure", prefix: "☀️")
+
+    /// Zoom - 🔍
+    public static let zoom              = IteoLoggerModule("Zoom", prefix: "🔍")
+
+    /// Stabilization - 〽️
+    public static let stabilization    = IteoLoggerModule("Stabilization", prefix: "〽️")
+
+    /// Photo - 📸
+    public static let photo             = IteoLoggerModule("Photo" ,prefix: "📸")
+
     /// Video - 🎬
     public static let video             = IteoLoggerModule("Video" ,prefix: "🎬")
 
@@ -164,6 +182,39 @@ public struct IteoLoggerModule: Codable, Equatable, Hashable {
 
     /// AppState - 🚀
     public static let appState          = IteoLoggerModule("AppState" ,prefix: "🚀")
+
+    /// TableView - 📜
+    public static let tableView         = IteoLoggerModule("TableView" ,prefix: "📜")
+
+    /// CollectionView - 💠
+    public static let collectionView    = IteoLoggerModule("CollectionView" ,prefix: "💠")
+
+    /// Editor - ✍🏻
+    public static let editor            = IteoLoggerModule("Editor" ,prefix: "✍🏻")
+
+    /// Device - ⚙️
+    public static let device            = IteoLoggerModule("Device", prefix: "⚙️")
+
+    /// Drop - 🦂
+    public static let drop              = IteoLoggerModule("Drop", prefix: "🦂")
+
+    /// Writer - 💾
+    public static let writer            = IteoLoggerModule("Writer", prefix: "💾")
+
+    /// Reader - 💾
+    public static let reader            = IteoLoggerModule("Reader", prefix: "📖")
+
+    /// Metal - 📉
+    public static let metal             = IteoLoggerModule("Metal", prefix: "📉")
+
+    /// Gallery - 🏙
+    public static let gallery           = IteoLoggerModule("Gallery", prefix: "🏙")
+
+    /// Recorder - 🔴
+    public static let recorder          = IteoLoggerModule("Recorder", prefix: "🔴")
+
+    /// Pressure - 🌡
+    public static let pressure          = IteoLoggerModule("Pressure", prefix: "🌡")
 
     /// LOG - 🖊
     public static let unknown           = IteoLoggerModule("LOG" ,prefix: "🖊")
