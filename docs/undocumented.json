@@ -1,6 +1,19 @@
 {
   "warnings": [
-
+    {
+      "file": "/Users/patryksredzinski/Projects/IteoLogger/IteoLogger/Models/IteoLoggerModule.swift",
+      "line": 222,
+      "symbol": "IteoLoggerModule.prefix",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/patryksredzinski/Projects/IteoLogger/IteoLogger/Models/IteoLoggerModule.swift",
+      "line": 223,
+      "symbol": "IteoLoggerModule.name",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    }
   ],
   "source_directory": "/Users/patryksredzinski/Projects/IteoLogger"
 }
