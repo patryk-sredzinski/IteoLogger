@@ -2,6 +2,9 @@
 
 IteoLogger is a smart logger created in Swift, with a nice interface.
 
+Documentation can be found here:
+https://htmlpreview.github.io/?https://github.com/psredzinski/IteoLogger/blob/master/docs/index.html
+
 - [Features](#features)
 - [Preview](#preview)
 - [Requirements](#requirements)
