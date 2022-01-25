@@ -49,7 +49,7 @@ enum SampleLog:  String, CaseIterable, Identifiable {
 
 final class HomeSceneViewModel: ObservableObject {
     
-    let logger = IteoLogger(consumers: [])
+    let logger = IteoLogger.default
 
     func logSample(_ log: SampleLog) {
         switch log {
