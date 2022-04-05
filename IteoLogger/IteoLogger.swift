@@ -18,8 +18,8 @@ public extension IteoLogger {
      Sends data to logger to be consumed by consumers passed in *IteoLogger* initializer.
 
      - Parameters:
-        - items: items to be logged
-    */
+     - items: items to be logged
+     */
     func log(_ items: Any?...) {
         log(level: .info, module: .unknown, items: items)
     }
@@ -28,9 +28,9 @@ public extension IteoLogger {
      Sends data to logger to be consumed by consumers passed in *IteoLogger* initializer.
 
      - Parameters:
-        - module: one of default modules, or a custom one, used for filtering and grouping logs.
-        - items: items to be logged
-    */
+     - module: one of default modules, or a custom one, used for filtering and grouping logs.
+     - items: items to be logged
+     */
     func log(_ module: IteoLoggerModule, _ items: Any?...) {
         log(level: .info, module: module, items: items)
     }
@@ -39,9 +39,9 @@ public extension IteoLogger {
      Sends data to logger to be consumed by consumers passed in *IteoLogger* initializer.
 
      - Parameters:
-        - level: one of default levels (info, success, warning, error), used for filtering and grouping logs.
-        - items: items to be logged
-    */
+     - level: one of default levels (info, success, warning, error), used for filtering and grouping logs.
+     - items: items to be logged
+     */
     func log(_ level: IteoLoggerLevel, _ items: Any?...) {
         log(level: level, module: .unknown, items: items)
     }
@@ -50,10 +50,10 @@ public extension IteoLogger {
      Sends data to logger to be consumed by consumers passed in *IteoLogger* initializer.
 
      - Parameters:
-        - module: one of default modules, or a custom one, used for filtering and grouping logs.
-        - level: one of default levels (info, success, warning, error), used for filtering and grouping logs.
-        - items: items to be logged
-    */
+     - module: one of default modules, or a custom one, used for filtering and grouping logs.
+     - level: one of default levels (info, success, warning, error), used for filtering and grouping logs.
+     - items: items to be logged
+     */
     func log(_ module: IteoLoggerModule, _ level: IteoLoggerLevel, _ items: Any?...) {
         log(level: level, module: module, items: items)
     }
@@ -62,10 +62,10 @@ public extension IteoLogger {
      Sends data to logger to be consumed by consumers passed in *IteoLogger* initializer.
 
      - Parameters:
-        - level: one of default levels (info, success, warning, error), used for filtering and grouping logs.
-        - module: one of default modules, or a custom one, used for filtering and grouping logs.
-        - items: items to be logged
-    */
+     - level: one of default levels (info, success, warning, error), used for filtering and grouping logs.
+     - module: one of default modules, or a custom one, used for filtering and grouping logs.
+     - items: items to be logged
+     */
     func log(_ level: IteoLoggerLevel, _ module: IteoLoggerModule, _ items: Any?...) {
         log(level: level, module: module, items: items)
     }
@@ -74,10 +74,10 @@ public extension IteoLogger {
      Displays a full page view with logs that were stored with an use of *IteoLoggerStorageItemConsumer*.
 
      - Parameters:
-        - logsDirectoryName: optional directory name where logs are stored.
-        - shareFormat: string format which is used when user wants to share logs with someone.
+     - logsDirectoryName: optional directory name where logs are stored.
+     - shareFormat: string format which is used when user wants to share logs with someone.
      - Note: Use the same *logsDirectoryName* in *IteoLoggerStorageItemConsumer* to see results. Default shareFormat is: *[level] [[date] [time]] - [module_prefix] [module_name]: [output]* You can use these parameters in your own format to fill it with data.
-    */
+     */
     func displayLogs(logsDirectoryName: String? = nil, shareFormat: String? = nil) {
         presentLogs(logsDirectoryName: logsDirectoryName, shareFormat: shareFormat)
     }
@@ -86,7 +86,7 @@ public extension IteoLogger {
 
 /**
  This main class is responsible for all logger functionalities.
-*/
+ */
 final public class IteoLogger {
     
     private var logIndex: UInt = 0
@@ -95,9 +95,9 @@ final public class IteoLogger {
     /**
      Initializes logger instance with customized logger consumers.
      - Parameters:
-        -  consumers: list of consumers that will be called on every log action.
+     -  consumers: list of consumers that will be called on every log action.
      - Returns: a new logger instance with custom consumers.
-    */
+     */
     public init(consumers: [IteoLoggerItemConsumer]) {
         self.consumers = consumers
     }
@@ -105,9 +105,9 @@ final public class IteoLogger {
     /**
      Initializes logger instance with default logger consumer.
      - Parameters:
-        - consumers: list of consumers that will be called on every log action.
+     - consumers: list of consumers that will be called on every log action.
      - Returns: a new logger instance with Console and Storage consumers.
-    */
+     */
     public static let `default` = IteoLogger(consumers: [
         IteoLoggerConsoleItemConsumer(consoleFormat: defaultConsoleFormat),
         IteoLoggerStorageItemConsumer(logsDirectoryName: defaultLogsDirectoryName)
@@ -134,32 +134,32 @@ private extension IteoLogger {
 
     private func presentLogs(logsDirectoryName: String? = nil, shareFormat: String? = nil) {
 
-    guard consumers.contains(where: { $0 is IteoLoggerStorageItemConsumer }) else {
-        assertionFailure("IteoLoggerStorageItemConsumer is not added to the logger, so there's no point of displaying logs page")
-        return
-    }
+        guard consumers.contains(where: { $0 is IteoLoggerStorageItemConsumer }) else {
+            assertionFailure("IteoLoggerStorageItemConsumer is not added to the logger, so there's no point of displaying logs page")
+            return
+        }
 
-    let logsDirectoryName = logsDirectoryName ?? Self.defaultLogsDirectoryName
-    let shareFormat = shareFormat ?? Self.defaultShareFormat
+        let logsDirectoryName = logsDirectoryName ?? Self.defaultLogsDirectoryName
+        let shareFormat = shareFormat ?? Self.defaultShareFormat
 
-    var rootController: UIViewController?
-    if let window = UIApplication.shared.keyWindow, let rootViewController = window.rootViewController {
-        rootController = rootViewController
-    } else if #available(iOS 13.0, *) {
-        let scenes = UIApplication.shared.connectedScenes
-        if let windowScene = scenes.first(where: { $0 is UIWindowScene }) as? UIWindowScene,
-           let window = windowScene.windows.first,
-           let rootViewController = window.rootViewController {
+        var rootController: UIViewController?
+        if #available(iOS 13.0, *) {
+            let scenes = UIApplication.shared.connectedScenes
+            if let windowScene = scenes.first(where: { $0 is UIWindowScene }) as? UIWindowScene,
+               let window = windowScene.windows.first,
+               let rootViewController = window.rootViewController {
+                rootController = rootViewController
+            }
+        } else if let window = UIApplication.shared.keyWindow, let rootViewController = window.rootViewController {
             rootController = rootViewController
         }
-    }
-    guard let rootViewController = rootController else {
-        assertionFailure("Could not find root controller")
-        return
-    }
-    rootViewController.present(LogsControllerCreator().getController(logsDirectoryName: logsDirectoryName, shareFormat: shareFormat),
-                               animated: true,
-                               completion: nil)
+        guard let rootViewController = rootController else {
+            assertionFailure("Could not find root controller")
+            return
+        }
+
+        let controller = LogsControllerCreator().getController(logsDirectoryName: logsDirectoryName, shareFormat: shareFormat)
+        rootViewController.present(controller, animated: true, completion: nil)
 
     }
     

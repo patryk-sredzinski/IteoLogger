@@ -99,6 +99,9 @@ public struct IteoLoggerModule: Codable, Equatable, Hashable {
     /// Audio - 🎵
     public static let audio             = IteoLoggerModule("Audio" ,prefix: "🎵")
 
+    /// Voice - 🎤
+    public static let voice             = IteoLoggerModule("Voice" ,prefix: "🎤")
+
     /// Random - 🎲
     public static let random            = IteoLoggerModule("Random" ,prefix: "🎲")
 
@@ -111,8 +114,11 @@ public struct IteoLoggerModule: Codable, Equatable, Hashable {
     /// Settings - ⚙️
     public static let settings          = IteoLoggerModule("Settings" ,prefix: "⚙️")
 
-    /// Map - 📍
-    public static let map               = IteoLoggerModule("Map" ,prefix: "📍")
+    /// Map - 🗺
+    public static let map               = IteoLoggerModule("Map" ,prefix: "🗺")
+
+    /// Clustering - 📍
+    public static let clustering        = IteoLoggerModule("Clustering" ,prefix: "📍")
 
     /// Security - 🔐
     public static let security          = IteoLoggerModule("Security" ,prefix: "🔐")
@@ -201,7 +207,7 @@ public struct IteoLoggerModule: Codable, Equatable, Hashable {
     /// Writer - 💾
     public static let writer            = IteoLoggerModule("Writer", prefix: "💾")
 
-    /// Reader - 💾
+    /// Reader - 📖
     public static let reader            = IteoLoggerModule("Reader", prefix: "📖")
 
     /// Metal - 📉
