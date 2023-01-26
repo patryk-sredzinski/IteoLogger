@@ -51,6 +51,9 @@ public struct IteoLoggerModule: Codable, Equatable, Hashable {
     /// DataBase - 🗳
     public static let dataBase          = IteoLoggerModule("DataBase" ,prefix: "🗳")
 
+    /// Synchronizer - 🔄
+    public static let synchronizer      = IteoLoggerModule("Synchronizer" ,prefix: "🔄")
+
     /// ScreenView - 📱
     public static let screenView        = IteoLoggerModule("ScreenView" ,prefix: "📱")
 

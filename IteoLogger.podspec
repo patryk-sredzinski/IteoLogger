@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name                  = 'IteoLogger'
-  spec.version               = '1.0.15'
+  spec.version               = '1.0.16'
   spec.license               = { :type => 'MIT' }
   spec.homepage              = 'https://github.com/psredzinski/IteoLogger'
   spec.authors               = { 'Patryk Średziński' => 'patryk.sredzinski@iteo.com' }
@@ -10,6 +10,6 @@ Pod::Spec.new do |spec|
   spec.resources             = 'IteoLogger/*.{xcassets}', 'IteoLogger/*.{xib}', 'IteoLogger/**/*.{xib}', 'IteoLogger/**/**/*.{xib}', 'IteoLogger/**/**/**/*.{swift,xib}'
   spec.ios.deployment_target = '13.0'
   spec.osx.deployment_target = '13.0'
-  spec.swift_versions        = ['5.1', '5.2', '5.3']
+  spec.swift_versions        = ['5.1', '5.2', '5.3', '5.4', '5.5', '5.6', '5.7']
   spec.platform              = :ios, '13.0'
 end
