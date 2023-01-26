@@ -31,8 +31,8 @@ Logs Scene             |  Filters Scene
 
 ## Requirements
 
-- iOS 11.0+
-- Xcode 11+
+- iOS 13.0+
+- Xcode 14+
 - Swift 5.1+
 
 ## Installation
