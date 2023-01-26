@@ -36,6 +36,12 @@ public struct IteoLoggerModule: Codable, Equatable, Hashable {
     /// WebSocket - 🔌
     public static let webSocket         = IteoLoggerModule("WebSocket" ,prefix: "🔌")
 
+    /// WebSocket Request - ↗️
+    public static let webSocketRequest  = IteoLoggerModule("WebSocketRequest" ,prefix: "↗️")
+
+    /// WebSocket Response - ↘️
+    public static let webSocketResponse = IteoLoggerModule("WebSocketResponse" ,prefix: "↘️")
+
     /// VoIP - 📞
     public static let voip              = IteoLoggerModule("VoIP" ,prefix: "📞")
 
