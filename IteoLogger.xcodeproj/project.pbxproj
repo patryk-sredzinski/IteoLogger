@@ -15,7 +15,6 @@
 		603AB87125CD82850026D0F3 /* LogsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB86A25CD82850026D0F3 /* LogsRouter.swift */; };
 		603AB87225CD82850026D0F3 /* LogsControllerCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB86B25CD82850026D0F3 /* LogsControllerCreator.swift */; };
 		603AB87325CD82850026D0F3 /* LogsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB86C25CD82850026D0F3 /* LogsWorker.swift */; };
-		603AB87425CD82850026D0F3 /* LogsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 603AB86D25CD82850026D0F3 /* LogsController.xib */; };
 		603AB87525CD82850026D0F3 /* LogsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB86E25CD82850026D0F3 /* LogsPresenter.swift */; };
 		603AB87625CD82850026D0F3 /* LogsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB86F25CD82850026D0F3 /* LogsController.swift */; };
 		603AB87725CD82850026D0F3 /* LogsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB87025CD82850026D0F3 /* LogsInteractor.swift */; };
@@ -24,35 +23,34 @@
 		603AB88825CD83AA0026D0F3 /* IteoLoggerAlertPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB88725CD83AA0026D0F3 /* IteoLoggerAlertPresentable.swift */; };
 		603AB88C25CD83BB0026D0F3 /* IteoLoggerSpinnerPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB88B25CD83BB0026D0F3 /* IteoLoggerSpinnerPresentable.swift */; };
 		603AB89725CD84150026D0F3 /* IteoLoggerSpinnerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB89525CD84150026D0F3 /* IteoLoggerSpinnerController.swift */; };
-		603AB89825CD84150026D0F3 /* IteoLoggerSpinnerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 603AB89625CD84150026D0F3 /* IteoLoggerSpinnerController.xib */; };
 		603AB8A025CD8B730026D0F3 /* Bundle+Framework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB89F25CD8B730026D0F3 /* Bundle+Framework.swift */; };
 		603AB8A425CD8EAF0026D0F3 /* LogsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB8A325CD8EAF0026D0F3 /* LogsViewModel.swift */; };
 		603AB8B025CD8F230026D0F3 /* PauseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB8AA25CD8ECA0026D0F3 /* PauseCell.swift */; };
-		603AB8B125CD8F230026D0F3 /* PauseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 603AB8A825CD8ECA0026D0F3 /* PauseCell.xib */; };
-		603AB8B225CD8F230026D0F3 /* LogCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 603AB8A925CD8ECA0026D0F3 /* LogCell.xib */; };
 		603AB8B325CD8F230026D0F3 /* LogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB8AB25CD8ECA0026D0F3 /* LogCell.swift */; };
 		603AB8B925CD8F310026D0F3 /* LogSectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603AB8B625CD8F310026D0F3 /* LogSectionItem.swift */; };
 		6041AC6025D1695500830765 /* URL+LogsPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6041AC5F25D1695500830765 /* URL+LogsPath.swift */; };
 		6041AC6625D18F6900830765 /* LogFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6041AC6525D18F6900830765 /* LogFilter.swift */; };
 		6098D0F725D523CC000A2962 /* FilterSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6098D0F625D523CC000A2962 /* FilterSectionHeader.swift */; };
-		6098D0FB25D523D5000A2962 /* FilterSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6098D0FA25D523D5000A2962 /* FilterSectionHeader.xib */; };
 		6098D0FF25D5245E000A2962 /* IteoLoggerXibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6098D0FE25D5245E000A2962 /* IteoLoggerXibView.swift */; };
-		6098D10325D52E5E000A2962 /* LogSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6098D10225D52E5E000A2962 /* LogSectionHeader.xib */; };
 		6098D10725D52E65000A2962 /* LogSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6098D10625D52E65000A2962 /* LogSectionHeader.swift */; };
-		6098D10D25D53A56000A2962 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6098D10C25D53A56000A2962 /* README.md */; };
-		6098D16125D54224000A2962 /* IteoLogger.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 6098D16025D54224000A2962 /* IteoLogger.podspec */; };
 		60CF5A6B25CD69A300F0645D /* HomeSceneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CF5A6A25CD69A300F0645D /* HomeSceneViewModel.swift */; };
 		60E2D2DF25D29DDA0034FA6C /* FiltersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E2D2D325D29CCE0034FA6C /* FiltersPresenter.swift */; };
 		60E2D2E025D29DDA0034FA6C /* FiltersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E2D2D625D29CCE0034FA6C /* FiltersController.swift */; };
 		60E2D2E125D29DDA0034FA6C /* FiltersRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E2D2D125D29CCE0034FA6C /* FiltersRouter.swift */; };
 		60E2D2E225D29DDA0034FA6C /* FiltersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E2D2D725D29CCE0034FA6C /* FiltersViewModel.swift */; };
 		60E2D2E325D29DDA0034FA6C /* FiltersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E2D2D825D29CCE0034FA6C /* FiltersInteractor.swift */; };
-		60E2D2E425D29DDA0034FA6C /* FiltersController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60E2D2D425D29CCE0034FA6C /* FiltersController.xib */; };
 		60E2D2E525D29DDA0034FA6C /* FiltersControllerCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E2D2D225D29CCE0034FA6C /* FiltersControllerCreator.swift */; };
 		60E2D2E625D29DDA0034FA6C /* FiltersWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E2D2D525D29CCE0034FA6C /* FiltersWorker.swift */; };
 		60E2D2EA25D29F840034FA6C /* FilterSectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E2D2E925D29F430034FA6C /* FilterSectionItem.swift */; };
 		60E2D2F725D29FB80034FA6C /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E2D2EE25D29F9E0034FA6C /* FilterCell.swift */; };
-		60E2D2F825D29FB80034FA6C /* FilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60E2D2ED25D29F9E0034FA6C /* FilterCell.xib */; };
+		60E3A786298A63C800DC3078 /* IteoLoggerSpinnerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 603AB89625CD84150026D0F3 /* IteoLoggerSpinnerController.xib */; };
+		60E3A787298A63CD00DC3078 /* LogsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 603AB86D25CD82850026D0F3 /* LogsController.xib */; };
+		60E3A788298A63CD00DC3078 /* FilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60E2D2ED25D29F9E0034FA6C /* FilterCell.xib */; };
+		60E3A789298A63CD00DC3078 /* FilterSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6098D0FA25D523D5000A2962 /* FilterSectionHeader.xib */; };
+		60E3A78A298A63CD00DC3078 /* LogSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6098D10225D52E5E000A2962 /* LogSectionHeader.xib */; };
+		60E3A78B298A63CD00DC3078 /* PauseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 603AB8A825CD8ECA0026D0F3 /* PauseCell.xib */; };
+		60E3A78C298A63CD00DC3078 /* FiltersController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60E2D2D425D29CCE0034FA6C /* FiltersController.xib */; };
+		60E3A78D298A63CD00DC3078 /* LogCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 603AB8A925CD8ECA0026D0F3 /* LogCell.xib */; };
 		60ECC5BD25CC00E90088C4B0 /* IteoLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60ECC5B325CC00E90088C4B0 /* IteoLogger.framework */; };
 		60ECC5C225CC00E90088C4B0 /* IteoLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ECC5C125CC00E90088C4B0 /* IteoLoggerTests.swift */; };
 		60ECC5C425CC00E90088C4B0 /* IteoLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 60ECC5B625CC00E90088C4B0 /* IteoLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -554,16 +552,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6098D16125D54224000A2962 /* IteoLogger.podspec in Resources */,
-				60E2D2E425D29DDA0034FA6C /* FiltersController.xib in Resources */,
-				6098D10D25D53A56000A2962 /* README.md in Resources */,
-				603AB87425CD82850026D0F3 /* LogsController.xib in Resources */,
-				603AB8B125CD8F230026D0F3 /* PauseCell.xib in Resources */,
-				6098D0FB25D523D5000A2962 /* FilterSectionHeader.xib in Resources */,
-				6098D10325D52E5E000A2962 /* LogSectionHeader.xib in Resources */,
-				603AB8B225CD8F230026D0F3 /* LogCell.xib in Resources */,
-				603AB89825CD84150026D0F3 /* IteoLoggerSpinnerController.xib in Resources */,
-				60E2D2F825D29FB80034FA6C /* FilterCell.xib in Resources */,
+				60E3A789298A63CD00DC3078 /* FilterSectionHeader.xib in Resources */,
+				60E3A78C298A63CD00DC3078 /* FiltersController.xib in Resources */,
+				60E3A78A298A63CD00DC3078 /* LogSectionHeader.xib in Resources */,
+				60E3A788298A63CD00DC3078 /* FilterCell.xib in Resources */,
+				60E3A787298A63CD00DC3078 /* LogsController.xib in Resources */,
+				60E3A78B298A63CD00DC3078 /* PauseCell.xib in Resources */,
+				60E3A78D298A63CD00DC3078 /* LogCell.xib in Resources */,
+				60E3A786298A63C800DC3078 /* IteoLoggerSpinnerController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -725,7 +721,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.0.17;
+				MARKETING_VERSION = 1.0.18;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -784,7 +780,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.0.17;
+				MARKETING_VERSION = 1.0.18;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
