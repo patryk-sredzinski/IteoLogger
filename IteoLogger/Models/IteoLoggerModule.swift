@@ -231,6 +231,9 @@ public struct IteoLoggerModule: Codable, Equatable, Hashable {
     /// Pressure - 🌡
     public static let pressure          = IteoLoggerModule("Pressure", prefix: "🌡")
 
+    /// Theme - 🎨
+    public static let theme             = IteoLoggerModule("Theme", prefix: "🎨")
+
     /// LOG - 🖊
     public static let unknown           = IteoLoggerModule("LOG" ,prefix: "🖊")
 
