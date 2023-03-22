@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,13 +21,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="OeV-hF-aCe">
-                    <rect key="frame" x="8" y="52" width="359" height="40"/>
+                    <rect key="frame" x="8" y="55" width="359" height="40"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="900" verticalHuggingPriority="900" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6eI-Aj-4xe">
                             <rect key="frame" x="0.0" y="0.0" width="37.333333333333336" height="40"/>
-                            <color key="backgroundColor" white="0.94999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="16"/>
-                            <color key="tintColor" red="1" green="0.39607843139999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" systemColor="systemOrangeColor"/>
                             <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                             <state key="normal" image="xmark" catalog="system"/>
                             <state key="highlighted">
@@ -45,9 +45,9 @@
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="900" verticalHuggingPriority="900" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egS-5Z-eiy">
                             <rect key="frame" x="45.333333333333343" y="0.0" width="39" height="40"/>
-                            <color key="backgroundColor" white="0.94999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="16"/>
-                            <color key="tintColor" red="1" green="0.39607843139999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" systemColor="systemOrangeColor"/>
                             <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                             <state key="normal" image="trash" catalog="system"/>
                             <state key="highlighted">
@@ -70,7 +70,7 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="900" verticalHuggingPriority="900" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Filters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Il0-AX-K9s">
                             <rect key="frame" x="163.33333333333334" y="0.0" width="32" height="40"/>
                             <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="11"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" systemColor="systemBackgroundColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" horizontalHuggingPriority="10" verticalHuggingPriority="10" horizontalCompressionResistancePriority="10" verticalCompressionResistancePriority="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZbF-dy-C9v">
@@ -83,9 +83,9 @@
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="900" verticalHuggingPriority="900" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FVP-Zc-AIp">
                             <rect key="frame" x="320.66666666666669" y="0.0" width="38.333333333333314" height="40"/>
-                            <color key="backgroundColor" white="0.94999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="16"/>
-                            <color key="tintColor" red="1" green="0.39607843139999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" systemColor="systemOrangeColor"/>
                             <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                             <state key="normal" image="checkmark" catalog="system"/>
                             <state key="highlighted">
@@ -102,6 +102,7 @@
                             </connections>
                         </button>
                     </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="ZbF-dy-C9v" firstAttribute="width" secondItem="rVa-5b-qKg" secondAttribute="width" id="Pwn-1L-NvS"/>
                         <constraint firstAttribute="height" constant="40" id="Z1v-Yq-LN0"/>
@@ -109,10 +110,10 @@
                     </constraints>
                 </stackView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="43" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="62" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="bJd-KD-3OX">
-                    <rect key="frame" x="0.0" y="100" width="375" height="712"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <color key="sectionIndexColor" systemColor="systemGrayColor"/>
+                    <rect key="frame" x="0.0" y="103" width="375" height="709"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="separatorColor" systemColor="systemBackgroundColor"/>
+                    <color key="sectionIndexColor" systemColor="secondaryLabelColor"/>
                     <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="5Zh-EV-6MT"/>
@@ -121,7 +122,7 @@
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="HIB-y5-EUu"/>
-            <color key="backgroundColor" red="1" green="0.39607843139999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" systemColor="systemOrangeColor"/>
             <constraints>
                 <constraint firstItem="bJd-KD-3OX" firstAttribute="top" secondItem="OeV-hF-aCe" secondAttribute="bottom" constant="8" id="0pQ-p4-EHk"/>
                 <constraint firstAttribute="bottom" secondItem="bJd-KD-3OX" secondAttribute="bottom" id="FDz-pJ-wr5"/>
@@ -136,10 +137,16 @@
     </objects>
     <resources>
         <image name="checkmark" catalog="system" width="128" height="114"/>
-        <image name="trash" catalog="system" width="121" height="128"/>
+        <image name="trash" catalog="system" width="117" height="128"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
-        <systemColor name="systemGrayColor">
-            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
