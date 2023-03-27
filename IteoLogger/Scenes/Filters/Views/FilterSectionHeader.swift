@@ -17,6 +17,10 @@ final class FilterSectionHeader: IteoLoggerXibHeaderFooterView {
     private var buttonAction: SimpleAction?
     
     func setup(with title: String, buttonTitle: String, action: SimpleAction?) {
+        backgroundColor = .systemBackground
+        titleLabel.textColor = .secondaryLabel
+        actionLabel.textColor = .systemOrange
+        
         titleLabel.text = title.uppercased()
         actionLabel.text = buttonTitle
         buttonAction = action

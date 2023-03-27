@@ -16,6 +16,9 @@ protocol FiltersPresentable: IteoLoggerSpinnerPresentable & IteoLoggerAlertPrese
 
 final class FiltersController: IteoLoggerBaseViewController {
     
+    @IBOutlet private var closeButton: UIButton!
+    @IBOutlet private var clearButton: UIButton!
+    @IBOutlet private var saveButton: UIButton!
     @IBOutlet private var tableView: UITableView!
     
     private let interactor: FiltersInteractor
@@ -42,7 +45,20 @@ final class FiltersController: IteoLoggerBaseViewController {
 private extension FiltersController {
     
     private func setupView() {
+        view.backgroundColor = .systemOrange
+        setupButtons()
         setupTableView()
+    }
+    
+    private func setupButtons() {
+        setupButton(closeButton)
+        setupButton(clearButton)
+        setupButton(saveButton)
+    }
+    
+    private func setupButton(_ button: UIButton) {
+        button.backgroundColor = .systemBackground
+        button.tintColor = .systemOrange
     }
     
     private func setupTableView() {
