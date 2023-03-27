@@ -17,6 +17,14 @@ protocol LogsPresentable: IteoLoggerSpinnerPresentable & IteoLoggerAlertPresenta
 
 final class LogsController: IteoLoggerBaseViewController {
     
+    @IBOutlet private var closeButton: UIButton!
+    @IBOutlet private var refreshButton: UIButton!
+    @IBOutlet private var clearButton: UIButton!
+    @IBOutlet private var filtersButton: UIButton!
+    @IBOutlet private var shareButton: UIButton!
+    @IBOutlet private var scrollUpButton: UIButton!
+    @IBOutlet private var scrollDownButton: UIButton!
+    
     @IBOutlet private var tableView: UITableView!
     @IBOutlet private var loadedSessionsCountLabel: UILabel!
     
@@ -44,13 +52,29 @@ final class LogsController: IteoLoggerBaseViewController {
         setupView()
         interactor.loadNextSection(id: 0)
     }
-    
 }
 
 private extension LogsController {
     
     private func setupView() {
+        view.backgroundColor = .systemOrange
+        setupButtons()
         setupTableView()
+    }
+    
+    private func setupButtons() {
+        setupButton(closeButton)
+        setupButton(refreshButton)
+        setupButton(clearButton)
+        setupButton(filtersButton)
+        setupButton(shareButton)
+        setupButton(scrollUpButton)
+        setupButton(scrollDownButton)
+    }
+    
+    private func setupButton(_ button: UIButton) {
+        button.backgroundColor = .systemBackground
+        button.tintColor = .systemOrange
     }
     
     private func setupTableView() {
@@ -59,6 +83,9 @@ private extension LogsController {
         tableView.register(nibLogCell, forCellReuseIdentifier: LogCell.reuseIdentifier)
         tableView.register(nibPauseCell, forCellReuseIdentifier: PauseCell.reuseIdentifier)
         tableView.register(LogSectionHeader.self, forHeaderFooterViewReuseIdentifier: LogSectionHeader.reuseIdentifier)
+        tableView.backgroundColor = .systemBackground
+        tableView.sectionIndexColor = .secondaryLabel
+        tableView.separatorColor = .tertiarySystemBackground
     }
     
     @IBAction private func closeTapped() {

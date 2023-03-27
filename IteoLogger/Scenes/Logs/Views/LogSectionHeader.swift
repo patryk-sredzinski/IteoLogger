@@ -15,8 +15,10 @@ final class LogSectionHeader: IteoLoggerXibHeaderFooterView {
     @IBOutlet private var dateLabel: UILabel!
     
     func setup(with title: String, date: String) {
+        backgroundColor = .systemBackground
+        titleLabel.textColor = .secondaryLabel
+        dateLabel.textColor = .tertiaryLabel
         titleLabel.text = title.uppercased()
         dateLabel.text = date.uppercased()
     }
-    
 }

@@ -23,8 +23,12 @@ final class FilterCell: UITableViewCell {
         roundModuleContainer()
     }
     
+    override func didMoveToSuperview() {
+        super.didMoveToSuperview()
+        configureColors()
+    }
+    
     func setup(with level: IteoLoggerLevel, selected: Bool) {
-
         let levelPrefix = level.icon
         let levelBackgroundColor = level.color
         let levelLabelColor = level.color.brightness > 0.5 ? UIColor.black : UIColor.white
@@ -39,7 +43,6 @@ final class FilterCell: UITableViewCell {
     }
     
     func setup(with module: IteoLoggerModule, selected: Bool) {
-
         let modulePrefix = module.prefix
         let moduleBackgroundColor = module.backgroundColor
         let moduleLabelColor = module.labelColor
@@ -68,6 +71,14 @@ private extension FilterCell {
     private func roundLayer(_ layer: CALayer) {
         layer.masksToBounds = true
         layer.cornerRadius = 4
+    }
+    
+    private func configureColors() {
+        contentView.backgroundColor = .systemBackground
+        cellContainer.backgroundColor = .secondarySystemBackground
+        prefixLabel.textColor = .label
+        switchControl.tintColor = .systemOrange
+        switchControl.set(offTint: .tertiarySystemBackground)
     }
     
 }
@@ -108,7 +119,6 @@ private extension IteoLoggerModule {
 
 
 private extension UIColor {
-    
     var brightness: CGFloat {
         var r: CGFloat = 0
         var g: CGFloat = 0
@@ -116,5 +126,14 @@ private extension UIColor {
         getRed(&r, green: &g, blue: &b, alpha: nil)
         return 0.2126 * r + 0.7152 * g + 0.0722 * b
     }
-    
+}
+
+
+private extension UISwitch {
+    func set(offTint color: UIColor ) {
+        let minSide = min(bounds.size.height, bounds.size.width)
+        layer.cornerRadius = minSide / 2
+        backgroundColor = color
+        tintColor = color
+    }
 }

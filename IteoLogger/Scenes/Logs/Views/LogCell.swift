@@ -29,6 +29,16 @@ final class LogCell: UITableViewCell {
         roundModuleContainer()
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        contentView.backgroundColor = .systemBackground
+        cellContainer.backgroundColor = .secondarySystemBackground
+        logIndexLabel.textColor = .tertiarySystemBackground
+        logLabel.textColor = .label
+        prefixLabel.textColor = .label
+        dateLabel.textColor = .label
+    }
+    
     func setup(with item: IteoLoggerItem, longTapAction: SimpleAction?, isExpanded: Bool) {
         
         let indexValue = "#\(item.index)"
@@ -39,7 +49,7 @@ final class LogCell: UITableViewCell {
         let moduleName = item.module.name
         let dateString = DateFormatManager.shared.string(from: item.date, format: .fullDate)
         let logString = item.output
-        
+                
         logIndexLabel.text = indexValue
         levelContainer.backgroundColor = levelColor
         prefixLabel.text = modulePrefix
