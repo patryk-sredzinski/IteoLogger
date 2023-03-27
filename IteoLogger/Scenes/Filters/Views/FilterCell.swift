@@ -34,6 +34,8 @@ final class FilterCell: UITableViewCell {
         moduleContainer.backgroundColor = levelBackgroundColor
         moduleLabel.textColor = levelLabelColor
         moduleLabel.text = levelName
+        switchControl.tintColor = .systemOrange
+        switchControl.set(offTint: .tertiarySystemBackground)
         
         switchControl.isOn = selected
     }
@@ -44,6 +46,10 @@ final class FilterCell: UITableViewCell {
         let moduleBackgroundColor = module.backgroundColor
         let moduleLabelColor = module.labelColor
         let moduleName = module.name
+
+        contentView.backgroundColor = .systemBackground
+        cellContainer.backgroundColor = .secondarySystemBackground
+        prefixLabel.textColor = .label
 
         prefixLabel.text = modulePrefix
         moduleContainer.backgroundColor = moduleBackgroundColor
@@ -108,7 +114,6 @@ private extension IteoLoggerModule {
 
 
 private extension UIColor {
-    
     var brightness: CGFloat {
         var r: CGFloat = 0
         var g: CGFloat = 0
@@ -116,5 +121,14 @@ private extension UIColor {
         getRed(&r, green: &g, blue: &b, alpha: nil)
         return 0.2126 * r + 0.7152 * g + 0.0722 * b
     }
-    
+}
+
+
+private extension UISwitch {
+    func set(offTint color: UIColor ) {
+        let minSide = min(bounds.size.height, bounds.size.width)
+        layer.cornerRadius = minSide / 2
+        backgroundColor = color
+        tintColor = color
+    }
 }

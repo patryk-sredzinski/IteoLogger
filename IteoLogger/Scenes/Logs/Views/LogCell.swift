@@ -40,6 +40,13 @@ final class LogCell: UITableViewCell {
         let dateString = DateFormatManager.shared.string(from: item.date, format: .fullDate)
         let logString = item.output
         
+        contentView.backgroundColor = .systemBackground
+        cellContainer.backgroundColor = .secondarySystemBackground
+        logIndexLabel.textColor = .tertiarySystemBackground
+        logLabel.textColor = .label
+        prefixLabel.textColor = .label
+        dateLabel.textColor = .label
+        
         logIndexLabel.text = indexValue
         levelContainer.backgroundColor = levelColor
         prefixLabel.text = modulePrefix

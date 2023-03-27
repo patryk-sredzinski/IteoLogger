@@ -11,6 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FiltersController" customModule="IteoLogger">
             <connections>
+                <outlet property="clearButton" destination="egS-5Z-eiy" id="fbt-ia-rwa"/>
+                <outlet property="closeButton" destination="6eI-Aj-4xe" id="gor-hD-Bki"/>
+                <outlet property="saveButton" destination="FVP-Zc-AIp" id="8g8-Hl-SHk"/>
                 <outlet property="tableView" destination="bJd-KD-3OX" id="yyk-95-GSq"/>
                 <outlet property="view" destination="KHg-FY-jX3" id="g3e-BG-3M0"/>
             </connections>
@@ -21,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="OeV-hF-aCe">
-                    <rect key="frame" x="8" y="55" width="359" height="40"/>
+                    <rect key="frame" x="8" y="8" width="359" height="40"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="900" verticalHuggingPriority="900" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6eI-Aj-4xe">
                             <rect key="frame" x="0.0" y="0.0" width="37.333333333333336" height="40"/>
@@ -110,7 +113,7 @@
                     </constraints>
                 </stackView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="43" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="62" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="bJd-KD-3OX">
-                    <rect key="frame" x="0.0" y="103" width="375" height="709"/>
+                    <rect key="frame" x="0.0" y="56" width="375" height="756"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <color key="separatorColor" systemColor="systemBackgroundColor"/>
                     <color key="sectionIndexColor" systemColor="secondaryLabelColor"/>

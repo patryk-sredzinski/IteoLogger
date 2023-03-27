@@ -11,7 +11,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LogsController" customModule="IteoLogger">
             <connections>
+                <outlet property="clearButton" destination="pKd-vF-v6w" id="uTq-vA-NCP"/>
+                <outlet property="closeButton" destination="CR8-zV-k8F" id="MHl-NV-oJr"/>
+                <outlet property="filtersButton" destination="Zld-vB-GLs" id="k0f-lk-54A"/>
                 <outlet property="loadedSessionsCountLabel" destination="Esk-7H-zbN" id="3J4-Nt-TuS"/>
+                <outlet property="refreshButton" destination="j0e-8e-CH4" id="AQA-P3-FkY"/>
+                <outlet property="scrollDownButton" destination="YBL-K7-8WZ" id="O2Z-6i-tj5"/>
+                <outlet property="scrollUpButton" destination="YBL-K7-8WZ" id="SYd-x9-ayJ"/>
+                <outlet property="shareButton" destination="NM4-32-tOK" id="e8G-dq-c5x"/>
                 <outlet property="tableView" destination="bJd-KD-3OX" id="yyk-95-GSq"/>
                 <outlet property="view" destination="KHg-FY-jX3" id="g3e-BG-3M0"/>
             </connections>
@@ -172,11 +179,11 @@
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLw-2A-qVx">
                             <rect key="frame" x="0.0" y="0.0" width="56" height="56"/>
-                            <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="dLw-2A-qVx" secondAttribute="height" multiplier="1:1" id="osh-YP-OPS"/>
                             </constraints>
-                            <color key="tintColor" systemColor="systemBackgroundColor"/>
+                            <color key="tintColor" systemColor="systemOrangeColor"/>
                             <state key="normal" image="chevron.up" catalog="system"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
@@ -190,11 +197,11 @@
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YBL-K7-8WZ">
                             <rect key="frame" x="0.0" y="64" width="56" height="56"/>
-                            <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="YBL-K7-8WZ" secondAttribute="height" multiplier="1:1" id="XX1-TZ-keH"/>
                             </constraints>
-                            <color key="tintColor" systemColor="systemBackgroundColor"/>
+                            <color key="tintColor" systemColor="systemOrangeColor"/>
                             <state key="normal" image="chevron.down" catalog="system"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
