@@ -21,10 +21,6 @@ final class FilterCell: UITableViewCell {
         super.awakeFromNib()
         roundCell()
         roundModuleContainer()
-    }
-    
-    override func didMoveToSuperview() {
-        super.didMoveToSuperview()
         configureColors()
     }
     

@@ -234,6 +234,21 @@ public struct IteoLoggerModule: Codable, Equatable, Hashable {
     /// Theme - 🎨
     public static let theme             = IteoLoggerModule("Theme", prefix: "🎨")
 
+    /// Manager - 🧑‍💼
+    public static let manager             = IteoLoggerModule("Manager", prefix: "🧑‍💼")
+
+    /// Fetcher - 📡
+    public static let fetcher             = IteoLoggerModule("Fetcher", prefix: "📡")
+
+    /// CellManager - 🫛
+    public static let cellManager             = IteoLoggerModule("CellManager", prefix: "🫛")
+
+    /// TableManager - 📃
+    public static let tableManager             = IteoLoggerModule("TableManager", prefix: "📃")
+
+    /// Paginator - 📜
+    public static let paginator             = IteoLoggerModule("Paginator", prefix: "📜")
+
     /// LOG - 🖊
     public static let unknown           = IteoLoggerModule("LOG" ,prefix: "🖊")
 

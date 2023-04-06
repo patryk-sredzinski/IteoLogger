@@ -27,16 +27,7 @@ final class LogCell: UITableViewCell {
         setupDoubleTapGesture()
         roundCell()
         roundModuleContainer()
-    }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        contentView.backgroundColor = .systemBackground
-        cellContainer.backgroundColor = .secondarySystemBackground
-        logIndexLabel.textColor = .tertiarySystemBackground
-        logLabel.textColor = .label
-        prefixLabel.textColor = .label
-        dateLabel.textColor = .label
+        configureColors()
     }
     
     func setup(with item: IteoLoggerItem, longTapAction: SimpleAction?, isExpanded: Bool) {
@@ -86,6 +77,15 @@ private extension LogCell {
     private func roundLayer(_ layer: CALayer) {
         layer.masksToBounds = true
         layer.cornerRadius = 4
+    }
+    
+    private func configureColors() {
+        contentView.backgroundColor = .systemBackground
+        cellContainer.backgroundColor = .secondarySystemBackground
+        logIndexLabel.textColor = .tertiarySystemBackground
+        logLabel.textColor = .label
+        prefixLabel.textColor = .label
+        dateLabel.textColor = .label
     }
     
 }
