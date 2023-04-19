@@ -85,7 +85,7 @@ public struct IteoLoggerModule: Codable, Equatable, Hashable {
     public static let bug               = IteoLoggerModule("Bug" ,prefix: "🪲")
 
     /// Camera - 📸
-    public static let camera           = IteoLoggerModule("Camera", prefix: "📸")
+    public static let camera            = IteoLoggerModule("Camera", prefix: "📸")
 
     /// Focus - 🌫
     public static let focus             = IteoLoggerModule("Focus", prefix: "🌫")
@@ -97,7 +97,7 @@ public struct IteoLoggerModule: Codable, Equatable, Hashable {
     public static let zoom              = IteoLoggerModule("Zoom", prefix: "🔍")
 
     /// Stabilization - 〽️
-    public static let stabilization    = IteoLoggerModule("Stabilization", prefix: "〽️")
+    public static let stabilization     = IteoLoggerModule("Stabilization", prefix: "〽️")
 
     /// Photo - 📸
     public static let photo             = IteoLoggerModule("Photo" ,prefix: "📸")
@@ -110,6 +110,9 @@ public struct IteoLoggerModule: Codable, Equatable, Hashable {
 
     /// Voice - 🎤
     public static let voice             = IteoLoggerModule("Voice" ,prefix: "🎤")
+
+    /// Gif - 🌠
+    public static let gif               = IteoLoggerModule("Gif" ,prefix: "🌠")
 
     /// Random - 🎲
     public static let random            = IteoLoggerModule("Random" ,prefix: "🎲")
@@ -235,19 +238,46 @@ public struct IteoLoggerModule: Codable, Equatable, Hashable {
     public static let theme             = IteoLoggerModule("Theme", prefix: "🎨")
 
     /// Manager - 🧑‍💼
-    public static let manager             = IteoLoggerModule("Manager", prefix: "🧑‍💼")
+    public static let manager           = IteoLoggerModule("Manager", prefix: "🧑‍💼")
 
     /// Fetcher - 📡
-    public static let fetcher             = IteoLoggerModule("Fetcher", prefix: "📡")
+    public static let fetcher           = IteoLoggerModule("Fetcher", prefix: "📡")
 
     /// CellManager - 🫛
-    public static let cellManager             = IteoLoggerModule("CellManager", prefix: "🫛")
+    public static let cellManager       = IteoLoggerModule("CellManager", prefix: "🫛")
 
     /// TableManager - 📃
-    public static let tableManager             = IteoLoggerModule("TableManager", prefix: "📃")
+    public static let tableManager      = IteoLoggerModule("TableManager", prefix: "📃")
 
     /// Paginator - 📜
-    public static let paginator             = IteoLoggerModule("Paginator", prefix: "📜")
+    public static let paginator         = IteoLoggerModule("Paginator", prefix: "📜")
+
+    /// System - 💻
+    public static let system            = IteoLoggerModule("System", prefix: "💻")
+
+    /// Storage - 💽
+    public static let storage           = IteoLoggerModule("Storage", prefix: "💽")
+
+    /// Clean Up - 🧹
+    public static let cleanup           = IteoLoggerModule("Clean Up", prefix: "🧹")
+
+    /// Token - 📯
+    public static let token             = IteoLoggerModule("Token", prefix: "📯")
+
+    /// Force Update - 🪓
+    public static let forceUpdate       = IteoLoggerModule("Force Update", prefix: "🪓")
+
+    /// Media - 🎧
+    public static let media             = IteoLoggerModule("Media", prefix: "🎧")
+
+    /// Observer - 👀
+    public static let observer          = IteoLoggerModule("Observer", prefix: "👀")
+
+    /// Local - 🛖
+    public static let local             = IteoLoggerModule("Local", prefix: "🛖")
+
+    /// Remote - ☁️
+    public static let remote            = IteoLoggerModule("Remote", prefix: "☁️")
 
     /// LOG - 🖊
     public static let unknown           = IteoLoggerModule("LOG" ,prefix: "🖊")

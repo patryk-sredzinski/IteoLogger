@@ -105,7 +105,14 @@ private extension LogsController {
     }
     
     @IBAction private func shareTapped() {
-        interactor.shareLogs(sessions: viewModel.dataSource)
+        guard let firstSession = viewModel.dataSource.first,
+              let lastSession = viewModel.dataSource.last else {
+            return
+        }
+        interactor.confirmSharingLogs(sessions: viewModel.dataSource,
+                                      loadedSessionCount: viewModel.dataSource.count,
+                                      totalCount: firstSession.index,
+                                      startDate: lastSession.date)
     }
     
     @IBAction private func previousTapped() {
@@ -143,7 +150,20 @@ private extension LogsController {
             loadedSessionsCountLabel.text = "No logs available"
             return
         }
-        loadedSessionsCountLabel.text = "Loaded \(viewModel.dataSource.count) out of \(firstSession.index) available sessions, since: \(lastSession.date)"
+        let attributedString = NSMutableAttributedString()
+        attributedString.append(NSAttributedString(string: "Loaded ",
+                                                   attributes: nil))
+        attributedString.append(NSAttributedString(string: "\(viewModel.dataSource.count)",
+                                                   attributes: [.font: UIFont.boldSystemFont(ofSize: 14),
+                                                                .foregroundColor: UIColor.systemBlue]))
+        attributedString.append(NSAttributedString(string: " out of ",
+                                                   attributes: nil))
+        attributedString.append(NSAttributedString(string: "\(firstSession.index)",
+                                                   attributes: [.font: UIFont.systemFont(ofSize: 12),
+                                                                .foregroundColor: UIColor.systemBlue]))
+        attributedString.append(NSAttributedString(string: " available sessions, since: \(lastSession.date)",
+                                                   attributes: nil))
+        loadedSessionsCountLabel.attributedText = attributedString
     }
     
 }

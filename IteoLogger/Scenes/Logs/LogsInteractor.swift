@@ -15,7 +15,10 @@ protocol LogsInteractor {
     func copyLog()
     func reloadLogs()
     func deleteLogs()
-    func shareLogs(sessions: [LogSectionItem])
+    func confirmSharingLogs(sessions: [LogSectionItem],
+                            loadedSessionCount: Int,
+                            totalCount: Int,
+                            startDate: String)
     func displayFilters()
 }
 
@@ -27,7 +30,7 @@ final class LogsInteractorImpl {
     private var filter: LogFilter
 
     private let backgroundQueue = DispatchQueue(label: String(describing: LogsInteractor.self), qos: .background)
-    
+
     private var isLoading = false
 
     init(presenter: LogsPresenter,
@@ -72,15 +75,23 @@ extension LogsInteractorImpl: LogsInteractor {
         }, rightTitle: "No", rightAction: nil)
     }
     
-    func shareLogs(sessions: [LogSectionItem]) {
-        presenter.toggleSpinner(true)
-        backgroundQueue.async { [weak self] in
-            let logData = self?.worker.prepareShareData(sessions: sessions)
-            DispatchQueue.main.async { [weak self] in
-                self?.presenter.toggleSpinner(false)
-                guard let logHeader = logData?.header, let logUrl = logData?.fileUrl else { return }
-                self?.router.displaySharingController(logHeader, logUrl)
-            }
+    func confirmSharingLogs(sessions: [LogSectionItem],
+                            loadedSessionCount: Int,
+                            totalCount: Int,
+                            startDate: String) {
+        let bodyMessages = [
+                "❗️>>> \(loadedSessionCount) out of \(totalCount) <<<❗️",
+                "available sessions loaded for sharing",
+                "starting: \(startDate)",
+                "",
+                "If you want to share more logs, scroll down the logs and retry"
+        ]
+        presenter.showAlert(title: "Share Logs",
+                            body: bodyMessages.joined(separator: "\n"),
+                            leftTitle: "Load More",
+                            leftAction: nil,
+                            rightTitle: "Share") { [weak self] in
+            self?.shareLogs(sessions: sessions)
         }
     }
     
@@ -99,6 +110,18 @@ private extension LogsInteractorImpl {
             self.presenter.reloadLogs()
         }
         
+    }
+    
+    private func shareLogs(sessions: [LogSectionItem]) {
+        presenter.toggleSpinner(true)
+        backgroundQueue.async { [weak self] in
+            let logData = self?.worker.prepareShareData(sessions: sessions)
+            DispatchQueue.main.async { [weak self] in
+                self?.presenter.toggleSpinner(false)
+                guard let logHeader = logData?.header, let logUrl = logData?.fileUrl else { return }
+                self?.router.displaySharingController(logHeader, logUrl)
+            }
+        }
     }
     
 }
