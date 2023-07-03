@@ -132,7 +132,9 @@ private extension IteoLogger {
         
     }
 
-    private func presentLogs(logsDirectoryName: String? = nil, shareFormat: String? = nil) {
+    private func presentLogs(logsDirectoryName: String? = nil,
+                             groupIdentifier: String? = nil,
+                             shareFormat: String? = nil) {
 
         guard consumers.contains(where: { $0 is IteoLoggerStorageItemConsumer }) else {
             assertionFailure("IteoLoggerStorageItemConsumer is not added to the logger, so there's no point of displaying logs page")
@@ -158,7 +160,11 @@ private extension IteoLogger {
             return
         }
 
-        let controller = LogsControllerCreator().getController(logsDirectoryName: logsDirectoryName, shareFormat: shareFormat)
+        let controller = LogsControllerCreator().getController(
+            logsDirectoryName: logsDirectoryName,
+            groupIdentifier: groupIdentifier ?? "",
+            shareFormat: shareFormat
+        )
         rootViewController.present(controller, animated: true, completion: nil)
 
     }
