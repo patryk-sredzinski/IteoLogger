@@ -12,7 +12,6 @@ Default consumer that saves logs in phone directory, available to be read and di
 final public class IteoLoggerStorageItemConsumer: IteoLoggerItemConsumer {
     
     private let logsDirectoryName: String
-    private let groupIdentifier: String
     private let jsonEncoder: JSONEncoder
     private let fileManager: FileManager
     private let dateFormatter = DateFormatManager.shared
@@ -22,20 +21,17 @@ final public class IteoLoggerStorageItemConsumer: IteoLoggerItemConsumer {
     /**
      Initializes storage  consumer in specified directory.
      - Parameters:
-        - logsDirectoryName: custom directory where logs should be store
-        - groupIdentifier: if you need to share logs between extensions, set this to AppGroup identifier
+        - logsDirectoryName: custom directory where logs should be stored
         - jsonEncoder: custom JSONEncoder, in case you'd like to store logs differently
         - fileManager: you can use custom *FileManager•
         - savingQueue: queue on which you'd like to have all saving operatiobs
      - Returns: a new storage consumer.
-     */
+    */
     public init(logsDirectoryName: String,
-                groupIdentifier: String = "",
-                jsonEncoder: JSONEncoder = JSONEncoder(),
-                fileManager: FileManager = FileManager.default,
-                savingQueue: DispatchQueue = DispatchQueue(label: "saving_queue", qos: .utility, attributes: [], autoreleaseFrequency: .inherit, target: nil)) {
+         jsonEncoder: JSONEncoder = JSONEncoder(),
+         fileManager: FileManager = FileManager.default,
+         savingQueue: DispatchQueue = DispatchQueue(label: "saving_queue", qos: .utility, attributes: [], autoreleaseFrequency: .inherit, target: nil)) {
         self.logsDirectoryName = logsDirectoryName
-        self.groupIdentifier = groupIdentifier
         self.jsonEncoder = jsonEncoder
         self.fileManager = fileManager
         self.savingQueue = savingQueue
@@ -45,10 +41,7 @@ final public class IteoLoggerStorageItemConsumer: IteoLoggerItemConsumer {
     public func consumeLog(_ logItem: IteoLoggerItem) {
         savingQueue.async { [self] in
             do {
-                let logUrl = try fileManager.getLogsUrl(
-                    logsDirectoryName: logsDirectoryName,
-                    groupIdentifier: groupIdentifier
-                ).appendingPathComponent(currentSessionFileName)
+                let logUrl = try fileManager.getLogsUrl(logsDirectoryName).appendingPathComponent(currentSessionFileName)
                 try append(logItem, filePath: logUrl)
             } catch {
                 assertionFailure("Failed to store IteoLoggerItem in .log file: \(error)")
