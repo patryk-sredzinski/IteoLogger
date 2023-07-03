@@ -9,11 +9,9 @@ import Foundation
 
 extension FileManager {
     
-    func getLogsUrl(logsDirectoryName: String, groupIdentifier: String) throws -> URL {
+    func getLogsUrl(_ logsDirectoryName: String) throws -> URL {
         
-        let documentPath = try
-        (containerURL(forSecurityApplicationGroupIdentifier: groupIdentifier)
-        ?? url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true))
+        let documentPath = try url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
         let logsDirectoryUrl = documentPath.appendingPathComponent(logsDirectoryName, isDirectory: true)
         var isDirectory : ObjCBool = true
         if !fileExists(atPath: logsDirectoryUrl.path, isDirectory: &isDirectory) {

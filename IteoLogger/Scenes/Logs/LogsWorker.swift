@@ -30,7 +30,6 @@ protocol LogsWorker {
 final class LogsWorkerImpl {
     
     private let logsDirectoryName: String
-    private let groupIdentifier: String
     private let shareFormat: String
     private let jsonDecoder: JSONDecoder
     private let fileManager: FileManager
@@ -43,14 +42,12 @@ final class LogsWorkerImpl {
     private(set) var availableLevels = Set<IteoLoggerLevel>()
 
     init(logsDirectoryName: String,
-         groupIdentifier: String,
          shareFormat: String,
          jsonDecoder: JSONDecoder = JSONDecoder(),
          fileManager: FileManager = FileManager.default,
          byteFormatter: ByteCountFormatter = ByteCountFormatter(),
          userDefaults: UserDefaults = UserDefaults.standard) {
         self.logsDirectoryName = logsDirectoryName
-        self.groupIdentifier = groupIdentifier
         self.shareFormat = shareFormat
         self.jsonDecoder = jsonDecoder
         self.fileManager = fileManager
@@ -141,8 +138,7 @@ private extension LogsWorkerImpl {
     
     private func loadAvailableSessionsPaths() throws -> [String] {
         
-        let logsDirectoryUrl = try fileManager.getLogsUrl(logsDirectoryName: logsDirectoryName,
-                                                          groupIdentifier: groupIdentifier)
+        let logsDirectoryUrl = try fileManager.getLogsUrl(logsDirectoryName)
         let files = try fileManager.contentsOfDirectory(atPath: logsDirectoryUrl.path)
         return files.sorted().reversed()
         
@@ -150,8 +146,7 @@ private extension LogsWorkerImpl {
     
     private func loadLogFile(at path: String) -> [IteoLoggerItem] {
         do {
-            let logsDirectoryUrl = try fileManager.getLogsUrl(logsDirectoryName: logsDirectoryName,
-                                                              groupIdentifier: groupIdentifier)
+            let logsDirectoryUrl = try fileManager.getLogsUrl(logsDirectoryName)
             
             let logUrl = logsDirectoryUrl.appendingPathComponent(path)
             let logContent = try String(contentsOf: logUrl)
@@ -172,8 +167,7 @@ private extension LogsWorkerImpl {
     
     private func deleteLogDirectory() {
         do {
-            let logsDirectoryUrl = try fileManager.getLogsUrl(logsDirectoryName: logsDirectoryName,
-                                                              groupIdentifier: groupIdentifier)
+            let logsDirectoryUrl = try fileManager.getLogsUrl(logsDirectoryName)
             try fileManager.removeItem(at: logsDirectoryUrl)
         } catch {
             assertionFailure(error.localizedDescription)
