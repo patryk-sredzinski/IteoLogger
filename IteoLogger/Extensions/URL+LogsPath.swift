@@ -7,12 +7,24 @@
 
 import Foundation
 
+enum FileManagerError: Error {
+    case appGroupSetButNotValid
+}
+
 extension FileManager {
     
-    func getLogsUrl(_ logsDirectoryName: String) throws -> URL {
-        
-        let documentPath = try url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-        let logsDirectoryUrl = documentPath.appendingPathComponent(logsDirectoryName, isDirectory: true)
+    func getLogsUrl(directoryName: String, appGroup: String) throws -> URL {
+        let documentPath: URL
+        if !appGroup.isEmpty {
+            let containerUrl = containerURL(forSecurityApplicationGroupIdentifier: appGroup)
+            guard let containerUrl else {
+                throw FileManagerError.appGroupSetButNotValid
+            }
+            documentPath = containerUrl
+        } else {
+            documentPath = try url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+        }
+        let logsDirectoryUrl = documentPath.appendingPathComponent(directoryName, isDirectory: true)
         var isDirectory : ObjCBool = true
         if !fileExists(atPath: logsDirectoryUrl.path, isDirectory: &isDirectory) {
             try createDirectory(atPath: logsDirectoryUrl.path, withIntermediateDirectories: false, attributes: nil)

@@ -11,6 +11,7 @@ import UIKit
 public extension IteoLogger {
     
     private static let defaultLogsDirectoryName = "IteoLoggerLogData"
+    private static var defaultLogsAppGroup = ""
     private static let defaultConsoleFormat = "[level] [[time]] - [module_prefix] [module_name]: [output]"
     private static let defaultShareFormat = "[level] [[date] [time]] - [module_prefix] [module_name]: [output]"
 
@@ -78,8 +79,9 @@ public extension IteoLogger {
      - shareFormat: string format which is used when user wants to share logs with someone.
      - Note: Use the same *logsDirectoryName* in *IteoLoggerStorageItemConsumer* to see results. Default shareFormat is: *[level] [[date] [time]] - [module_prefix] [module_name]: [output]* You can use these parameters in your own format to fill it with data.
      */
-    func displayLogs(logsDirectoryName: String? = nil, shareFormat: String? = nil) {
-        presentLogs(logsDirectoryName: logsDirectoryName, shareFormat: shareFormat)
+    @available(iOSApplicationExtension, unavailable)
+    func displayLogs(logsDirectoryName: String? = nil, logsAppGroup: String? = nil, shareFormat: String? = nil) {
+        presentLogs(logsDirectoryName: logsDirectoryName, logsAppGroup: logsAppGroup, shareFormat: shareFormat)
     }
     
 }
@@ -110,8 +112,12 @@ final public class IteoLogger {
      */
     public static let `default` = IteoLogger(consumers: [
         IteoLoggerConsoleItemConsumer(consoleFormat: defaultConsoleFormat),
-        IteoLoggerStorageItemConsumer(logsDirectoryName: defaultLogsDirectoryName)
+        IteoLoggerStorageItemConsumer(logsDirectoryName: defaultLogsDirectoryName, logsAppGroup: defaultLogsAppGroup)
     ])
+    
+    public static func setDefaultLogsAppGroup(_ newValue: String) {
+        defaultLogsAppGroup = newValue
+    }
     
 }
 
@@ -132,7 +138,8 @@ private extension IteoLogger {
         
     }
 
-    private func presentLogs(logsDirectoryName: String? = nil, shareFormat: String? = nil) {
+    @available(iOSApplicationExtension, unavailable)
+    private func presentLogs(logsDirectoryName: String? = nil, logsAppGroup: String? = nil, shareFormat: String? = nil) {
 
         guard consumers.contains(where: { $0 is IteoLoggerStorageItemConsumer }) else {
             assertionFailure("IteoLoggerStorageItemConsumer is not added to the logger, so there's no point of displaying logs page")
@@ -141,6 +148,7 @@ private extension IteoLogger {
 
         let logsDirectoryName = logsDirectoryName ?? Self.defaultLogsDirectoryName
         let shareFormat = shareFormat ?? Self.defaultShareFormat
+        let logsAppGroup = logsAppGroup ?? Self.defaultLogsAppGroup
 
         var rootController: UIViewController?
         if #available(iOS 13.0, *) {
@@ -158,7 +166,9 @@ private extension IteoLogger {
             return
         }
 
-        let controller = LogsControllerCreator().getController(logsDirectoryName: logsDirectoryName, shareFormat: shareFormat)
+        let controller = LogsControllerCreator().getController(logsDirectoryName: logsDirectoryName,
+                                                               logsAppGroup: logsAppGroup,
+                                                               shareFormat: shareFormat)
         rootViewController.present(controller, animated: true, completion: nil)
 
     }

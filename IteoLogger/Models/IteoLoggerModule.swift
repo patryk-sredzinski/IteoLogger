@@ -168,6 +168,9 @@ public struct IteoLoggerModule: Codable, Equatable, Hashable {
     /// Push - ⚡️
     public static let push              = IteoLoggerModule("Push" ,prefix: "⚡️")
 
+    /// PushExtension - 🌩️
+    public static let pushExtension     = IteoLoggerModule("PushExtension" ,prefix: "🌩️")
+
     /// Language - 👅
     public static let language          = IteoLoggerModule("Language" ,prefix: "👅")
 
