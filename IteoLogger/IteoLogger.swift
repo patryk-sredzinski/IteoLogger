@@ -79,6 +79,7 @@ public extension IteoLogger {
      - shareFormat: string format which is used when user wants to share logs with someone.
      - Note: Use the same *logsDirectoryName* in *IteoLoggerStorageItemConsumer* to see results. Default shareFormat is: *[level] [[date] [time]] - [module_prefix] [module_name]: [output]* You can use these parameters in your own format to fill it with data.
      */
+    @available(iOSApplicationExtension, unavailable)
     func displayLogs(logsDirectoryName: String? = nil, logsAppGroup: String? = nil, shareFormat: String? = nil) {
         presentLogs(logsDirectoryName: logsDirectoryName, logsAppGroup: logsAppGroup, shareFormat: shareFormat)
     }
@@ -137,6 +138,7 @@ private extension IteoLogger {
         
     }
 
+    @available(iOSApplicationExtension, unavailable)
     private func presentLogs(logsDirectoryName: String? = nil, logsAppGroup: String? = nil, shareFormat: String? = nil) {
 
         guard consumers.contains(where: { $0 is IteoLoggerStorageItemConsumer }) else {
