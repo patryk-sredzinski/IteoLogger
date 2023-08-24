@@ -14,6 +14,7 @@ public extension IteoLogger {
     private static var defaultLogsAppGroup = ""
     private static let defaultConsoleFormat = "[level] [[time]] - [module_prefix] [module_name]: [output]"
     private static let defaultShareFormat = "[level] [[date] [time]] - [module_prefix] [module_name]: [output]"
+    private static let defaultSystemFormat = "[level] - [module_prefix] [module_name]: [output]"
 
     /**
      Sends data to logger to be consumed by consumers passed in *IteoLogger* initializer.
@@ -110,10 +111,17 @@ final public class IteoLogger {
      - consumers: list of consumers that will be called on every log action.
      - Returns: a new logger instance with Console and Storage consumers.
      */
-    public static let `default` = IteoLogger(consumers: [
-        IteoLoggerConsoleItemConsumer(consoleFormat: defaultConsoleFormat),
-        IteoLoggerStorageItemConsumer(logsDirectoryName: defaultLogsDirectoryName, logsAppGroup: defaultLogsAppGroup)
-    ])
+    public static let `default`: IteoLogger = {
+        var consumers = [IteoLoggerItemConsumer]()
+        if #available(iOS 14.0, *) {
+            consumers.append(IteoLoggerSystemItemConsumer(consoleFormat: defaultSystemFormat))
+        } else {
+            consumers.append(IteoLoggerConsoleItemConsumer(consoleFormat: defaultConsoleFormat))
+        }
+        consumers.append(IteoLoggerStorageItemConsumer(logsDirectoryName: defaultLogsDirectoryName,
+                                                       logsAppGroup: defaultLogsAppGroup))
+        return IteoLogger(consumers: consumers)
+    }()
     
     public static func setDefaultLogsAppGroup(_ newValue: String) {
         defaultLogsAppGroup = newValue
