@@ -138,7 +138,11 @@ private extension IteoLogger {
 
     private func log(level: IteoLoggerLevel, module: IteoLoggerModule, items: [Any?]) {
         
-        let logItem = IteoLoggerItem(index: getIndex(), date: Date(), module: module, level: level, output: items.toString)
+        let logItem = IteoLoggerItem(index: getIndex(),
+                                     date: Date(),
+                                     module: module,
+                                     level: level,
+                                     output: Self.toString(array: items))
         
         consumers.forEach { consumer in
             consumer.consumeLog(logItem)
