@@ -7,23 +7,13 @@
 
 import Foundation
 
-extension Array where Element: Any {
-    
-    var toString: String {
-        return convertItems(self)
-    }
-    
-}
-
-private extension Array where Element: Any {
-    
-    private func convertItems(_ items: [Any?]) -> String {
-        let stringItems = items.map(transformItem(_:))
+extension IteoLogger {
+    static func toString(array: [Any?]) -> String {
+        let stringItems = array.map(toString(item:))
         return stringItems.joined(separator: "\n")
     }
     
-    private func transformItem(_ item: Any?) -> String {
-        
+    private static func toString(item: Any?) -> String {
         guard let itemSet = item else {
             return "nil"
         }
@@ -41,21 +31,18 @@ private extension Array where Element: Any {
         }
         
         if let arrayItem = itemSet as? [Any?] {
-            return "[\n\(arrayItem.map(transformItem(_:)).joined(separator: ",\n"))\n]"
+            return "[\n\(arrayItem.map(toString(item:)).joined(separator: ",\n"))\n]"
         }
         
         return "\(itemSet)"
     }
-    
 }
 
 private extension Encodable {
-    
     func toJson(_ encoder: JSONEncoder = JSONEncoder()) throws -> Data {
         let encodedData = try encoder.encode(self)
         let json = try JSONSerialization.jsonObject(with: encodedData)
         let jsonData = try JSONSerialization.data(withJSONObject: json, options: .prettyPrinted)
         return jsonData
     }
-    
 }
