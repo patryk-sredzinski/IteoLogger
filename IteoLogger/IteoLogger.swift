@@ -206,7 +206,7 @@ private extension IteoLogger {
         let filter = LogFilter()
         var sections = [LogSectionItem]()
         for i in 0..<sessionCount {
-            let logData = worker.loadLogs(at: 0, filter: filter)
+            let logData = worker.loadLogs(at: i, filter: filter)
             let cellItems = logData.map { LogCellItem.log(item: $0) }
             let section = LogSectionItem(index: i, date: "\(i)", items: cellItems)
             sections.append(section)
