@@ -85,6 +85,16 @@ public extension IteoLogger {
         presentLogs(logsDirectoryName: logsDirectoryName, logsAppGroup: logsAppGroup, shareFormat: shareFormat)
     }
     
+    /**
+     Saves logs on the drive
+     
+     - Parameters:
+     - logsDirectoryName: optional directory name where logs are stored.
+     - Note: Use the same *logsDirectoryName* in *IteoLoggerStorageItemConsumer* to see results. Default shareFormat is: *[level] [[date] [time]] - [module_prefix] [module_name]: [output]* You can use these parameters in your own format to fill it with data.
+     */
+    func exportLogs(sessionCount: Int = 5, logsDirectoryName: String? = nil, logsAppGroup: String? = nil, shareFormat: String? = nil) -> URL {
+        return saveLogs(sessionCount: sessionCount, logsDirectoryName: logsDirectoryName, logsAppGroup: logsAppGroup, shareFormat: shareFormat)
+    }
 }
 
 /**
@@ -159,8 +169,8 @@ private extension IteoLogger {
         }
 
         let logsDirectoryName = logsDirectoryName ?? Self.defaultLogsDirectoryName
-        let shareFormat = shareFormat ?? Self.defaultShareFormat
         let logsAppGroup = logsAppGroup ?? Self.defaultLogsAppGroup
+        let shareFormat = shareFormat ?? Self.defaultShareFormat
 
         var rootController: UIViewController?
         if #available(iOS 13.0, *) {
@@ -185,4 +195,23 @@ private extension IteoLogger {
 
     }
     
+    private func saveLogs(sessionCount: Int, logsDirectoryName: String? = nil, logsAppGroup: String? = nil, shareFormat: String? = nil) -> URL {
+        let logsDirectoryName = logsDirectoryName ?? Self.defaultLogsDirectoryName
+        let logsAppGroup = logsAppGroup ?? Self.defaultLogsAppGroup
+        let shareFormat = shareFormat ?? Self.defaultShareFormat
+        
+        let worker: LogsWorker = LogsWorkerImpl(logsDirectoryName: logsDirectoryName,
+                                                logsAppGroup: logsAppGroup,
+                                                shareFormat: shareFormat)
+        let filter = LogFilter()
+        var sections = [LogSectionItem]()
+        for i in 0..<sessionCount {
+            let logData = worker.loadLogs(at: 0, filter: filter)
+            let cellItems = logData.map { LogCellItem.log(item: $0) }
+            let section = LogSectionItem(index: i, date: "\(i)", items: cellItems)
+            sections.append(section)
+        }
+        let shareData = worker.prepareShareData(sessions: sections)
+        return shareData.fileUrl
+    }
 }
