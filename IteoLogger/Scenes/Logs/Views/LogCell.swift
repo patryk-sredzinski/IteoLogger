@@ -14,6 +14,8 @@ final class LogCell: UITableViewCell {
     @IBOutlet private var cellContainer: UIView!
     @IBOutlet private var levelContainer: UIView!
     @IBOutlet private var prefixLabel: UILabel!
+    @IBOutlet private var frameworkContainer: UIView!
+    @IBOutlet private var frameworkLabel: UILabel!
     @IBOutlet private var moduleContainer: UIView!
     @IBOutlet private var moduleLabel: UILabel!
     @IBOutlet private var dateLabel: UILabel!
@@ -35,6 +37,9 @@ final class LogCell: UITableViewCell {
         let indexValue = "#\(item.index)"
         let levelColor = item.level.color
         let modulePrefix = item.module.prefix
+        let frameworkBackgroundColor = item.framework.backgroundColor
+        let frameworkLabelColor = item.framework.labelColor
+        let frameworkName = item.framework
         let moduleBackgroundColor = item.module.backgroundColor
         let moduleLabelColor = item.module.labelColor
         let moduleName = item.module.name
@@ -44,6 +49,9 @@ final class LogCell: UITableViewCell {
         logIndexLabel.text = indexValue
         levelContainer.backgroundColor = levelColor
         prefixLabel.text = modulePrefix
+        frameworkContainer.backgroundColor = frameworkBackgroundColor
+        frameworkLabel.textColor = frameworkLabelColor
+        frameworkLabel.text = frameworkName
         moduleContainer.backgroundColor = moduleBackgroundColor
         moduleLabel.textColor = moduleLabelColor
         moduleLabel.text = moduleName
@@ -133,6 +141,23 @@ private extension UIColor {
         var b: CGFloat = 0
         getRed(&r, green: &g, blue: &b, alpha: nil)
         return 0.2126 * r + 0.7152 * g + 0.0722 * b
+    }
+    
+}
+
+extension String {
+    
+    var backgroundColor: UIColor {
+        let hash = hash
+        srand48(hash)
+        let r = CGFloat(drand48())
+        let g = CGFloat(drand48())
+        let b = CGFloat(drand48())
+        return UIColor(red: r, green: g, blue: b, alpha: 1.0)
+    }
+    
+    var labelColor: UIColor {
+        return backgroundColor.brightness > 0.5 ? UIColor.black : UIColor.white
     }
     
 }

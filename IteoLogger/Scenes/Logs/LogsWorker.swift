@@ -16,6 +16,7 @@ enum LogsWorkerErrors: Error {
 
 protocol LogsWorker {
     
+    var availableFrameworks: Set<String> { get }
     var availableModules: Set<IteoLoggerModule> { get }
     var availableLevels: Set<IteoLoggerLevel> { get }
 
@@ -39,6 +40,7 @@ final class LogsWorkerImpl {
     private let userDefaults: UserDefaults
 
     private var availableSessionPaths: [String]?
+    private(set) var availableFrameworks = Set<String>()
     private(set) var availableModules = Set<IteoLoggerModule>()
     private(set) var availableLevels = Set<IteoLoggerLevel>()
 
@@ -181,6 +183,10 @@ private extension LogsWorkerImpl {
     }
     
     private func updateAvailableFilterData(for logs: [IteoLoggerItem], filter: LogFilter) {
+        let uniqueFrameworks = Set(logs.map { $0.framework })
+        uniqueFrameworks.forEach {
+            availableFrameworks.insert($0)
+        }
         let uniqueLevels = Set(logs.map { $0.level })
         uniqueLevels.forEach {
             availableLevels.insert($0)

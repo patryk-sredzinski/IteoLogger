@@ -23,12 +23,12 @@ final public class IteoLoggerSystemItemConsumer: IteoLoggerItemConsumer {
         - consoleFormat: format to be displayed in the console. Default: *"[level] [[time]] - [module_prefix] [module_name]: [output]"*.
      - Returns: a new console consumer.
     */
-    public init(consoleFormat: String = "[level] - [module_prefix] [module_name]: [output]") {
+    public init(consoleFormat: String = "[level] [framework] [module_prefix] [module_name]: [output]") {
         self.consoleFormat = consoleFormat
     }
 
     public func consumeLog(_ logItem: IteoLoggerItem) {
-        let logger = Logger(subsystem: logItem.module.prefix, category: logItem.module.name)
+        let logger = Logger(subsystem: logItem.framework, category: logItem.module.name)
         let log = logItem.toString(consoleFormat, dateFormatter: dateFormatter)
         switch logItem.level {
         case .error:

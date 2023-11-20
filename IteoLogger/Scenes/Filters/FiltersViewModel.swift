@@ -8,6 +8,7 @@
 final class FiltersViewModel {
        
     var dataSource = [FilterSectionItem]()
+    var toggleFrameworksText = ""
     var toggleLevelsText = ""
     var toggleModulesText = ""
 

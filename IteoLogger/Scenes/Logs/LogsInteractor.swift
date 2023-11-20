@@ -96,7 +96,7 @@ extension LogsInteractorImpl: LogsInteractor {
     }
     
     func displayFilters() {
-        router.displayFilters(filter, availableModules: worker.availableModules, availableLevels: worker.availableLevels, delegate: self)
+        router.displayFilters(filter, availableFrameworks: worker.availableFrameworks, availableModules: worker.availableModules, availableLevels: worker.availableLevels, delegate: self)
     }
     
 }

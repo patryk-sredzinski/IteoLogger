@@ -27,6 +27,8 @@ public struct IteoLoggerItem: Codable {
     /// Stringified log output
     public let output: String
     
+    /// Framework name
+    public let framework: String
 }
 
 internal extension IteoLoggerItem {
@@ -36,12 +38,15 @@ internal extension IteoLoggerItem {
         let currentTime = date
         let date = dateFormatter.string(from: currentTime, format: .dateOnly)
         let time = dateFormatter.string(from: currentTime, format: .timeOnly)
-        
+        let iso = dateFormatter.string(from: currentTime, format: .iso)
+
         return format.replacingOccurrences(of: "[date]", with: date)
             .replacingOccurrences(of: "[time]", with: time)
+            .replacingOccurrences(of: "[iso]", with: iso)
             .replacingOccurrences(of: "[level]", with: level.icon)
             .replacingOccurrences(of: "[module_prefix]", with: module.prefix)
             .replacingOccurrences(of: "[module_name]", with: module.name)
+            .replacingOccurrences(of: "[framework]", with: framework)
             .replacingOccurrences(of: "[output]", with: output)
             .replacingOccurrences(of: "[index]", with: "\(index)")
 
