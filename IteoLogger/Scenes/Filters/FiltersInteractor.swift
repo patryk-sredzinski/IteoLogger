@@ -12,8 +12,10 @@ import Foundation
 
 protocol FiltersInteractor {
     func reloadFilters()
+    func toggleFramework(_ framework: String)
     func toggleLevel(_ level: IteoLoggerLevel)
     func toggleModule(_ module: IteoLoggerModule)
+    func toggleAllFrameworks()
     func toggleAllLevels()
     func toggleAllModules()
     func clearAllFilters()
@@ -26,6 +28,7 @@ final class FiltersInteractorImpl {
     private let worker: FiltersWorker
     private let router: FiltersRouter
     private var filter: LogFilter
+    private let availableFrameworks: Set<String>
     private let availableModules: Set<IteoLoggerModule>
     private let availableLevels: Set<IteoLoggerLevel>
     
@@ -33,14 +36,25 @@ final class FiltersInteractorImpl {
          worker: FiltersWorker,
          router: FiltersRouter,
          filter: LogFilter,
+         availableFrameworks: Set<String>,
          availableModules: Set<IteoLoggerModule>,
          availableLevels: Set<IteoLoggerLevel>) {
         self.presenter = presenter
         self.worker = worker
         self.router = router
         self.filter = filter
+        self.availableFrameworks = availableFrameworks
         self.availableModules = availableModules
         self.availableLevels = availableLevels
+    }
+    
+    func toggleFramework(_ framework: String) {
+        if filter.frameworks.contains(framework) {
+            filter.frameworks.remove(framework)
+        } else {
+            filter.frameworks.insert(framework)
+        }
+        reloadFilters()
     }
     
     func toggleLevel(_ level: IteoLoggerLevel) {
@@ -57,6 +71,15 @@ final class FiltersInteractorImpl {
             filter.modules.remove(module)
         } else {
             filter.modules.insert(module)
+        }
+        reloadFilters()
+    }
+    
+    func toggleAllFrameworks() {
+        if filter.frameworks.isEmpty {
+            filter.frameworks = availableFrameworks
+        } else {
+            filter.frameworks = []
         }
         reloadFilters()
     }
@@ -80,6 +103,7 @@ final class FiltersInteractorImpl {
     }
     
     func clearAllFilters() {
+        filter.frameworks = availableFrameworks
         filter.modules = availableModules
         filter.levels = availableLevels
         reloadFilters()
@@ -99,7 +123,7 @@ final class FiltersInteractorImpl {
 extension FiltersInteractorImpl: FiltersInteractor {
     
     func reloadFilters() {
-        presenter.reloadFilters(filter, availableModules: availableModules, availableLevels: availableLevels)
+        presenter.reloadFilters(filter, availableFrameworks: availableFrameworks, availableModules: availableModules, availableLevels: availableLevels)
     }
     
 }

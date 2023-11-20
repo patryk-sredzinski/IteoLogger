@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -44,8 +44,26 @@
                                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="10"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xVD-4j-rcP">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JIm-dJ-aU5">
                                                 <rect key="frame" x="17" y="11.5" width="50" height="50"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xbi-fx-aX5">
+                                                        <rect key="frame" x="4" y="4" width="42" height="42"/>
+                                                        <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="10"/>
+                                                        <color key="textColor" systemColor="systemBackgroundColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="xbi-fx-aX5" firstAttribute="leading" secondItem="JIm-dJ-aU5" secondAttribute="leading" constant="4" id="712-8M-bqL"/>
+                                                    <constraint firstItem="xbi-fx-aX5" firstAttribute="top" secondItem="JIm-dJ-aU5" secondAttribute="top" constant="4" id="Dzn-9A-jYf"/>
+                                                    <constraint firstAttribute="bottom" secondItem="xbi-fx-aX5" secondAttribute="bottom" constant="4" id="Rkf-Th-JqO"/>
+                                                    <constraint firstAttribute="trailing" secondItem="xbi-fx-aX5" secondAttribute="trailing" constant="4" id="lPg-mw-XBy"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xVD-4j-rcP">
+                                                <rect key="frame" x="71" y="11.5" width="50" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ipo-aT-LNQ">
                                                         <rect key="frame" x="4" y="4" width="42" height="42"/>
@@ -63,7 +81,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" horizontalHuggingPriority="10" verticalHuggingPriority="10" horizontalCompressionResistancePriority="10" verticalCompressionResistancePriority="10" translatesAutoresizingMaskIntoConstraints="NO" id="07k-KQ-JhO">
-                                                <rect key="frame" x="71" y="36.5" width="334" height="0.0"/>
+                                                <rect key="frame" x="125" y="36.5" width="280" height="0.0"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01.01.2021 12:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7zt-in-BlC">
@@ -111,6 +129,8 @@
             <connections>
                 <outlet property="cellContainer" destination="1IB-Ul-3F5" id="dsx-FN-Tad"/>
                 <outlet property="dateLabel" destination="7zt-in-BlC" id="cZW-CD-iUc"/>
+                <outlet property="frameworkContainer" destination="JIm-dJ-aU5" id="YlG-Fx-jc9"/>
+                <outlet property="frameworkLabel" destination="xbi-fx-aX5" id="ddS-OT-DIU"/>
                 <outlet property="levelContainer" destination="9Sj-7s-9yc" id="lJt-vF-IGd"/>
                 <outlet property="logIndexLabel" destination="9Bh-uK-Pdg" id="AAW-Qz-ZFK"/>
                 <outlet property="logLabel" destination="xL1-n1-eBh" id="7sA-03-89F"/>
@@ -123,13 +143,13 @@
     </objects>
     <resources>
         <systemColor name="secondarySystemBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemIndigoColor">
-            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiarySystemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

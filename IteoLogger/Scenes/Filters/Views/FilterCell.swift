@@ -24,6 +24,20 @@ final class FilterCell: UITableViewCell {
         configureColors()
     }
     
+    func setup(with framework: String, selected: Bool) {
+        let frameworkPrefix = ""
+        let frameworkBackgroundColor = framework.backgroundColor
+        let frameworkLabelColor = framework.labelColor
+        let frameworkName = framework
+
+        prefixLabel.text = frameworkPrefix
+        moduleContainer.backgroundColor = frameworkBackgroundColor
+        moduleLabel.textColor = frameworkLabelColor
+        moduleLabel.text = frameworkName
+        
+        switchControl.isOn = selected
+    }
+    
     func setup(with level: IteoLoggerLevel, selected: Bool) {
         let levelPrefix = level.icon
         let levelBackgroundColor = level.color

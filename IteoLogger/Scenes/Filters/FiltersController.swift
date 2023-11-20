@@ -11,7 +11,7 @@
 import UIKit
 
 protocol FiltersPresentable: IteoLoggerSpinnerPresentable & IteoLoggerAlertPresentable {
-    func reloadFilter(dataSource: [FilterSectionItem], toggleLevelsText: String, toggleModulesText: String)
+    func reloadFilter(dataSource: [FilterSectionItem], toggleFrameworksText: String, toggleLevelsText: String, toggleModulesText: String)
 }
 
 final class FiltersController: IteoLoggerBaseViewController {
@@ -69,6 +69,8 @@ private extension FiltersController {
     
     private func toggleFilters(for sectionItem: FilterSectionItem) {
         switch sectionItem.type {
+        case .frameworks:
+            interactor.toggleAllFrameworks()
         case .levels:
             interactor.toggleAllLevels()
         case .modules:
@@ -78,6 +80,8 @@ private extension FiltersController {
     
     private func toggleText(for sectionItem: FilterSectionItem) -> String {
         switch sectionItem.type {
+        case .frameworks:
+            return viewModel.toggleFrameworksText
         case .levels:
             return viewModel.toggleLevelsText
         case .modules:
@@ -99,8 +103,9 @@ private extension FiltersController {
 }
 
 extension FiltersController: FiltersPresentable {
-    func reloadFilter(dataSource: [FilterSectionItem], toggleLevelsText: String, toggleModulesText: String) {
+    func reloadFilter(dataSource: [FilterSectionItem], toggleFrameworksText: String, toggleLevelsText: String, toggleModulesText: String) {
         viewModel.dataSource = dataSource
+        viewModel.toggleFrameworksText = toggleFrameworksText
         viewModel.toggleLevelsText = toggleLevelsText
         viewModel.toggleModulesText = toggleModulesText
         tableView.reloadData()
@@ -136,6 +141,8 @@ extension FiltersController: UITableViewDataSource, UITableViewDelegate {
             return UITableViewCell()
         }
         switch cellItem {
+        case .framework(let item, let selected):
+            cell.setup(with: item, selected: selected)
         case .module(let item, let selected):
             cell.setup(with: item, selected: selected)
         case .level(let item, let selected):
@@ -148,6 +155,8 @@ extension FiltersController: UITableViewDataSource, UITableViewDelegate {
         let section = viewModel.dataSource[indexPath.section]
         let cellItem = section.items[indexPath.row]
         switch cellItem {
+        case .framework(let item, _):
+            interactor.toggleFramework(item)
         case .module(let item, _):
             interactor.toggleModule(item)
         case .level(let item, _):

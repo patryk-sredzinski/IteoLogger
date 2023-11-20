@@ -13,6 +13,7 @@ import UIKit
 protocol LogsRouter {
     func displaySharingController(_ logHeader: String, _ logFileUrl: URL)
     func displayFilters(_ filters: LogFilter,
+                        availableFrameworks: Set<String>,
                         availableModules: Set<IteoLoggerModule>,
                         availableLevels: Set<IteoLoggerLevel>,
                         delegate: FiltersRouterDelegate?)
@@ -30,11 +31,13 @@ extension LogsRouterImpl: LogsRouter {
     }
     
     func displayFilters(_ filters: LogFilter,
+                        availableFrameworks: Set<String>,
                         availableModules: Set<IteoLoggerModule>,
                         availableLevels: Set<IteoLoggerLevel>,
                         delegate: FiltersRouterDelegate?) {
         let filterToSend = filters.isSet ? filters : LogFilter(levels: availableLevels, modules: availableModules)
         let filterController = FiltersControllerCreator().getController(filter: filterToSend,
+                                                                        availableFrameworks: availableFrameworks,
                                                                         availableModules: availableModules,
                                                                         availableLevels: availableLevels,
                                                                         delegate: delegate)

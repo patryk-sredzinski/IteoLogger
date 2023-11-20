@@ -21,7 +21,7 @@ final public class IteoLoggerConsoleItemConsumer: IteoLoggerItemConsumer {
         - consoleFormat: format to be displayed in the console. Default: *"[level] [[time]] - [module_prefix] [module_name]: [output]"*.
      - Returns: a new console consumer.
     */
-    public init(consoleFormat: String = "[level] [[time]] - [module_prefix] [module_name]: [output]") {
+    public init(consoleFormat: String = "[level] [framework] [[time]] [module_prefix] [module_name]: [output]") {
         self.consoleFormat = consoleFormat
     }
 
