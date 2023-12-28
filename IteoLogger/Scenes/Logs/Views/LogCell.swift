@@ -29,6 +29,7 @@ final class LogCell: UITableViewCell {
         setupDoubleTapGesture()
         roundCell()
         roundModuleContainer()
+        roundFrameworkContainer()
         configureColors()
     }
     
@@ -80,6 +81,10 @@ private extension LogCell {
     
     private func roundModuleContainer() {
         roundLayer(moduleContainer.layer)
+    }
+    
+    private func roundFrameworkContainer() {
+        roundLayer(frameworkContainer.layer)
     }
     
     private func roundLayer(_ layer: CALayer) {
