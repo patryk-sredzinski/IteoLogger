@@ -35,7 +35,7 @@ extension LogsRouterImpl: LogsRouter {
                         availableModules: Set<IteoLoggerModule>,
                         availableLevels: Set<IteoLoggerLevel>,
                         delegate: FiltersRouterDelegate?) {
-        let filterToSend = filters.isSet ? filters : LogFilter(levels: availableLevels, modules: availableModules)
+        let filterToSend = filters.isSet ? filters : LogFilter(frameworks: availableFrameworks, levels: availableLevels, modules: availableModules)
         let filterController = FiltersControllerCreator().getController(filter: filterToSend,
                                                                         availableFrameworks: availableFrameworks,
                                                                         availableModules: availableModules,
