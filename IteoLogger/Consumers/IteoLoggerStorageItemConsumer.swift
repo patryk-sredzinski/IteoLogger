@@ -69,10 +69,13 @@ private extension IteoLoggerStorageItemConsumer {
         }
         
         let file = try FileHandle(forWritingTo: filePath)
-        file.seekToEndOfFile()
-        file.write(dataToLog)
-        file.closeFile()
-        
+        if #available(iOS 13.4, *) {
+            try file.seekToEnd()
+            try file.write(contentsOf: dataToLog)
+        } else {
+            file.write(dataToLog)
+            file.closeFile()
+        }
     }
     
 }

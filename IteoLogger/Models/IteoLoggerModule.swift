@@ -183,6 +183,12 @@ public struct IteoLoggerModule: Codable, Equatable, Hashable {
     /// Deeplink - ⛓
     public static let deeplink                      = IteoLoggerModule("Deeplink" ,prefix: "⛓")
 
+    /// Link - 🔗
+    public static let link                          = IteoLoggerModule("Link" ,prefix: "🔗")
+
+    /// RichLink - 🗾
+    public static let richlink                      = IteoLoggerModule("RichLink" ,prefix: "🗾")
+
     /// Call - 📞
     public static let call                          = IteoLoggerModule("Call" ,prefix: "📞")
 
