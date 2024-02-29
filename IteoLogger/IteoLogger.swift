@@ -12,9 +12,9 @@ public extension IteoLogger {
     
     private static let defaultLogsDirectoryName = "IteoLoggerLogData"
     private static var defaultLogsAppGroup = ""
-    private static let defaultConsoleFormat = "[level] [framework] [[time]] [module_prefix] [module_name]: [output]"
-    private static let defaultShareFormat = "[level] [framework] [module_prefix] [module_name] [iso]: [output]"
-    private static let defaultSystemFormat = "[level] [framework] [module_prefix] [module_name]: [output]"
+    private static let defaultConsoleFormat = "[level] [module_prefix] [[time]] [framework] - [module_name]: [output]"
+    private static let defaultShareFormat = "[level] [iso] [module_prefix] [framework] - [module_name]: [output]"
+    private static let defaultSystemFormat = "[level] [module_prefix] [framework] - [module_name]: [output]"
 
     /**
      Sends data to logger to be consumed by consumers passed in *IteoLogger* initializer.
