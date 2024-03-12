@@ -425,7 +425,10 @@ public struct IteoLoggerModule: Codable, Equatable, Hashable {
    
     /// Sustainability - 🌱
     public static let sustainability                = IteoLoggerModule("Sustainability" ,prefix: "🌱")
-
+    
+     /// Connection - 🪺
+     public static let connection                   = IteoLoggerModule("Connection" ,prefix: "🪺")
+    
     /// LOG - 🖊
     public static let unknown                       = IteoLoggerModule("LOG" ,prefix: "🖊")
 
