@@ -429,6 +429,15 @@ public struct IteoLoggerModule: Codable, Equatable, Hashable {
      /// Connection - 🪺
      public static let connection                   = IteoLoggerModule("Connection" ,prefix: "🪺")
     
+     /// Intents - 🚿
+     public static let intents                      = IteoLoggerModule("Intents" ,prefix: "🚿")
+    
+     /// "Share Extension - ♐️
+     public static let shareExtension               = IteoLoggerModule("Share Extension" ,prefix: "♐️")
+    
+     /// Device Token - 🎗️
+     public static let deviceToken                  = IteoLoggerModule("Device Token" ,prefix: "🎗️")
+
     /// LOG - 🖊
     public static let unknown                       = IteoLoggerModule("LOG" ,prefix: "🖊")
 
