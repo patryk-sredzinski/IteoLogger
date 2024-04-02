@@ -16,8 +16,8 @@ final public class IteoLoggerStorageItemConsumer: IteoLoggerItemConsumer {
     private let jsonEncoder: JSONEncoder
     private let fileManager: FileManager
     private let dateFormatter = DateFormatManager.shared
-    private let currentSessionFileName: String
     private let savingQueue: DispatchQueue
+    private var currentSessionFileName: String = ""
 
     /**
      Initializes storage  consumer in specified directory.
@@ -39,7 +39,7 @@ final public class IteoLoggerStorageItemConsumer: IteoLoggerItemConsumer {
         self.jsonEncoder = jsonEncoder
         self.fileManager = fileManager
         self.savingQueue = savingQueue
-        self.currentSessionFileName = "\(dateFormatter.string(from: Date(), format: .logFormat))".appending(".log")
+        startNewSession()
     }
     
     public func consumeLog(_ logItem: IteoLoggerItem) {
@@ -53,6 +53,10 @@ final public class IteoLoggerStorageItemConsumer: IteoLoggerItemConsumer {
                 assertionFailure("Failed to store IteoLoggerItem in .log file: \(error)")
             }
         }
+    }
+    
+    public func startNewSession() {
+        currentSessionFileName = "\(dateFormatter.string(from: Date(), format: .logFormat))".appending(".log")
     }
     
 }

@@ -137,6 +137,10 @@ final public class IteoLogger {
         defaultLogsAppGroup = newValue
     }
     
+    public func startNewSession() {
+        (consumers.first(where: { $0 is IteoLoggerStorageItemConsumer }) as? IteoLoggerStorageItemConsumer)?.startNewSession()
+    }
+    
 }
 
 private extension IteoLogger {
