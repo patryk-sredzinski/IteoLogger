@@ -216,6 +216,12 @@ public struct IteoLoggerModule: Codable, Equatable, Hashable {
     /// CollectionView - 💠
     public static let collectionView                = IteoLoggerModule("CollectionView" ,prefix: "💠")
 
+    /// ScrollView - 📰
+    public static let scrollView                    = IteoLoggerModule("ScrollView" ,prefix: "📰")
+
+    /// Insets - 🧈
+    public static let insets                        = IteoLoggerModule("Insets" ,prefix: "🧈")
+
     /// Editor - ✍🏻
     public static let editor                        = IteoLoggerModule("Editor" ,prefix: "✍🏻")
 
