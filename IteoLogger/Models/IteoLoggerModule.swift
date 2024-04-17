@@ -443,7 +443,13 @@ public struct IteoLoggerModule: Codable, Equatable, Hashable {
     
      /// Device Token - 🎗️
      public static let deviceToken                  = IteoLoggerModule("Device Token" ,prefix: "🎗️")
-
+    
+     /// VideoConferencing - 🎥
+     public static let videoConferencing            = IteoLoggerModule("VideoConferencing" ,prefix: "🎥")
+    
+     /// Meeting - 🫱🏻‍🫲🏾
+     public static let meeting                      = IteoLoggerModule("Meeting" ,prefix: "🫱🏻‍🫲🏾")
+    
     /// LOG - 🖊
     public static let unknown                       = IteoLoggerModule("LOG" ,prefix: "🖊")
 
