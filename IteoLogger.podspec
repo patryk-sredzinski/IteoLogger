@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name                  = 'IteoLogger'
-  spec.version               = '1.4.6'
+  spec.version               = '1.4.7'
   spec.license               = { :type => 'MIT' }
   spec.homepage              = 'https://github.com/psredzinski/IteoLogger'
   spec.authors               = { 'Patryk Średziński' => 'patryk.sredzinski@iteo.com' }

@@ -223,7 +223,8 @@ private extension IteoLogger {
 
 private extension IteoLogger {
     private func getOriginalFrameworkName() -> String {
-        let loggerFrameworkName: String = (Bundle(for: Self.self).infoDictionary?["CFBundleName"] as? String) ?? "IteoLogger"
+        var loggerFrameworkName: String = (Bundle(for: Self.self).infoDictionary?["CFBundleName"] as? String) ?? "IteoLogger"
+        loggerFrameworkName = loggerFrameworkName.replacingOccurrences(of: "PackageProduct", with: "Package")
         let stackList: [String] = Thread.callStackSymbols.compactMap {
             let splitData = $0.split(separator: " ")
             guard splitData.count == 6 else { return nil }
