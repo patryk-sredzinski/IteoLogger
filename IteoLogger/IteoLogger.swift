@@ -224,13 +224,13 @@ private extension IteoLogger {
 private extension IteoLogger {
     private func getOriginalFrameworkName() -> String {
         let loggerFrameworkName: String = (Bundle(for: Self.self).infoDictionary?["CFBundleName"] as? String) ?? "IteoLogger"
-        return Thread.callStackSymbols
-            .compactMap {
-                let splitData = $0.split(separator: " ")
-                guard splitData.count == 6 else { return nil }
-                return String(splitData[1])
-            }
-            .filter { $0 != "???" && $0 != loggerFrameworkName }
+        let stackList: [String] = Thread.callStackSymbols.compactMap {
+            let splitData = $0.split(separator: " ")
+            guard splitData.count == 6 else { return nil }
+            return String(splitData[1].split(separator: ".")[0])
+        }
+        return stackList
+            .filter { $0 != "???" && !$0.starts(with: loggerFrameworkName) }
             .first ?? ""
     }
 }
