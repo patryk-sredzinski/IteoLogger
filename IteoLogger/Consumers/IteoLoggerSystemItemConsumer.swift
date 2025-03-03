@@ -32,13 +32,13 @@ final public class IteoLoggerSystemItemConsumer: IteoLoggerItemConsumer {
         let log = logItem.toString(consoleFormat, dateFormatter: dateFormatter)
         switch logItem.level {
         case .error:
-            logger.fault("\(log)")
+            logger.fault("\(log, privacy: .public)")
         case .warning:
-            logger.warning("\(log)")
+            logger.warning("\(log, privacy: .public)")
         case .success:
-            logger.trace("\(log)")
+            logger.trace("\(log, privacy: .public)")
         case .info:
-            logger.info("\(log)")
+            logger.info("\(log, privacy: .public)")
         }
     }
 }
