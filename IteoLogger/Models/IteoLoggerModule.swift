@@ -456,6 +456,210 @@ public struct IteoLoggerModule: Codable, Equatable, Hashable {
     /// Meeting - 📉
     public static let rpcResponse                   = IteoLoggerModule("RPC Response" ,prefix: "📉")
     
+    /// AI - 🤖
+    public static let ai                            = IteoLoggerModule("AI", prefix: "🤖")
+
+    /// Machine Learning - 🧠
+    public static let machineLearning               = IteoLoggerModule("Machine Learning", prefix: "🧠")
+
+    /// Data Science - 📊
+    public static let dataScience                   = IteoLoggerModule("Data Science", prefix: "📊")
+
+    /// Neural Network - 🔗
+    public static let neuralNetwork                 = IteoLoggerModule("Neural Network", prefix: "🔗")
+
+    /// Text Recognition - 🔡
+    public static let textRecognition               = IteoLoggerModule("Text Recognition", prefix: "🔡")
+
+    /// Object Detection - 🎯
+    public static let objectDetection               = IteoLoggerModule("Object Detection", prefix: "🎯")
+
+    /// Face Recognition - 😃
+    public static let faceRecognition               = IteoLoggerModule("Face Recognition", prefix: "😃")
+
+    /// Sentiment Analysis - 💭
+    public static let sentimentAnalysis             = IteoLoggerModule("Sentiment Analysis", prefix: "💭")
+
+    /// Chatbot - 💬
+    public static let chatbot                       = IteoLoggerModule("Chatbot", prefix: "💬")
+
+    /// Virtual Assistant - 🎙️
+    public static let virtualAssistant              = IteoLoggerModule("Virtual Assistant", prefix: "🎙️")
+
+    /// OCR - 📄
+    public static let ocr                           = IteoLoggerModule("OCR", prefix: "📄")
+
+    /// Image Processing - 🖼
+    public static let imageProcessing               = IteoLoggerModule("Image Processing", prefix: "🖼")
+
+    /// Video Processing - 🎥
+    public static let videoProcessing               = IteoLoggerModule("Video Processing", prefix: "🎥")
+
+    /// Speech Recognition - 🗣️
+    public static let speechRecognition             = IteoLoggerModule("Speech Recognition", prefix: "🗣️")
+
+    /// Sound Processing - 🎵
+    public static let soundProcessing               = IteoLoggerModule("Sound Processing", prefix: "🎵")
+
+    /// Weather Data - ⛅️
+    public static let weatherData                   = IteoLoggerModule("Weather Data", prefix: "⛅️")
+
+    /// Smart Home - 🏡
+    public static let smartHome                     = IteoLoggerModule("Smart Home", prefix: "🏡")
+
+    /// Internet of Things - 🌍
+    public static let iot                           = IteoLoggerModule("IoT", prefix: "🌍")
+
+    /// Cybersecurity - 🔒
+    public static let cybersecurity                 = IteoLoggerModule("Cybersecurity", prefix: "🔒")
+
+    /// Firewall - 🔥
+    public static let firewall                      = IteoLoggerModule("Firewall", prefix: "🔥")
+
+    /// Malware Detection - 🦠
+    public static let malwareDetection              = IteoLoggerModule("Malware Detection", prefix: "🦠")
+
+    /// Encryption - 🔐
+    public static let encryption                    = IteoLoggerModule("Encryption", prefix: "🔐")
+
+    /// Cryptography - 🕵️‍♂️
+    public static let cryptography                  = IteoLoggerModule("Cryptography", prefix: "🕵️‍♂️")
+
+    /// Cloud Storage - ☁️
+    public static let cloudStorage                  = IteoLoggerModule("Cloud Storage", prefix: "☁️")
+
+    /// Cloud Computing - 💻
+    public static let cloudComputing                = IteoLoggerModule("Cloud Computing", prefix: "💻")
+
+    /// Server - 🖥
+    public static let server                        = IteoLoggerModule("Server", prefix: "🖥")
+
+    /// Database Migration - 🚛
+    public static let databaseMigration             = IteoLoggerModule("Database Migration", prefix: "🚛")
+
+    /// Big Data - 📦
+    public static let bigData                       = IteoLoggerModule("Big Data", prefix: "📦")
+
+    /// Distributed Systems - 🖧
+    public static let distributedSystems            = IteoLoggerModule("Distributed Systems", prefix: "🖧")
+
+    /// Load Balancing - ⚖️
+    public static let loadBalancing                 = IteoLoggerModule("Load Balancing", prefix: "⚖️")
+
+    /// API - 🔄
+    public static let api                           = IteoLoggerModule("API", prefix: "🔄")
+
+    /// REST API - 🌐
+    public static let restApi                       = IteoLoggerModule("REST API", prefix: "🌐")
+
+    /// GraphQL - 📈
+    public static let graphql                       = IteoLoggerModule("GraphQL", prefix: "📈")
+
+    /// SDK - 📦
+    public static let sdk                           = IteoLoggerModule("SDK", prefix: "📦")
+
+    /// Backend - 🔧
+    public static let backend                       = IteoLoggerModule("Backend", prefix: "🔧")
+
+    /// Frontend - 🎨
+    public static let frontend                      = IteoLoggerModule("Frontend", prefix: "🎨")
+
+    /// Web Development - 🌍
+    public static let webDevelopment                = IteoLoggerModule("Web Development", prefix: "🌍")
+
+    /// Mobile Development - 📱
+    public static let mobileDevelopment             = IteoLoggerModule("Mobile Development", prefix: "📱")
+
+    /// UI Components - 🏗
+    public static let uiComponents                  = IteoLoggerModule("UI Components", prefix: "🏗")
+
+    /// UX Design - 🎨
+    public static let uxDesign                      = IteoLoggerModule("UX Design", prefix: "🎨")
+
+    /// Prototyping - 📝
+    public static let prototyping                   = IteoLoggerModule("Prototyping", prefix: "📝")
+
+    /// Design System - 🏗
+    public static let designSystem                  = IteoLoggerModule("Design System", prefix: "🏗")
+
+    /// Typography - 🔤
+    public static let typography                    = IteoLoggerModule("Typography", prefix: "🔤")
+
+    /// Theming - 🎭
+    public static let theming                       = IteoLoggerModule("Theming", prefix: "🎭")
+
+    /// Animation - 🎞️
+    public static let animation                     = IteoLoggerModule("Animation", prefix: "🎞️")
+
+    /// Performance Optimization - 🚀
+    public static let performanceOptimization       = IteoLoggerModule("Performance Optimization", prefix: "🚀")
+
+    /// Code Review - 👀
+    public static let codeReview                    = IteoLoggerModule("Code Review", prefix: "👀")
+
+    /// Unit Testing - 🧪
+    public static let unitTesting                   = IteoLoggerModule("Unit Testing", prefix: "🧪")
+
+    /// Integration Testing - 🔄
+    public static let integrationTesting            = IteoLoggerModule("Integration Testing", prefix: "🔄")
+
+    /// UI Testing - 🎭
+    public static let uiTesting                     = IteoLoggerModule("UI Testing", prefix: "🎭")
+
+    /// Bug Tracking - 🐛
+    public static let bugTracking                   = IteoLoggerModule("Bug Tracking", prefix: "🐛")
+
+    /// Version Control - 🗂
+    public static let versionControl                = IteoLoggerModule("Version Control", prefix: "🗂")
+
+    /// CI/CD - 🔄
+    public static let ciCd                          = IteoLoggerModule("CI/CD", prefix: "🔄")
+
+    /// Build Pipeline - 🏗
+    public static let buildPipeline                 = IteoLoggerModule("Build Pipeline", prefix: "🏗")
+
+    /// Package Management - 📦
+    public static let packageManagement             = IteoLoggerModule("Package Management", prefix: "📦")
+
+    /// Dependency Injection - 🏗
+    public static let dependencyInjection           = IteoLoggerModule("Dependency Injection", prefix: "🏗")
+
+    /// Authentication - 🔑
+    public static let authentication                = IteoLoggerModule("Authentication", prefix: "🔑")
+
+    /// Authorization - 🔓
+    public static let authorization                 = IteoLoggerModule("Authorization", prefix: "🔓")
+
+    /// Two-Factor Authentication - 📲
+    public static let twoFactorAuthentication       = IteoLoggerModule("Two-Factor Authentication", prefix: "📲")
+
+    /// Data Validation - ✅
+    public static let dataValidation                = IteoLoggerModule("Data Validation", prefix: "✅")
+
+    /// Logging - 📝
+    public static let logging                       = IteoLoggerModule("Logging", prefix: "📝")
+
+    /// Debugging - 🛠️
+    public static let debugging                     = IteoLoggerModule("Debugging", prefix: "🛠️")
+
+    /// Profiling - 📊
+    public static let profiling                     = IteoLoggerModule("Profiling", prefix: "📊")
+
+    /// Exception Handling - 🚨
+    public static let exceptionHandling             = IteoLoggerModule("Exception Handling", prefix: "🚨")
+
+    /// Event Handling - 🎟
+    public static let eventHandling                 = IteoLoggerModule("Event Handling", prefix: "🎟")
+
+    /// Push Notifications - 📬
+    public static let pushNotifications             = IteoLoggerModule("Push Notifications", prefix: "📬")
+
+    /// VDS - 🎨
+    public static let vds                           = IteoLoggerModule("VDS", prefix: "🎨")
+
+    /// Bucket - 🪣
+    public static let bucket                        = IteoLoggerModule("Bucket", prefix: "🪣")
+
     /// LOG - 🖊
     public static let unknown                       = IteoLoggerModule("LOG" ,prefix: "🖊")
     
