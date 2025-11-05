@@ -231,7 +231,11 @@ private extension IteoLogger {
             return String(splitData[1].split(separator: ".")[0])
         }
         return stackList
-            .filter { $0 != "???" && !$0.starts(with: loggerFrameworkName) }
+            .filter {
+                $0 != "???" &&
+                !$0.starts(with: loggerFrameworkName) &&
+                !$0.contains("Logger")
+            }
             .first ?? ""
     }
 }
