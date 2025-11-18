@@ -56,7 +56,9 @@ final public class IteoLoggerStorageItemConsumer: IteoLoggerItemConsumer {
     }
     
     public func startNewSession() {
-        currentSessionFileName = "\(dateFormatter.string(from: Date(), format: .logFormat))".appending(".log")
+        savingQueue.async { [self] in
+            currentSessionFileName = "\(dateFormatter.string(from: Date(), format: .logFormat))".appending(".log")
+        }
     }
     
 }
