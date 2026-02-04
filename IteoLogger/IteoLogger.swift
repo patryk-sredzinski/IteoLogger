@@ -104,7 +104,6 @@ final public class IteoLogger {
     
     private var logIndex: UInt = 0
     private var consumers: [IteoLoggerItemConsumer]
-    private let loggingQueue = DispatchQueue(label: "com.iteo.logger.queue", qos: .utility)
 
     /**
      Initializes logger instance with customized logger consumers.
@@ -152,60 +151,18 @@ private extension IteoLogger {
     }
     
     private func log(level: IteoLoggerLevel, module: IteoLoggerModule, items: [Any?]) {
-        let date = Date()
-        let output = Self.toString(array: items)
-        // Capture return addresses synchronously (cheap - just copies pointers)
-        let returnAddresses = Thread.callStackReturnAddresses
         
-        loggingQueue.async { [weak self] in
-            guard let self = self else { return }
-            // Symbolicate asynchronously (expensive part happens here, off main thread)
-            let framework = Self.getOriginalFrameworkName(from: returnAddresses)
-            let logItem = IteoLoggerItem(index: self.getIndex(),
-                                         date: date,
-                                         module: module,
-                                         level: level,
-                                         output: output,
-                                         framework: framework)
-            
-            self.consumers.forEach { consumer in
-                consumer.consumeLog(logItem)
-            }
-        }
-    }
-    
-    private static func getOriginalFrameworkName(from returnAddresses: [NSNumber]) -> String {
-        var loggerFrameworkName: String = (Bundle(for: Self.self).infoDictionary?["CFBundleName"] as? String) ?? "IteoLogger"
-        loggerFrameworkName = loggerFrameworkName.replacingOccurrences(of: "PackageProduct", with: "Package")
+        let logItem = IteoLoggerItem(index: getIndex(),
+                                     date: Date(),
+                                     module: module,
+                                     level: level,
+                                     output: Self.toString(array: items),
+                                     framework: getOriginalFrameworkName())
         
-        // Convert return addresses to symbols (expensive, but now done on background queue)
-        let stackList: [String] = returnAddresses.compactMap { address -> String? in
-            var info = Dl_info()
-            let pointer = UnsafeRawPointer(bitPattern: address.uintValue)
-            guard let ptr = pointer, dladdr(ptr, &info) != 0, let fname = info.dli_fname else {
-                return nil
-            }
-            // Extract framework/library name from path
-            let path = String(cString: fname)
-            guard let lastComponent = path.split(separator: "/").last else { return nil }
-            // Handle .framework bundles and dylibs
-            let name = String(lastComponent)
-                .replacingOccurrences(of: ".framework", with: "")
-                .split(separator: ".").first.map(String.init) ?? String(lastComponent)
-            return name
+        consumers.forEach { consumer in
+            consumer.consumeLog(logItem)
         }
         
-        return stackList
-            .filter {
-                $0 != "???" &&
-                !$0.starts(with: loggerFrameworkName) &&
-                !$0.contains("Logger") &&
-                !$0.contains("libdispatch") &&
-                !$0.contains("libsystem") &&
-                !$0.contains("CoreFoundation") &&
-                $0 != "libdyld"
-            }
-            .first ?? ""
     }
     
     @available(iOSApplicationExtension, unavailable)
@@ -264,3 +221,21 @@ private extension IteoLogger {
     }
 }
 
+private extension IteoLogger {
+    private func getOriginalFrameworkName() -> String {
+        var loggerFrameworkName: String = (Bundle(for: Self.self).infoDictionary?["CFBundleName"] as? String) ?? "IteoLogger"
+        loggerFrameworkName = loggerFrameworkName.replacingOccurrences(of: "PackageProduct", with: "Package")
+        let stackList: [String] = Thread.callStackSymbols.compactMap {
+            let splitData = $0.split(separator: " ")
+            guard splitData.count == 6 else { return nil }
+            return String(splitData[1].split(separator: ".")[0])
+        }
+        return stackList
+            .filter {
+                $0 != "???" &&
+                !$0.starts(with: loggerFrameworkName) &&
+                !$0.contains("Logger")
+            }
+            .first ?? ""
+    }
+}

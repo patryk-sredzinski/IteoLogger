@@ -41,9 +41,9 @@ extension FiltersPresenterImpl: FiltersPresenter {
                                                 .sorted(by: { a, b in a.name < b.name })
                                                 .map { FilterCellItem.module(item: $0, selected: filter.modules.contains($0))}))
         controller?.reloadFilter(dataSource: dataSource,
-                                 toggleFrameworksText: filter.frameworks.isAll ? "DESELECT ALL" : "SELECT ALL",
-                                 toggleLevelsText: filter.levels.isAll ? "DESELECT ALL" : "SELECT ALL",
-                                 toggleModulesText: filter.modules.isAll ? "DESELECT ALL" : "SELECT ALL")
+                                 toggleFrameworksText: filter.frameworks.isEmpty ? "SELECT ALL" : "DESELECT ALL",
+                                 toggleLevelsText: filter.levels.isEmpty ? "SELECT ALL" : "DESELECT ALL",
+                                 toggleModulesText: filter.modules.isEmpty ? "SELECT ALL" : "DESELECT ALL")
     }
     
 }
