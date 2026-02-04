@@ -49,63 +49,69 @@ final class FiltersInteractorImpl {
     }
     
     func toggleFramework(_ framework: String) {
-        if filter.frameworks.contains(framework) {
-            filter.frameworks.remove(framework)
+        var currentSet = filter.frameworks.selectedItems(from: availableFrameworks)
+        if currentSet.contains(framework) {
+            currentSet.remove(framework)
         } else {
-            filter.frameworks.insert(framework)
+            currentSet.insert(framework)
         }
+        filter.frameworks = .selected(currentSet)
         reloadFilters()
     }
     
     func toggleLevel(_ level: IteoLoggerLevel) {
-        if filter.levels.contains(level) {
-            filter.levels.remove(level)
+        var currentSet = filter.levels.selectedItems(from: availableLevels)
+        if currentSet.contains(level) {
+            currentSet.remove(level)
         } else {
-            filter.levels.insert(level)
+            currentSet.insert(level)
         }
+        filter.levels = .selected(currentSet)
         reloadFilters()
     }
     
     func toggleModule(_ module: IteoLoggerModule) {
-        if filter.modules.contains(module) {
-            filter.modules.remove(module)
+        var currentSet = filter.modules.selectedItems(from: availableModules)
+        if currentSet.contains(module) {
+            currentSet.remove(module)
         } else {
-            filter.modules.insert(module)
+            currentSet.insert(module)
         }
+        filter.modules = .selected(currentSet)
         reloadFilters()
     }
     
     func toggleAllFrameworks() {
-        if filter.frameworks.isEmpty {
-            filter.frameworks = availableFrameworks
+        if filter.frameworks.isAll {
+            filter.frameworks = .selected([])
         } else {
-            filter.frameworks = []
+            filter.frameworks = .all
         }
         reloadFilters()
     }
     
     func toggleAllLevels() {
-        if filter.levels.isEmpty {
-            filter.levels = availableLevels
+        if filter.levels.isAll {
+            filter.levels = .selected([])
         } else {
-            filter.levels = []
+            filter.levels = .all
         }
         reloadFilters()
     }
     
     func toggleAllModules() {
-        if filter.modules.isEmpty {
-            filter.modules = availableModules
+        if filter.modules.isAll {
+            filter.modules = .selected([])
         } else {
-            filter.modules = []
+            filter.modules = .all
         }
         reloadFilters()
     }
     
     func clearAllFilters() {
-        filter.frameworks = availableFrameworks
-        filter.modules = availableModules
-        filter.levels = availableLevels
+        filter.frameworks = .all
+        filter.modules = .all
+        filter.levels = .all
         reloadFilters()
     }
     
