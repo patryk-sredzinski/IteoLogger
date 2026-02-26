@@ -52,8 +52,6 @@
 		60E3A78B298A63CD00DC3078 /* PauseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 603AB8A825CD8ECA0026D0F3 /* PauseCell.xib */; };
 		60E3A78C298A63CD00DC3078 /* FiltersController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60E2D2D425D29CCE0034FA6C /* FiltersController.xib */; };
 		60E3A78D298A63CD00DC3078 /* LogCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 603AB8A925CD8ECA0026D0F3 /* LogCell.xib */; };
-		60ECC5BD25CC00E90088C4B0 /* IteoLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60ECC5B325CC00E90088C4B0 /* IteoLogger.framework */; };
-		60ECC5C225CC00E90088C4B0 /* IteoLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ECC5C125CC00E90088C4B0 /* IteoLoggerTests.swift */; };
 		60ECC5C425CC00E90088C4B0 /* IteoLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 60ECC5B625CC00E90088C4B0 /* IteoLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		60ECC5D125CC01780088C4B0 /* IteoLoggerItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ECC5D025CC01780088C4B0 /* IteoLoggerItem.swift */; };
 		60ECC5D625CC01830088C4B0 /* IteoLoggerModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ECC5D425CC01830088C4B0 /* IteoLoggerModule.swift */; };
@@ -74,13 +72,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		60ECC5BE25CC00E90088C4B0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 60ECC5AA25CC00E90088C4B0 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 60ECC5B225CC00E90088C4B0;
-			remoteInfo = IteoLogger;
-		};
 		60ECC62825CC219B0088C4B0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 60ECC5AA25CC00E90088C4B0 /* Project object */;
@@ -156,9 +147,6 @@
 		60ECC5B325CC00E90088C4B0 /* IteoLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = IteoLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60ECC5B625CC00E90088C4B0 /* IteoLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IteoLogger.h; sourceTree = "<group>"; };
 		60ECC5B725CC00E90088C4B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		60ECC5BC25CC00E90088C4B0 /* IteoLoggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IteoLoggerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		60ECC5C125CC00E90088C4B0 /* IteoLoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IteoLoggerTests.swift; sourceTree = "<group>"; };
-		60ECC5C325CC00E90088C4B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60ECC5D025CC01780088C4B0 /* IteoLoggerItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IteoLoggerItem.swift; sourceTree = "<group>"; };
 		60ECC5D425CC01830088C4B0 /* IteoLoggerModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IteoLoggerModule.swift; sourceTree = "<group>"; };
 		60ECC5D525CC01830088C4B0 /* IteoLoggerLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IteoLoggerLevel.swift; sourceTree = "<group>"; };
@@ -182,14 +170,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		60ECC5B925CC00E90088C4B0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				60ECC5BD25CC00E90088C4B0 /* IteoLogger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,7 +308,6 @@
 				6098D16025D54224000A2962 /* IteoLogger.podspec */,
 				6098D10C25D53A56000A2962 /* README.md */,
 				60ECC5B525CC00E90088C4B0 /* IteoLogger */,
-				60ECC5C025CC00E90088C4B0 /* IteoLoggerTests */,
 				60ECC61425CC14A70088C4B0 /* IteoLoggerExample */,
 				60ECC5B425CC00E90088C4B0 /* Products */,
 				60ECC62525CC219B0088C4B0 /* Frameworks */,
@@ -339,7 +318,6 @@
 			isa = PBXGroup;
 			children = (
 				60ECC5B325CC00E90088C4B0 /* IteoLogger.framework */,
-				60ECC5BC25CC00E90088C4B0 /* IteoLoggerTests.xctest */,
 				60ECC61325CC14A70088C4B0 /* IteoLoggerExample.app */,
 			);
 			name = Products;
@@ -358,15 +336,6 @@
 				60ECC5B725CC00E90088C4B0 /* Info.plist */,
 			);
 			path = IteoLogger;
-			sourceTree = "<group>";
-		};
-		60ECC5C025CC00E90088C4B0 /* IteoLoggerTests */ = {
-			isa = PBXGroup;
-			children = (
-				60ECC5C125CC00E90088C4B0 /* IteoLoggerTests.swift */,
-				60ECC5C325CC00E90088C4B0 /* Info.plist */,
-			);
-			path = IteoLoggerTests;
 			sourceTree = "<group>";
 		};
 		60ECC5CF25CC01650088C4B0 /* Models */ = {
@@ -472,24 +441,6 @@
 			productReference = 60ECC5B325CC00E90088C4B0 /* IteoLogger.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		60ECC5BB25CC00E90088C4B0 /* IteoLoggerTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 60ECC5CA25CC00E90088C4B0 /* Build configuration list for PBXNativeTarget "IteoLoggerTests" */;
-			buildPhases = (
-				60ECC5B825CC00E90088C4B0 /* Sources */,
-				60ECC5B925CC00E90088C4B0 /* Frameworks */,
-				60ECC5BA25CC00E90088C4B0 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				60ECC5BF25CC00E90088C4B0 /* PBXTargetDependency */,
-			);
-			name = IteoLoggerTests;
-			productName = IteoLoggerTests;
-			productReference = 60ECC5BC25CC00E90088C4B0 /* IteoLoggerTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		60ECC61225CC14A70088C4B0 /* IteoLoggerExample */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 60ECC61F25CC14A80088C4B0 /* Build configuration list for PBXNativeTarget "IteoLoggerExample" */;
@@ -522,9 +473,6 @@
 						CreatedOnToolsVersion = 12.4;
 						LastSwiftMigration = 1240;
 					};
-					60ECC5BB25CC00E90088C4B0 = {
-						CreatedOnToolsVersion = 12.4;
-					};
 					60ECC61225CC14A70088C4B0 = {
 						CreatedOnToolsVersion = 12.4;
 					};
@@ -544,7 +492,6 @@
 			projectRoot = "";
 			targets = (
 				60ECC5B225CC00E90088C4B0 /* IteoLogger */,
-				60ECC5BB25CC00E90088C4B0 /* IteoLoggerTests */,
 				60ECC61225CC14A70088C4B0 /* IteoLoggerExample */,
 			);
 		};
@@ -563,13 +510,6 @@
 				60E3A78B298A63CD00DC3078 /* PauseCell.xib in Resources */,
 				60E3A78D298A63CD00DC3078 /* LogCell.xib in Resources */,
 				60E3A786298A63C800DC3078 /* IteoLoggerSpinnerController.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		60ECC5BA25CC00E90088C4B0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -634,14 +574,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		60ECC5B825CC00E90088C4B0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				60ECC5C225CC00E90088C4B0 /* IteoLoggerTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		60ECC60F25CC14A70088C4B0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -659,11 +591,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		60ECC5BF25CC00E90088C4B0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 60ECC5B225CC00E90088C4B0 /* IteoLogger */;
-			targetProxy = 60ECC5BE25CC00E90088C4B0 /* PBXContainerItemProxy */;
-		};
 		60ECC62925CC219B0088C4B0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 60ECC5B225CC00E90088C4B0 /* IteoLogger */;
@@ -851,44 +778,6 @@
 			};
 			name = Release;
 		};
-		60ECC5CB25CC00E90088C4B0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B78XDNYG5Q;
-				INFOPLIST_FILE = IteoLoggerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.iteo.IteoLoggerTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		60ECC5CC25CC00E90088C4B0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = B78XDNYG5Q;
-				INFOPLIST_FILE = IteoLoggerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.iteo.IteoLoggerTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		60ECC62025CC14A80088C4B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -950,15 +839,6 @@
 			buildConfigurations = (
 				60ECC5C825CC00E90088C4B0 /* Debug */,
 				60ECC5C925CC00E90088C4B0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		60ECC5CA25CC00E90088C4B0 /* Build configuration list for PBXNativeTarget "IteoLoggerTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				60ECC5CB25CC00E90088C4B0 /* Debug */,
-				60ECC5CC25CC00E90088C4B0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
