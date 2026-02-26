@@ -7,4 +7,4 @@
 
 import UIKit
 
-class IteoLoggerBaseViewController: UIViewController { }
+class IteoLoggerBaseViewController: UIViewController {}

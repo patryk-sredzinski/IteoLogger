@@ -8,13 +8,10 @@
 import UIKit
 
 protocol IteoLoggerSpinnerPresentable: UIViewController {
-    
     func toggleSpinner(_ state: Bool)
-
 }
 
 extension IteoLoggerSpinnerPresentable {
-
     func toggleSpinner(_ state: Bool) {
         if !Thread.isMainThread {
             DispatchQueue.main.async {
@@ -24,13 +21,9 @@ extension IteoLoggerSpinnerPresentable {
             setSpinnerVisible(state)
         }
     }
-    
 }
 
-
-
 private extension IteoLoggerSpinnerPresentable {
-
     func setSpinnerVisible(_ state: Bool) {
         if state {
             IteoLoggerSpinnerController.showOn(controller: self)
@@ -39,6 +32,4 @@ private extension IteoLoggerSpinnerPresentable {
         }
         UISelectionFeedbackGenerator().selectionChanged()
     }
-    
 }
-

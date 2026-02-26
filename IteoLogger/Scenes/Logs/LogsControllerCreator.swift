@@ -11,13 +11,13 @@
 import Foundation
 
 struct LogsControllerCreator {
-
     func getController(logsDirectoryName: String, logsAppGroup: String, shareFormat: String) -> LogsController {
-
         let dateFormatter = DateFormatManager.shared
-        let worker = LogsWorkerImpl(logsDirectoryName: logsDirectoryName,
-                                    logsAppGroup: logsAppGroup,
-                                    shareFormat: shareFormat)
+        let worker = LogsWorkerImpl(
+            logsDirectoryName: logsDirectoryName,
+            logsAppGroup: logsAppGroup,
+            shareFormat: shareFormat
+        )
         let router = LogsRouterImpl()
         let presenter = LogsPresenterImpl<LogsController>()
         let interactor = LogsInteractorImpl(presenter: presenter, worker: worker, router: router)
@@ -28,6 +28,5 @@ struct LogsControllerCreator {
         router.controller = controller
 
         return controller
-        
     }
 }

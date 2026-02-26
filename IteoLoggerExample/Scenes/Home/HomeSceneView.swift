@@ -9,9 +9,8 @@ import IteoLogger
 import SwiftUI
 
 struct HomeSceneView: View {
-    
     @EnvironmentObject var contentViewModel: HomeSceneViewModel
-    
+
     var body: some View {
         VStack {
             Text("Iteo Logger")
@@ -32,7 +31,6 @@ struct HomeSceneView: View {
             contentViewModel.logger.log(.screenView, .info, "HomeSceneView loaded")
         })
     }
-    
 }
 
 struct HomeSceneView_Previews: PreviewProvider {
@@ -42,24 +40,22 @@ struct HomeSceneView_Previews: PreviewProvider {
 }
 
 private extension String {
-
     func camelCaseToWords() -> String {
-        return unicodeScalars.reduce("") {
+        unicodeScalars.reduce("") {
             if CharacterSet.uppercaseLetters.contains($1) {
-                if $0.count > 0 {
-                    return ($0 + " " + String($1))
+                if !$0.isEmpty {
+                    return $0 + " " + String($1)
                 }
             }
             return $0 + String($1)
         }
     }
-    
+
     func capitalizingFirstLetter() -> String {
-        return prefix(1).capitalized + dropFirst()
+        prefix(1).capitalized + dropFirst()
     }
-    
+
     mutating func capitalizeFirstLetter() {
-        self = self.capitalizingFirstLetter()
+        self = capitalizingFirstLetter()
     }
-    
 }

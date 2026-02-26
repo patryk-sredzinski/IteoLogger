@@ -8,12 +8,11 @@
 import UIKit
 
 final class LogSectionHeader: IteoLoggerXibHeaderFooterView {
-    
     static let reuseIdentifier = String(describing: LogSectionHeader.self)
-    
+
     @IBOutlet private var titleLabel: UILabel!
     @IBOutlet private var dateLabel: UILabel!
-    
+
     func setup(with title: String, date: String) {
         backgroundColor = .systemBackground
         titleLabel.textColor = .secondaryLabel

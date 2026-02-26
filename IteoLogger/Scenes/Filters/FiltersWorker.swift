@@ -1,5 +1,5 @@
 //
-//  LogsWorker.swift
+//  FiltersWorker.swift
 //  IteoLogger
 //
 //  Created by Patryk Średziński on 05/02/2021.
@@ -15,30 +15,26 @@ protocol FiltersWorker {
 }
 
 final class FiltersWorkerImpl {
-
     private let userDefaults: UserDefaults
     private let decoder: JSONDecoder
     private let encoder: JSONEncoder
 
-    init(userDefaults: UserDefaults,
-         decoder: JSONDecoder,
-         encoder: JSONEncoder) {
+    init(
+        userDefaults: UserDefaults,
+        decoder: JSONDecoder,
+        encoder: JSONEncoder
+    ) {
         self.userDefaults = userDefaults
         self.decoder = decoder
         self.encoder = encoder
     }
-    
 }
 
 extension FiltersWorkerImpl: FiltersWorker {
-
     func saveFilters(_ filters: LogFilter) throws {
         let encodedData = try encoder.encode(filters)
         userDefaults.set(encodedData, forKey: LogFilter.userDefaultsKey)
     }
-
 }
 
-private extension FiltersWorkerImpl {
-    
-}
+private extension FiltersWorkerImpl {}

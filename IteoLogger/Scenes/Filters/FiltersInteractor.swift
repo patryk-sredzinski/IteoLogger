@@ -23,7 +23,6 @@ protocol FiltersInteractor {
 }
 
 final class FiltersInteractorImpl {
-    
     private let presenter: FiltersPresenter
     private let worker: FiltersWorker
     private let router: FiltersRouter
@@ -31,14 +30,16 @@ final class FiltersInteractorImpl {
     private let availableFrameworks: Set<String>
     private let availableModules: Set<IteoLoggerModule>
     private let availableLevels: Set<IteoLoggerLevel>
-    
-    init(presenter: FiltersPresenter,
-         worker: FiltersWorker,
-         router: FiltersRouter,
-         filter: LogFilter,
-         availableFrameworks: Set<String>,
-         availableModules: Set<IteoLoggerModule>,
-         availableLevels: Set<IteoLoggerLevel>) {
+
+    init(
+        presenter: FiltersPresenter,
+        worker: FiltersWorker,
+        router: FiltersRouter,
+        filter: LogFilter,
+        availableFrameworks: Set<String>,
+        availableModules: Set<IteoLoggerModule>,
+        availableLevels: Set<IteoLoggerLevel>
+    ) {
         self.presenter = presenter
         self.worker = worker
         self.router = router
@@ -47,7 +48,7 @@ final class FiltersInteractorImpl {
         self.availableModules = availableModules
         self.availableLevels = availableLevels
     }
-    
+
     func toggleFramework(_ framework: String) {
         if filter.frameworks.contains(framework) {
             filter.frameworks.remove(framework)
@@ -56,7 +57,7 @@ final class FiltersInteractorImpl {
         }
         reloadFilters()
     }
-    
+
     func toggleLevel(_ level: IteoLoggerLevel) {
         if filter.levels.contains(level) {
             filter.levels.remove(level)
@@ -65,7 +66,7 @@ final class FiltersInteractorImpl {
         }
         reloadFilters()
     }
-    
+
     func toggleModule(_ module: IteoLoggerModule) {
         if filter.modules.contains(module) {
             filter.modules.remove(module)
@@ -74,7 +75,7 @@ final class FiltersInteractorImpl {
         }
         reloadFilters()
     }
-    
+
     func toggleAllFrameworks() {
         if filter.frameworks.isEmpty {
             filter.frameworks = availableFrameworks
@@ -83,7 +84,7 @@ final class FiltersInteractorImpl {
         }
         reloadFilters()
     }
-    
+
     func toggleAllLevels() {
         if filter.levels.isEmpty {
             filter.levels = availableLevels
@@ -92,7 +93,7 @@ final class FiltersInteractorImpl {
         }
         reloadFilters()
     }
-    
+
     func toggleAllModules() {
         if filter.modules.isEmpty {
             filter.modules = availableModules
@@ -101,14 +102,14 @@ final class FiltersInteractorImpl {
         }
         reloadFilters()
     }
-    
+
     func clearAllFilters() {
         filter.frameworks = availableFrameworks
         filter.modules = availableModules
         filter.levels = availableLevels
         reloadFilters()
     }
-    
+
     func saveFilters() {
         router.saveFilters(filter)
         do {
@@ -117,13 +118,10 @@ final class FiltersInteractorImpl {
             presenter.showError(error)
         }
     }
-    
 }
 
 extension FiltersInteractorImpl: FiltersInteractor {
-    
     func reloadFilters() {
         presenter.reloadFilters(filter, availableFrameworks: availableFrameworks, availableModules: availableModules, availableLevels: availableLevels)
     }
-    
 }

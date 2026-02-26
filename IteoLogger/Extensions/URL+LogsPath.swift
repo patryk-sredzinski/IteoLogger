@@ -12,7 +12,6 @@ enum FileManagerError: Error {
 }
 
 extension FileManager {
-    
     func getLogsUrl(directoryName: String, appGroup: String) throws -> URL {
         let documentPath: URL
         if !appGroup.isEmpty {
@@ -25,18 +24,15 @@ extension FileManager {
             documentPath = try url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
         }
         let logsDirectoryUrl = documentPath.appendingPathComponent(directoryName, isDirectory: true)
-        var isDirectory : ObjCBool = true
+        var isDirectory: ObjCBool = true
         if !fileExists(atPath: logsDirectoryUrl.path, isDirectory: &isDirectory) {
             try createDirectory(atPath: logsDirectoryUrl.path, withIntermediateDirectories: false, attributes: nil)
         }
         return logsDirectoryUrl
-        
-    }
-    
-    func getTemporaryFileUrl(_ name: String) throws -> URL {
-        let documentPath = try url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-        let temporaryFileUrl = documentPath.appendingPathComponent(name, isDirectory: false)
-        return temporaryFileUrl
     }
 
+    func getTemporaryFileUrl(_ name: String) throws -> URL {
+        let documentPath = try url(for: .cachesDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+        return documentPath.appendingPathComponent(name, isDirectory: false)
+    }
 }

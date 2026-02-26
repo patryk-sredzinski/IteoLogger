@@ -8,10 +8,9 @@
 import Foundation
 
 /**
-Main class. Used across the whole SDK.
-*/
+ Main class. Used across the whole SDK.
+ */
 public struct IteoLoggerItem: Codable {
-
     /// Automatically incremented index
     public let index: UInt
 
@@ -26,15 +25,13 @@ public struct IteoLoggerItem: Codable {
 
     /// Stringified log output
     public let output: String
-    
+
     /// Framework name
     public let framework: String
 }
 
-internal extension IteoLoggerItem {
-    
+extension IteoLoggerItem {
     func toString(_ format: String, dateFormatter: DateFormatManager) -> String {
-        
         let currentTime = date
         let date = dateFormatter.string(from: currentTime, format: .dateOnly)
         let time = dateFormatter.string(from: currentTime, format: .timeOnly)
@@ -49,7 +46,5 @@ internal extension IteoLoggerItem {
             .replacingOccurrences(of: "[framework]", with: framework)
             .replacingOccurrences(of: "[output]", with: output)
             .replacingOccurrences(of: "[index]", with: "\(index)")
-
     }
-    
 }

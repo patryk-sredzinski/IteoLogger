@@ -11,39 +11,47 @@
 import UIKit
 
 protocol FiltersPresenter: IteoLoggerSpinnerPresenter, IteoLoggerAlertPresenter {
-    func reloadFilters(_ filter: LogFilter,
-                       availableFrameworks: Set<String>,
-                       availableModules: Set<IteoLoggerModule>,
-                       availableLevels: Set<IteoLoggerLevel>)
+    func reloadFilters(
+        _ filter: LogFilter,
+        availableFrameworks: Set<String>,
+        availableModules: Set<IteoLoggerModule>,
+        availableLevels: Set<IteoLoggerLevel>
+    )
 }
 
-final class FiltersPresenterImpl<T: FiltersPresentable>: IteoLoggerBasePresenter<T> {
-    
-}
+final class FiltersPresenterImpl<T: FiltersPresentable>: IteoLoggerBasePresenter<T> {}
 
 extension FiltersPresenterImpl: FiltersPresenter {
-    
-    func reloadFilters(_ filter: LogFilter,
-                       availableFrameworks: Set<String>,
-                       availableModules: Set<IteoLoggerModule>,
-                       availableLevels: Set<IteoLoggerLevel>) {
+    func reloadFilters(
+        _ filter: LogFilter,
+        availableFrameworks: Set<String>,
+        availableModules: Set<IteoLoggerModule>,
+        availableLevels: Set<IteoLoggerLevel>
+    ) {
         var dataSource = [FilterSectionItem]()
-        dataSource.append(FilterSectionItem(type: .frameworks,
-                                            items: availableFrameworks
-                                                .sorted(by: { a, b in a < b })
-                                                .map { FilterCellItem.framework(item: $0, selected: filter.frameworks.contains($0))}))
-        dataSource.append(FilterSectionItem(type: .levels,
-                                            items: availableLevels
-                                                .sorted(by: { a, b in a.rawValue < b.rawValue })
-                                                .map { FilterCellItem.level(item: $0, selected: filter.levels.contains($0))}))
-        dataSource.append(FilterSectionItem(type: .modules,
-                                            items: availableModules
-                                                .sorted(by: { a, b in a.name < b.name })
-                                                .map { FilterCellItem.module(item: $0, selected: filter.modules.contains($0))}))
-        controller?.reloadFilter(dataSource: dataSource,
-                                 toggleFrameworksText: filter.frameworks.isEmpty ? "SELECT ALL" : "DESELECT ALL",
-                                 toggleLevelsText: filter.levels.isEmpty ? "SELECT ALL" : "DESELECT ALL",
-                                 toggleModulesText: filter.modules.isEmpty ? "SELECT ALL" : "DESELECT ALL")
+        dataSource.append(FilterSectionItem(
+            type: .frameworks,
+            items: availableFrameworks
+                .sorted(by: { a, b in a < b })
+                .map { FilterCellItem.framework(item: $0, selected: filter.frameworks.contains($0)) }
+        ))
+        dataSource.append(FilterSectionItem(
+            type: .levels,
+            items: availableLevels
+                .sorted(by: { a, b in a.rawValue < b.rawValue })
+                .map { FilterCellItem.level(item: $0, selected: filter.levels.contains($0)) }
+        ))
+        dataSource.append(FilterSectionItem(
+            type: .modules,
+            items: availableModules
+                .sorted(by: { a, b in a.name < b.name })
+                .map { FilterCellItem.module(item: $0, selected: filter.modules.contains($0)) }
+        ))
+        controller?.reloadFilter(
+            dataSource: dataSource,
+            toggleFrameworksText: filter.frameworks.isEmpty ? "SELECT ALL" : "DESELECT ALL",
+            toggleLevelsText: filter.levels.isEmpty ? "SELECT ALL" : "DESELECT ALL",
+            toggleModulesText: filter.modules.isEmpty ? "SELECT ALL" : "DESELECT ALL"
+        )
     }
-    
 }

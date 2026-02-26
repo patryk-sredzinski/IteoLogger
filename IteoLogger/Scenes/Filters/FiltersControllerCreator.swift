@@ -11,23 +11,25 @@
 import Foundation
 
 struct FiltersControllerCreator {
-
-    func getController(filter: LogFilter, 
-                       availableFrameworks: Set<String>,
-                       availableModules: Set<IteoLoggerModule>,
-                       availableLevels: Set<IteoLoggerLevel>, 
-                       delegate: FiltersRouterDelegate?) -> FiltersController {
-
+    func getController(
+        filter: LogFilter,
+        availableFrameworks: Set<String>,
+        availableModules: Set<IteoLoggerModule>,
+        availableLevels: Set<IteoLoggerLevel>,
+        delegate: FiltersRouterDelegate?
+    ) -> FiltersController {
         let worker = FiltersWorkerImpl(userDefaults: .standard, decoder: JSONDecoder(), encoder: JSONEncoder())
         let router = FiltersRouterImpl()
         let presenter = FiltersPresenterImpl<FiltersController>()
-        let interactor = FiltersInteractorImpl(presenter: presenter, 
-                                               worker: worker,
-                                               router: router,
-                                               filter: filter, 
-                                               availableFrameworks: availableFrameworks,
-                                               availableModules: availableModules,
-                                               availableLevels: availableLevels)
+        let interactor = FiltersInteractorImpl(
+            presenter: presenter,
+            worker: worker,
+            router: router,
+            filter: filter,
+            availableFrameworks: availableFrameworks,
+            availableModules: availableModules,
+            availableLevels: availableLevels
+        )
         let viewModel = FiltersViewModel()
         let controller = FiltersController(viewModel: viewModel, interactor: interactor)
 
@@ -36,6 +38,5 @@ struct FiltersControllerCreator {
         router.delegate = delegate
 
         return controller
-        
     }
 }

@@ -15,15 +15,16 @@ protocol LogsInteractor {
     func copyLog()
     func reloadLogs()
     func deleteLogs()
-    func confirmSharingLogs(sessions: [LogSectionItem],
-                            loadedSessionCount: Int,
-                            totalCount: Int,
-                            startDate: String)
+    func confirmSharingLogs(
+        sessions: [LogSectionItem],
+        loadedSessionCount: Int,
+        totalCount: Int,
+        startDate: String
+    )
     func displayFilters()
 }
 
 final class LogsInteractorImpl {
-    
     private let presenter: LogsPresenter
     private let worker: LogsWorker
     private let router: LogsRouter
@@ -33,20 +34,23 @@ final class LogsInteractorImpl {
 
     private var isLoading = false
 
-    init(presenter: LogsPresenter,
-         worker: LogsWorker,
-         router: LogsRouter) {
+    init(
+        presenter: LogsPresenter,
+        worker: LogsWorker,
+        router: LogsRouter
+    ) {
         self.presenter = presenter
         self.worker = worker
         self.router = router
-        self.filter = worker.loadFilters()
+        filter = worker.loadFilters()
     }
 }
 
 extension LogsInteractorImpl: LogsInteractor {
-    
     func loadNextSection(id: Int) {
-        guard !isLoading else { return }
+        guard !isLoading else {
+            return
+        }
         isLoading = true
         presenter.toggleSpinner(true)
         backgroundQueue.async {
@@ -54,84 +58,83 @@ extension LogsInteractorImpl: LogsInteractor {
             self.presenter.toggleSpinner(false)
             self.isLoading = false
             let sessionCount = self.worker.loadedSessionsCount()
-            guard sessionCount - id > 0 else { return }
+            guard sessionCount - id > 0 else {
+                return
+            }
             self.presenter.buildSection(index: sessionCount - id, logs: logs)
         }
-        
     }
-    
+
     func copyLog() {
         presenter.showAlert(title: "Log", body: "Copied log details to pasteboard", leftTitle: "OK", leftAction: nil, rightTitle: nil, rightAction: nil)
     }
-    
+
     func reloadLogs() {
         presenter.reloadLogs()
         loadNextSection(id: 0)
     }
-    
+
     func deleteLogs() {
         presenter.showAlert(title: "Delete", body: "Do you really want to permanently delete all the logs?", leftTitle: "Yes", leftAction: {
             self.deleteLogDirectory()
         }, rightTitle: "No", rightAction: nil)
     }
-    
-    func confirmSharingLogs(sessions: [LogSectionItem],
-                            loadedSessionCount: Int,
-                            totalCount: Int,
-                            startDate: String) {
+
+    func confirmSharingLogs(
+        sessions: [LogSectionItem],
+        loadedSessionCount: Int,
+        totalCount: Int,
+        startDate: String
+    ) {
         let bodyMessages = [
-                "❗️>>> \(loadedSessionCount) out of \(totalCount) <<<❗️",
-                "available sessions loaded for sharing",
-                "starting: \(startDate)",
-                "",
-                "If you want to share more logs, scroll down the logs and retry"
+            "❗️>>> \(loadedSessionCount) out of \(totalCount) <<<❗️",
+            "available sessions loaded for sharing",
+            "starting: \(startDate)",
+            "",
+            "If you want to share more logs, scroll down the logs and retry"
         ]
-        presenter.showAlert(title: "Share Logs",
-                            body: bodyMessages.joined(separator: "\n"),
-                            leftTitle: "Load More",
-                            leftAction: nil,
-                            rightTitle: "Share") { [weak self] in
+        presenter.showAlert(
+            title: "Share Logs",
+            body: bodyMessages.joined(separator: "\n"),
+            leftTitle: "Load More",
+            leftAction: nil,
+            rightTitle: "Share"
+        ) { [weak self] in
             self?.shareLogs(sessions: sessions)
         }
     }
-    
+
     func displayFilters() {
         router.displayFilters(filter, availableFrameworks: worker.availableFrameworks, availableModules: worker.availableModules, availableLevels: worker.availableLevels, delegate: self)
     }
-    
 }
 
 private extension LogsInteractorImpl {
-    
     private func deleteLogDirectory() {
-       
         backgroundQueue.async {
             self.worker.deleteLogs()
             self.presenter.reloadLogs()
         }
-        
     }
-    
+
     private func shareLogs(sessions: [LogSectionItem]) {
         presenter.toggleSpinner(true)
         backgroundQueue.async { [weak self] in
             let logData = self?.worker.prepareShareData(sessions: sessions)
             DispatchQueue.main.async { [weak self] in
                 self?.presenter.toggleSpinner(false)
-                guard let logHeader = logData?.header, let logUrl = logData?.fileUrl else { return }
+                guard let logHeader = logData?.header, let logUrl = logData?.fileUrl else {
+                    return
+                }
                 self?.router.displaySharingController(logHeader, logUrl)
             }
         }
     }
-    
 }
 
-
 extension LogsInteractorImpl: FiltersRouterDelegate {
- 
     func saveFilters(_ filters: LogFilter) {
-        self.filter = filters
+        filter = filters
         reloadLogs()
     }
-    
 }

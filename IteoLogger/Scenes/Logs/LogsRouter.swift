@@ -12,11 +12,13 @@ import UIKit
 
 protocol LogsRouter {
     func displaySharingController(_ logHeader: String, _ logFileUrl: URL)
-    func displayFilters(_ filters: LogFilter,
-                        availableFrameworks: Set<String>,
-                        availableModules: Set<IteoLoggerModule>,
-                        availableLevels: Set<IteoLoggerLevel>,
-                        delegate: FiltersRouterDelegate?)
+    func displayFilters(
+        _ filters: LogFilter,
+        availableFrameworks: Set<String>,
+        availableModules: Set<IteoLoggerModule>,
+        availableLevels: Set<IteoLoggerLevel>,
+        delegate: FiltersRouterDelegate?
+    )
 }
 
 final class LogsRouterImpl {
@@ -24,24 +26,26 @@ final class LogsRouterImpl {
 }
 
 extension LogsRouterImpl: LogsRouter {
-
     func displaySharingController(_ logHeader: String, _ logFileUrl: URL) {
         let activityController = UIActivityViewController(activityItems: [logHeader, logFileUrl], applicationActivities: nil)
         controller?.present(activityController, animated: true, completion: nil)
     }
-    
-    func displayFilters(_ filters: LogFilter,
-                        availableFrameworks: Set<String>,
-                        availableModules: Set<IteoLoggerModule>,
-                        availableLevels: Set<IteoLoggerLevel>,
-                        delegate: FiltersRouterDelegate?) {
+
+    func displayFilters(
+        _ filters: LogFilter,
+        availableFrameworks: Set<String>,
+        availableModules: Set<IteoLoggerModule>,
+        availableLevels: Set<IteoLoggerLevel>,
+        delegate: FiltersRouterDelegate?
+    ) {
         let filterToSend = filters.isSet ? filters : LogFilter(frameworks: availableFrameworks, levels: availableLevels, modules: availableModules)
-        let filterController = FiltersControllerCreator().getController(filter: filterToSend,
-                                                                        availableFrameworks: availableFrameworks,
-                                                                        availableModules: availableModules,
-                                                                        availableLevels: availableLevels,
-                                                                        delegate: delegate)
+        let filterController = FiltersControllerCreator().getController(
+            filter: filterToSend,
+            availableFrameworks: availableFrameworks,
+            availableModules: availableModules,
+            availableLevels: availableLevels,
+            delegate: delegate
+        )
         controller?.present(filterController, animated: true, completion: nil)
     }
-    
 }

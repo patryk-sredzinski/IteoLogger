@@ -8,19 +8,18 @@
 import Foundation
 
 /**
-Default consumer that logs items in the console.
-*/
-final public class IteoLoggerConsoleItemConsumer: IteoLoggerItemConsumer {
-    
+ Default consumer that logs items in the console.
+ */
+public final class IteoLoggerConsoleItemConsumer: IteoLoggerItemConsumer {
     private let consoleFormat: String
     private let dateFormatter = DateFormatManager.shared
 
     /**
-     Initializes console consumer with console format.
-     - Parameters:
-        - consoleFormat: format to be displayed in the console. Default: *"[level] [[time]] - [module_prefix] [module_name]: [output]"*.
-     - Returns: a new console consumer.
-    */
+      Initializes console consumer with console format.
+      - Parameters:
+         - consoleFormat: format to be displayed in the console. Default: *"[level] [[time]] - [module_prefix] [module_name]: [output]"*.
+      - Returns: a new console consumer.
+     */
     public init(consoleFormat: String = "[level] [framework] [[time]] [module_prefix] [module_name]: [output]") {
         self.consoleFormat = consoleFormat
     }
@@ -28,5 +27,4 @@ final public class IteoLoggerConsoleItemConsumer: IteoLoggerItemConsumer {
     public func consumeLog(_ logItem: IteoLoggerItem) {
         print(logItem.toString(consoleFormat, dateFormatter: dateFormatter))
     }
-    
 }

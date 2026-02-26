@@ -24,10 +24,8 @@ final class FiltersRouterImpl {
 }
 
 extension FiltersRouterImpl: FiltersRouter {
-    
     func saveFilters(_ filters: LogFilter) {
         delegate?.saveFilters(filters)
         controller?.dismiss(animated: true, completion: nil)
     }
-    
 }

@@ -15,58 +15,56 @@ protocol FiltersPresentable: IteoLoggerSpinnerPresentable & IteoLoggerAlertPrese
 }
 
 final class FiltersController: IteoLoggerBaseViewController {
-    
     @IBOutlet private var closeButton: UIButton!
     @IBOutlet private var clearButton: UIButton!
     @IBOutlet private var saveButton: UIButton!
     @IBOutlet private var tableView: UITableView!
-    
+
     private let interactor: FiltersInteractor
     private let viewModel: FiltersViewModel
-    
+
     init(viewModel: FiltersViewModel, interactor: FiltersInteractor) {
         self.viewModel = viewModel
         self.interactor = interactor
         super.init(nibName: nil, bundle: .framework)
     }
-    
-    required init?(coder: NSCoder) {
+
+    @available(*, unavailable)
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         interactor.reloadFilters()
     }
-    
 }
 
 private extension FiltersController {
-    
     private func setupView() {
         view.backgroundColor = .systemOrange
         setupButtons()
         setupTableView()
     }
-    
+
     private func setupButtons() {
         setupButton(closeButton)
         setupButton(clearButton)
         setupButton(saveButton)
     }
-    
+
     private func setupButton(_ button: UIButton) {
         button.backgroundColor = .systemBackground
         button.tintColor = .systemOrange
     }
-    
+
     private func setupTableView() {
         let nibFilterCell = UINib(nibName: FilterCell.reuseIdentifier, bundle: .framework)
         tableView.register(nibFilterCell, forCellReuseIdentifier: FilterCell.reuseIdentifier)
         tableView.register(FilterSectionHeader.self, forHeaderFooterViewReuseIdentifier: FilterSectionHeader.reuseIdentifier)
     }
-    
+
     private func toggleFilters(for sectionItem: FilterSectionItem) {
         switch sectionItem.type {
         case .frameworks:
@@ -77,7 +75,7 @@ private extension FiltersController {
             interactor.toggleAllModules()
         }
     }
-    
+
     private func toggleText(for sectionItem: FilterSectionItem) -> String {
         switch sectionItem.type {
         case .frameworks:
@@ -88,16 +86,16 @@ private extension FiltersController {
             return viewModel.toggleModulesText
         }
     }
-    
+
     @IBAction private func closeTapped() {
         dismiss(animated: true, completion: nil)
     }
-    
-    @IBAction private func clearAllFilters(_ sender: UIButton) {
+
+    @IBAction private func clearAllFilters(_: UIButton) {
         interactor.clearAllFilters()
     }
-    
-    @IBAction private func saveFilters(_ sender: UIButton) {
+
+    @IBAction private func saveFilters(_: UIButton) {
         interactor.saveFilters()
     }
 }
@@ -113,27 +111,28 @@ extension FiltersController: FiltersPresentable {
 }
 
 extension FiltersController: UITableViewDataSource, UITableViewDelegate {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return viewModel.dataSource.count
+    func numberOfSections(in _: UITableView) -> Int {
+        viewModel.dataSource.count
     }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+    func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
         let section = viewModel.dataSource[section]
         return section.items.count
     }
-    
+
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let sectionItem = viewModel.dataSource[section]
         guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: FilterSectionHeader.reuseIdentifier) as? FilterSectionHeader else {
             return nil
         }
-        header.setup(with: sectionItem.type.rawValue,
-                     buttonTitle: toggleText(for: sectionItem),
-                     action: { [weak self] in self?.toggleFilters(for: sectionItem) } )
+        header.setup(
+            with: sectionItem.type.rawValue,
+            buttonTitle: toggleText(for: sectionItem),
+            action: { [weak self] in self?.toggleFilters(for: sectionItem) }
+        )
         return header
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let section = viewModel.dataSource[indexPath.section]
         let cellItem = section.items[indexPath.row]
@@ -141,27 +140,26 @@ extension FiltersController: UITableViewDataSource, UITableViewDelegate {
             return UITableViewCell()
         }
         switch cellItem {
-        case .framework(let item, let selected):
+        case let .framework(item, selected):
             cell.setup(with: item, selected: selected)
-        case .module(let item, let selected):
+        case let .module(item, selected):
             cell.setup(with: item, selected: selected)
-        case .level(let item, let selected):
+        case let .level(item, selected):
             cell.setup(with: item, selected: selected)
         }
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+    func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
         let section = viewModel.dataSource[indexPath.section]
         let cellItem = section.items[indexPath.row]
         switch cellItem {
-        case .framework(let item, _):
+        case let .framework(item, _):
             interactor.toggleFramework(item)
-        case .module(let item, _):
+        case let .module(item, _):
             interactor.toggleModule(item)
-        case .level(let item, _):
+        case let .level(item, _):
             interactor.toggleLevel(item)
         }
     }
-    
 }

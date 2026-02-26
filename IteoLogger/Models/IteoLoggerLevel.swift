@@ -8,10 +8,9 @@
 import Foundation
 
 /**
-Levels that determine what kind of log it is.
-*/
+ Levels that determine what kind of log it is.
+ */
 public enum IteoLoggerLevel: String, Codable, Hashable, CaseIterable {
-
     /// marked with: 📕
     case error
 
@@ -23,8 +22,8 @@ public enum IteoLoggerLevel: String, Codable, Hashable, CaseIterable {
 
     /// marked with: 📘
     case info
-    
-    internal var icon: String {
+
+    var icon: String {
         switch self {
         case .error:
             return "📕"
@@ -36,5 +35,4 @@ public enum IteoLoggerLevel: String, Codable, Hashable, CaseIterable {
             return "📘"
         }
     }
-    
 }

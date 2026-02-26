@@ -16,12 +16,11 @@ enum DateFormats: String {
 }
 
 final class DateFormatManager {
-
     static let shared = DateFormatManager()
-    
+
     private lazy var dateFormatter = DateFormatter()
     private lazy var isoFormatter = ISO8601DateFormatter()
-    
+
     func string(from date: Date, format: DateFormats = .fullDate) -> String {
         if case .iso = format {
             return isoFormatter.string(from: date)
@@ -29,5 +28,4 @@ final class DateFormatManager {
         dateFormatter.dateFormat = format.rawValue
         return dateFormatter.string(from: date)
     }
-    
 }

@@ -8,11 +8,9 @@
 import Foundation
 
 extension Bundle {
-    
     #if SWIFT_PACKAGE
-    static let framework = Bundle.module
+        static let framework = Bundle.module
     #else
-    static let framework = Bundle(for: IteoLogger.self)
+        static let framework = Bundle(for: IteoLogger.self)
     #endif
-    
 }

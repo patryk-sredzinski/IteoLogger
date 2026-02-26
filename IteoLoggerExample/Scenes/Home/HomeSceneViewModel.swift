@@ -1,5 +1,5 @@
 //
-//  ContentViewModel.swift
+//  HomeSceneViewModel.swift
 //  IteoLoggerExample
 //
 //  Created by Patryk Średziński on 05/02/2021.
@@ -8,7 +8,7 @@
 import Foundation
 import IteoLogger
 
-enum SampleLog:  String, CaseIterable, Identifiable {
+enum SampleLog: String, CaseIterable, Identifiable {
     var id: String { rawValue }
     case randomTenLogs
     case randomHundretLogs
@@ -48,17 +48,16 @@ enum SampleLog:  String, CaseIterable, Identifiable {
 }
 
 final class HomeSceneViewModel: ObservableObject {
-    
     let logger = IteoLogger.default
 
     func logSample(_ log: SampleLog) {
         switch log {
         case .randomTenLogs:
-            for _ in 0..<10 {
+            for _ in 0 ..< 10 {
                 randomLog()
             }
         case .randomHundretLogs:
-            for _ in 0..<100 {
+            for _ in 0 ..< 100 {
                 randomLog()
             }
         case .simple:
@@ -75,7 +74,7 @@ final class HomeSceneViewModel: ObservableObject {
         case .json:
             logger.log(.warning, .networkResponse, sampleJSONString)
         case .dictionary:
-            logger.log(.warning,.dataBase, sampleDictionary)
+            logger.log(.warning, .dataBase, sampleDictionary)
         case .structure:
             logger.log(.error, .settings, person1)
         case .object:
@@ -85,7 +84,7 @@ final class HomeSceneViewModel: ObservableObject {
         case .objectList:
             logger.log(.success, .settings, animalList)
         case .numberArray:
-            logger.log(.random, [1.52,2.521,3.12,4,5.65312,6.643,7.128,8.215])
+            logger.log(.random, [1.52, 2.521, 3.12, 4, 5.65312, 6.643, 7.128, 8.215])
         case .stringArray:
             logger.log(.random, ["Text 1", "Test 2", "Longer text 3"])
         case .dateArray:
@@ -130,18 +129,18 @@ final class HomeSceneViewModel: ObservableObject {
             logger.log(.security, "Simple security")
         }
     }
-    
+
     private func randomLog() {
         let randomLevel = IteoLoggerLevel.allCases.randomElement() ?? .info
         let allModules: [IteoLoggerModule] = [.network, .networkRequest, .networkResponse, .webView, .userDefaults, .keyChain, .dataBase, .screenView, .layout, .auth, .background, .calendar, .time, .cache, .bug, .video, .audio, .random, .todo, .payments, .settings, .map, .security, .notifications, .analytics, .bluetooth, .watch, .keyboard, .widget, .augumentedReality, .games, .graphics, .motion, .push, .unknown]
         let randomModule = allModules.randomElement() ?? .unknown
         logger.log(randomLevel, randomModule, "Randomized Level and Module log - " + shortLorem)
     }
-    
+
     private let shortLorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-    
+
     private let longLorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tincidunt condimentum purus nec suscipit. Maecenas suscipit arcu sed odio hendrerit elementum. Nunc vel metus eu lorem efficitur egestas. Duis ornare nunc ut orci dictum, varius suscipit sapien rutrum. Phasellus pellentesque egestas odio, non congue tortor tempus a. Morbi accumsan arcu tortor, vitae finibus tellus tempus a. In hac habitasse platea dictumst. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla scelerisque mi tellus, vel scelerisque purus lacinia sed. Mauris varius molestie libero, vel porttitor massa luctus sit amet. Ut erat dolor, ornare id diam in, maximus semper augue. Maecenas molestie facilisis odio, et fermentum lectus tristique non. Cras purus odio, malesuada et nunc euismod, ullamcorper suscipit nibh. Aenean quis sodales tortor. Donec porttitor id enim eget posuere. Etiam et venenatis quam. Suspendisse in felis ut elit imperdiet fermentum. Mauris tincidunt leo risus. Aenean fringilla neque ipsum, a tincidunt tortor consectetur non. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aliquam viverra lectus ipsum, eget lobortis leo efficitur id. Nam imperdiet scelerisque nulla, rutrum vestibulum ligula bibendum ac. Nam vitae feugiat diam. Vivamus hendrerit, erat non consectetur laoreet, quam elit aliquam ex, in varius est risus id mauris. Integer id rhoncus erat. Aenean convallis risus tellus, in congue quam efficitur et. Nam dignissim, turpis at dictum posuere, nunc lorem vestibulum urna, sed porttitor nibh est mattis velit. Nunc et interdum ex, ut egestas arcu."
-    
+
     private let sampleJSONString = """
     [
       {
@@ -431,36 +430,36 @@ final class HomeSceneViewModel: ObservableObject {
       }
     ]
     """
-    
+
     private let sampleDictionary: [String: Any] = [
-          "_id": "601d38a2895faa9836dbf8ed",
-          "index": 0,
-          "guid": "90c26f7c-86b5-43f7-8945-46baab530ebc",
-          "isActive": true,
-          "balance": "$3,305.00",
-          "picture": "http://placehold.it/32x32",
-          "age": 37,
-          "eyeColor": "brown",
-          "name": [
+        "_id": "601d38a2895faa9836dbf8ed",
+        "index": 0,
+        "guid": "90c26f7c-86b5-43f7-8945-46baab530ebc",
+        "isActive": true,
+        "balance": "$3,305.00",
+        "picture": "http://placehold.it/32x32",
+        "age": 37,
+        "eyeColor": "brown",
+        "name": [
             "first": "Frederick",
             "last": "Hood"
-          ],
-          "company": "ATGEN",
-          "email": "frederick.hood@atgen.net",
-          "phone": "+1 (879) 540-2857",
-          "address": "985 Jewel Street, Wolcott, Massachusetts, 1487",
-          "about": "Dolore minim labore non mollit officia ex sunt dolor irure dolor dolor ullamco. Est aliquip ea ex nulla Lorem culpa elit ex dolore tempor. Id ut cillum duis adipisicing excepteur fugiat ut deserunt.",
-          "registered": "Tuesday, November 14, 2017 3:51 PM",
-          "latitude": "-9.044841",
-          "longitude": "-68.004013",
-          "tags": [
+        ],
+        "company": "ATGEN",
+        "email": "frederick.hood@atgen.net",
+        "phone": "+1 (879) 540-2857",
+        "address": "985 Jewel Street, Wolcott, Massachusetts, 1487",
+        "about": "Dolore minim labore non mollit officia ex sunt dolor irure dolor dolor ullamco. Est aliquip ea ex nulla Lorem culpa elit ex dolore tempor. Id ut cillum duis adipisicing excepteur fugiat ut deserunt.",
+        "registered": "Tuesday, November 14, 2017 3:51 PM",
+        "latitude": "-9.044841",
+        "longitude": "-68.004013",
+        "tags": [
             "nisi",
             "esse",
             "cillum",
             "pariatur",
             "et"
-          ],
-          "range": [
+        ],
+        "range": [
             0,
             1,
             2,
@@ -471,25 +470,24 @@ final class HomeSceneViewModel: ObservableObject {
             7,
             8,
             9
-          ],
-          "greeting": "Hello, Frederick! You have 10 unread messages.",
-          "favoriteFruit": "banana"
+        ],
+        "greeting": "Hello, Frederick! You have 10 unread messages.",
+        "favoriteFruit": "banana"
     ]
-    
+
     private let person1 = Person(firstName: "Patryk", lastName: "Średziński", cars: [
         Car(brand: "Opel", model: "Astra", year: 2016),
         Car(brand: "Toyota", model: "Camry", year: 2020)
     ])
-    
-    private let person2 = Person(firstName: "Adam", lastName: "Kowalski", cars: [
-        Car(brand: "Ford", model: "Mondeo", year: 2005),
-    ])
-    
-    private var personList: [Person] { return [person1, person2] }
 
+    private let person2 = Person(firstName: "Adam", lastName: "Kowalski", cars: [
+        Car(brand: "Ford", model: "Mondeo", year: 2005)
+    ])
+
+    private var personList: [Person] { [person1, person2] }
 
     private let animal1 = Animal(name: "Lion", age: 3)
     private let animal2 = Animal(name: "Elephant", age: 6)
-    
-    private var animalList: [Animal] { return [animal1, animal2] }
+
+    private var animalList: [Animal] { [animal1, animal2] }
 }

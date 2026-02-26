@@ -9,20 +9,19 @@ import Foundation
 import os
 
 /**
-Default consumer that logs items in the system logger.
-*/
+ Default consumer that logs items in the system logger.
+ */
 @available(iOS 14.0, *)
-final public class IteoLoggerSystemItemConsumer: IteoLoggerItemConsumer {
-    
+public final class IteoLoggerSystemItemConsumer: IteoLoggerItemConsumer {
     private let consoleFormat: String
     private let dateFormatter = DateFormatManager.shared
 
     /**
-     Initializes console consumer with console format.
-     - Parameters:
-        - consoleFormat: format to be displayed in the console. Default: *"[level] [[time]] - [module_prefix] [module_name]: [output]"*.
-     - Returns: a new console consumer.
-    */
+      Initializes console consumer with console format.
+      - Parameters:
+         - consoleFormat: format to be displayed in the console. Default: *"[level] [[time]] - [module_prefix] [module_name]: [output]"*.
+      - Returns: a new console consumer.
+     */
     public init(consoleFormat: String = "[level] [framework] [module_prefix] [module_name]: [output]") {
         self.consoleFormat = consoleFormat
     }

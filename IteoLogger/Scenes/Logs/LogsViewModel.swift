@@ -6,7 +6,5 @@
 //
 
 final class LogsViewModel {
-    
     var dataSource = [LogSectionItem]()
-    
 }

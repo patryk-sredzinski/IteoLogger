@@ -8,13 +8,11 @@
 import UIKit
 
 final class IteoLoggerSpinnerController: UIViewController {
-    
     @IBOutlet private var blurView: UIVisualEffectView!
-    
+
     var isDisappearing = false
-    
+
     static func showOn(controller: UIViewController) {
-        
         let spinnerController = IteoLoggerSpinnerController(nibName: nil, bundle: .framework)
         spinnerController.view.alpha = 0
         controller.view.addSubview(spinnerController.view)
@@ -23,7 +21,7 @@ final class IteoLoggerSpinnerController: UIViewController {
             spinnerController.view.leadingAnchor.constraint(equalTo: controller.view.leadingAnchor),
             spinnerController.view.trailingAnchor.constraint(equalTo: controller.view.trailingAnchor),
             spinnerController.view.topAnchor.constraint(equalTo: controller.view.topAnchor),
-            spinnerController.view.bottomAnchor.constraint(equalTo: controller.view.bottomAnchor),
+            spinnerController.view.bottomAnchor.constraint(equalTo: controller.view.bottomAnchor)
         ])
         controller.addChild(spinnerController)
         spinnerController.didMove(toParent: controller)
@@ -31,10 +29,11 @@ final class IteoLoggerSpinnerController: UIViewController {
             spinnerController.view.alpha = 0.5
         }
     }
-    
+
     static func hideFrom(controller: UIViewController) {
-        
-        guard let spinnerController = controller.children.first(where: { ($0 as? IteoLoggerSpinnerController)?.isDisappearing == false }) as? IteoLoggerSpinnerController else { return }
+        guard let spinnerController = controller.children.first(where: { ($0 as? IteoLoggerSpinnerController)?.isDisappearing == false }) as? IteoLoggerSpinnerController else {
+            return
+        }
         spinnerController.isDisappearing = true
 
         UIView.animate(withDuration: .animationDuration, delay: 0, options: .beginFromCurrentState, animations: {
@@ -43,13 +42,9 @@ final class IteoLoggerSpinnerController: UIViewController {
             spinnerController.view.removeFromSuperview()
             spinnerController.removeFromParent()
         })
-        
     }
-    
 }
 
 private extension TimeInterval {
-    
     static let animationDuration: TimeInterval = 0.3
-    
 }

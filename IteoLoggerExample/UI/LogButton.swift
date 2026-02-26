@@ -11,7 +11,6 @@ struct LogButton: View {
     let title: String
     let action: () -> Void
     var body: some View {
-        
         Button(action: action) {
             HStack {
                 Text(title)
@@ -29,6 +28,6 @@ struct LogButton: View {
 
 struct LogButton_Previews: PreviewProvider {
     static var previews: some View {
-        LogButton(title: "Test", action: { })
+        LogButton(title: "Test", action: {})
     }
 }

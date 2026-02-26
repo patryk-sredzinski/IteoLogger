@@ -16,7 +16,6 @@ protocol LogsPresentable: IteoLoggerSpinnerPresentable & IteoLoggerAlertPresenta
 }
 
 final class LogsController: IteoLoggerBaseViewController {
-    
     @IBOutlet private var closeButton: UIButton!
     @IBOutlet private var refreshButton: UIButton!
     @IBOutlet private var clearButton: UIButton!
@@ -24,12 +23,12 @@ final class LogsController: IteoLoggerBaseViewController {
     @IBOutlet private var shareButton: UIButton!
     @IBOutlet private var scrollUpButton: UIButton!
     @IBOutlet private var scrollDownButton: UIButton!
-    
+
     @IBOutlet private var tableView: UITableView!
     @IBOutlet private var loadedSessionsCountLabel: UILabel!
-    
+
     private var expandedIndexPaths = Set<IndexPath>()
-    
+
     private let interactor: LogsInteractor
     private let viewModel: LogsViewModel
     private let shareFormat: String
@@ -42,11 +41,12 @@ final class LogsController: IteoLoggerBaseViewController {
         self.dateFormatter = dateFormatter
         super.init(nibName: nil, bundle: .framework)
     }
-    
-    required init?(coder: NSCoder) {
+
+    @available(*, unavailable)
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -55,13 +55,12 @@ final class LogsController: IteoLoggerBaseViewController {
 }
 
 private extension LogsController {
-    
     private func setupView() {
         view.backgroundColor = .systemOrange
         setupButtons()
         setupTableView()
     }
-    
+
     private func setupButtons() {
         setupButton(closeButton)
         setupButton(refreshButton)
@@ -71,12 +70,12 @@ private extension LogsController {
         setupButton(scrollUpButton)
         setupButton(scrollDownButton)
     }
-    
+
     private func setupButton(_ button: UIButton) {
         button.backgroundColor = .systemBackground
         button.tintColor = .systemOrange
     }
-    
+
     private func setupTableView() {
         let nibLogCell = UINib(nibName: LogCell.reuseIdentifier, bundle: .framework)
         let nibPauseCell = UINib(nibName: PauseCell.reuseIdentifier, bundle: .framework)
@@ -87,37 +86,42 @@ private extension LogsController {
         tableView.sectionIndexColor = .secondaryLabel
         tableView.separatorColor = .tertiarySystemBackground
     }
-    
+
     @IBAction private func closeTapped() {
         dismiss(animated: true, completion: nil)
     }
-    
+
     @IBAction private func refreshTapped() {
         interactor.reloadLogs()
     }
-    
+
     @IBAction private func deleteTapped() {
         interactor.deleteLogs()
     }
-    
+
     @IBAction private func filtersTapped() {
         interactor.displayFilters()
     }
-    
+
     @IBAction private func shareTapped() {
-        guard let firstSession = viewModel.dataSource.first,
-              let lastSession = viewModel.dataSource.last else {
+        guard
+            let firstSession = viewModel.dataSource.first,
+            let lastSession = viewModel.dataSource.last else {
             return
         }
-        interactor.confirmSharingLogs(sessions: viewModel.dataSource,
-                                      loadedSessionCount: viewModel.dataSource.count,
-                                      totalCount: firstSession.index,
-                                      startDate: lastSession.date)
+        interactor.confirmSharingLogs(
+            sessions: viewModel.dataSource,
+            loadedSessionCount: viewModel.dataSource.count,
+            totalCount: firstSession.index,
+            startDate: lastSession.date
+        )
     }
-    
+
     @IBAction private func previousTapped() {
         let visibleIndexes = tableView.indexPathsForVisibleRows ?? []
-        guard var minimumVisibleSection = visibleIndexes.map({ $0.section }).min() else { return }
+        guard var minimumVisibleSection = visibleIndexes.map(\.section).min() else {
+            return
+        }
         let minimumRowIndex = 0
         if visibleIndexes.contains(where: { $0.row == minimumRowIndex && $0.section == minimumVisibleSection }) {
             minimumVisibleSection -= 1
@@ -126,10 +130,12 @@ private extension LogsController {
         let rowToScrollTo = 0
         tableView.scrollToRow(at: IndexPath(row: rowToScrollTo, section: sectionToScrollTo), at: .top, animated: true)
     }
-    
+
     @IBAction private func nextTapped() {
         let visibleIndexes = tableView.indexPathsForVisibleRows ?? []
-        guard var maximumVisibleSection = visibleIndexes.map({ $0.section }).max() else { return }
+        guard var maximumVisibleSection = visibleIndexes.map(\.section).max() else {
+            return
+        }
         let maximumRowIndex = tableView.numberOfRows(inSection: maximumVisibleSection) - 1
         if visibleIndexes.contains(where: { $0.row == maximumRowIndex && $0.section == maximumVisibleSection }) {
             maximumVisibleSection += 1
@@ -138,63 +144,70 @@ private extension LogsController {
         let rowToScrollTo = tableView.numberOfRows(inSection: sectionToScrollTo) - 1
         tableView.scrollToRow(at: IndexPath(row: rowToScrollTo, section: sectionToScrollTo), at: .bottom, animated: true)
     }
-    
+
     private func logLongPressed(_ log: IteoLoggerItem) {
         interactor.copyLog()
         UIPasteboard.general.string = log.toString(shareFormat, dateFormatter: dateFormatter)
     }
-    
+
     private func updateLoadedSessionsText() {
-        guard let firstSession = viewModel.dataSource.first,
-              let lastSession = viewModel.dataSource.last else {
+        guard
+            let firstSession = viewModel.dataSource.first,
+            let lastSession = viewModel.dataSource.last else {
             loadedSessionsCountLabel.text = "No logs available"
             return
         }
         let attributedString = NSMutableAttributedString()
-        attributedString.append(NSAttributedString(string: "Loaded ",
-                                                   attributes: nil))
-        attributedString.append(NSAttributedString(string: "\(viewModel.dataSource.count)",
-                                                   attributes: [.font: UIFont.boldSystemFont(ofSize: 14),
-                                                                .foregroundColor: UIColor.systemBlue]))
-        attributedString.append(NSAttributedString(string: " out of ",
-                                                   attributes: nil))
-        attributedString.append(NSAttributedString(string: "\(firstSession.index)",
-                                                   attributes: [.font: UIFont.systemFont(ofSize: 12),
-                                                                .foregroundColor: UIColor.systemBlue]))
-        attributedString.append(NSAttributedString(string: " available sessions, since: \(lastSession.date)",
-                                                   attributes: nil))
+        attributedString.append(NSAttributedString(
+            string: "Loaded ",
+            attributes: nil
+        ))
+        attributedString.append(NSAttributedString(
+            string: "\(viewModel.dataSource.count)",
+            attributes: [.font: UIFont.boldSystemFont(ofSize: 14),
+                         .foregroundColor: UIColor.systemBlue]
+        ))
+        attributedString.append(NSAttributedString(
+            string: " out of ",
+            attributes: nil
+        ))
+        attributedString.append(NSAttributedString(
+            string: "\(firstSession.index)",
+            attributes: [.font: UIFont.systemFont(ofSize: 12),
+                         .foregroundColor: UIColor.systemBlue]
+        ))
+        attributedString.append(NSAttributedString(
+            string: " available sessions, since: \(lastSession.date)",
+            attributes: nil
+        ))
         loadedSessionsCountLabel.attributedText = attributedString
     }
-    
 }
 
 extension LogsController: LogsPresentable {
-    
     func resetLogs() {
         viewModel.dataSource = []
         tableView.reloadData()
         updateLoadedSessionsText()
     }
-    
+
     func appendNewSection(section: LogSectionItem) {
         viewModel.dataSource.append(section)
         tableView.insertSections(IndexSet(integer: viewModel.dataSource.count - 1), with: .bottom)
         updateLoadedSessionsText()
     }
-
 }
 
 extension LogsController: UITableViewDataSource, UITableViewDelegate {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return viewModel.dataSource.count
+    func numberOfSections(in _: UITableView) -> Int {
+        viewModel.dataSource.count
     }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+    func tableView(_: UITableView, numberOfRowsInSection section: Int) -> Int {
         let section = viewModel.dataSource[section]
         return section.items.count
     }
-    
+
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let sectionItem = viewModel.dataSource[section]
         guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: LogSectionHeader.reuseIdentifier) as? LogSectionHeader else {
@@ -203,27 +216,31 @@ extension LogsController: UITableViewDataSource, UITableViewDelegate {
         header.setup(with: "SESSION #\(sectionItem.index)", date: sectionItem.date)
         return header
     }
-    
-    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        return ""
+
+    func tableView(_: UITableView, titleForFooterInSection _: Int) -> String? {
+        ""
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let section = viewModel.dataSource[indexPath.section]
         let cellItem = section.items[indexPath.row]
         switch cellItem {
-        case .log(let logItem):
+        case let .log(logItem):
             guard let cell = tableView.dequeueReusableCell(withIdentifier: LogCell.reuseIdentifier, for: indexPath) as? LogCell else {
                 return UITableViewCell()
             }
-            cell.setup(with: logItem,
-                       longTapAction: { [weak self] in
-                        guard let self = self else { return }
-                        self.logLongPressed(logItem)
-                       },
-                       isExpanded: expandedIndexPaths.contains(indexPath))
+            cell.setup(
+                with: logItem,
+                longTapAction: { [weak self] in
+                    guard let self else {
+                        return
+                    }
+                    logLongPressed(logItem)
+                },
+                isExpanded: expandedIndexPaths.contains(indexPath)
+            )
             return cell
-        case .pause(let length):
+        case let .pause(length):
             guard let cell = tableView.dequeueReusableCell(withIdentifier: PauseCell.reuseIdentifier, for: indexPath) as? PauseCell else {
                 return UITableViewCell()
             }
@@ -231,14 +248,14 @@ extension LogsController: UITableViewDataSource, UITableViewDelegate {
             return cell
         }
     }
-    
-    func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+
+    func tableView(_: UITableView, willDisplayFooterView _: UIView, forSection section: Int) {
         let isLastSection = section == viewModel.dataSource.count - 1
         if isLastSection {
             interactor.loadNextSection(id: section + 1)
         }
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if expandedIndexPaths.contains(indexPath) {
             expandedIndexPaths.remove(indexPath)

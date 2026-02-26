@@ -9,7 +9,8 @@ let package = Package(
     products: [
         .library(
             name: "IteoLogger",
-            targets: ["IteoLogger"]),
+            targets: ["IteoLogger"]
+        )
     ],
     targets: [
         .target(
@@ -22,6 +23,7 @@ let package = Package(
                 "../IteoLoggerExample/",
                 "../IteoLoggerTests/",
                 "../IteoLogger.podspec"
-            ]),
+            ]
+        )
     ]
 )

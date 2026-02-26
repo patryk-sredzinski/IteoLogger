@@ -16,23 +16,19 @@ protocol LogsPresenter: IteoLoggerSpinnerPresenter, IteoLoggerAlertPresenter {
 }
 
 final class LogsPresenterImpl<T: LogsPresentable>: IteoLoggerBasePresenter<T> {
-    
     private let dateFormatter: DateFormatManager
-    
+
     init(dateFormatter: DateFormatManager = .shared) {
         self.dateFormatter = dateFormatter
     }
-    
 }
 
 extension LogsPresenterImpl: LogsPresenter {
-    
     func buildSection(index: Int, logs: [IteoLoggerItem]) {
-        
         var cellItems: [LogCellItem] = []
-        
+
         var previousLogDate: Date?
-        logs.forEach { log in
+        for log in logs {
             if let previousDate = previousLogDate {
                 let timeDifference = previousDate.timeIntervalSince1970 - log.date.timeIntervalSince1970
                 if timeDifference > 10 {
@@ -42,20 +38,19 @@ extension LogsPresenterImpl: LogsPresenter {
             cellItems.append(.log(item: log))
             previousLogDate = log.date
         }
-        
+
         DispatchQueue.main.async {
-            self.controller?.appendNewSection(section: LogSectionItem(index: index,
-                                                                      date: self.dateFormatter.string(from: previousLogDate ?? Date(), format: .fullDate),
-                                                                      items: cellItems))
+            self.controller?.appendNewSection(section: LogSectionItem(
+                index: index,
+                date: self.dateFormatter.string(from: previousLogDate ?? Date(), format: .fullDate),
+                items: cellItems
+            ))
         }
-        
     }
-    
+
     func reloadLogs() {
-        
         DispatchQueue.main.async {
             self.controller?.resetLogs()
         }
-        
     }
 }
