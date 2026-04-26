@@ -226,12 +226,20 @@ private extension IteoLogger {
     private func getOriginalFrameworkName() -> String {
         var loggerFrameworkName: String = (Bundle(for: Self.self).infoDictionary?["CFBundleName"] as? String) ?? "IteoLogger"
         loggerFrameworkName = loggerFrameworkName.replacingOccurrences(of: "PackageProduct", with: "Package")
-        let stackList: [String] = Thread.callStackSymbols.compactMap {
-            let splitData = $0.split(separator: " ")
-            guard splitData.count == 6 else {
+        let stackList: [String] = Thread.callStackSymbols.compactMap { callStackLine in
+            let components = callStackLine.split(whereSeparator: \.isWhitespace)
+            guard components.count >= 2 else {
                 return nil
             }
-            return String(splitData[1].split(separator: ".")[0])
+
+            // Prefer a module name decoded from Swift mangled symbols.
+            // This survives mergeable libraries where the image name is often just the app binary.
+            if let symbolToken = components.dropFirst(3).first,
+               let moduleName = moduleName(fromSwiftMangledSymbol: String(symbolToken)) {
+                return moduleName
+            }
+
+            return String(components[1].split(separator: ".")[0])
         }
         return stackList
             .filter {
@@ -240,5 +248,38 @@ private extension IteoLogger {
                     !$0.contains("Logger")
             }
             .first ?? ""
+    }
+
+    private func moduleName(fromSwiftMangledSymbol symbol: String) -> String? {
+        let normalizedSymbol: Substring
+        if symbol.hasPrefix("_$") {
+            normalizedSymbol = symbol.dropFirst()
+        } else {
+            normalizedSymbol = Substring(symbol)
+        }
+
+        guard normalizedSymbol.hasPrefix("$s") else {
+            return nil
+        }
+
+        var index = normalizedSymbol.index(normalizedSymbol.startIndex, offsetBy: 2)
+        let digitsStart = index
+
+        while index < normalizedSymbol.endIndex, normalizedSymbol[index].isNumber {
+            index = normalizedSymbol.index(after: index)
+        }
+
+        guard index > digitsStart,
+              let moduleLength = Int(normalizedSymbol[digitsStart..<index]) else {
+            return nil
+        }
+
+        guard moduleLength > 0,
+              normalizedSymbol.distance(from: index, to: normalizedSymbol.endIndex) >= moduleLength else {
+            return nil
+        }
+
+        let moduleEndIndex = normalizedSymbol.index(index, offsetBy: moduleLength)
+        return String(normalizedSymbol[index..<moduleEndIndex])
     }
 }
