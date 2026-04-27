@@ -21,8 +21,8 @@ public extension IteoLogger {
      - Parameters:
      - items: items to be logged
      */
-    func log(_ items: Any?...) {
-        log(level: .info, module: .unknown, items: items)
+    func log(_ items: Any?..., callerFileID: String = #fileID) {
+        log(level: .info, module: .unknown, items: items, callerFileID: callerFileID)
     }
 
     /**
@@ -32,8 +32,8 @@ public extension IteoLogger {
      - module: one of default modules, or a custom one, used for filtering and grouping logs.
      - items: items to be logged
      */
-    func log(_ module: IteoLoggerModule, _ items: Any?...) {
-        log(level: .info, module: module, items: items)
+    func log(_ module: IteoLoggerModule, _ items: Any?..., callerFileID: String = #fileID) {
+        log(level: .info, module: module, items: items, callerFileID: callerFileID)
     }
 
     /**
@@ -43,8 +43,8 @@ public extension IteoLogger {
      - level: one of default levels (info, success, warning, error), used for filtering and grouping logs.
      - items: items to be logged
      */
-    func log(_ level: IteoLoggerLevel, _ items: Any?...) {
-        log(level: level, module: .unknown, items: items)
+    func log(_ level: IteoLoggerLevel, _ items: Any?..., callerFileID: String = #fileID) {
+        log(level: level, module: .unknown, items: items, callerFileID: callerFileID)
     }
 
     /**
@@ -55,8 +55,8 @@ public extension IteoLogger {
      - level: one of default levels (info, success, warning, error), used for filtering and grouping logs.
      - items: items to be logged
      */
-    func log(_ module: IteoLoggerModule, _ level: IteoLoggerLevel, _ items: Any?...) {
-        log(level: level, module: module, items: items)
+    func log(_ module: IteoLoggerModule, _ level: IteoLoggerLevel, _ items: Any?..., callerFileID: String = #fileID) {
+        log(level: level, module: module, items: items, callerFileID: callerFileID)
     }
 
     /**
@@ -67,8 +67,12 @@ public extension IteoLogger {
      - module: one of default modules, or a custom one, used for filtering and grouping logs.
      - items: items to be logged
      */
-    func log(_ level: IteoLoggerLevel, _ module: IteoLoggerModule, _ items: Any?...) {
-        log(level: level, module: module, items: items)
+    func log(_ level: IteoLoggerLevel, _ module: IteoLoggerModule, _ items: Any?..., callerFileID: String = #fileID) {
+        log(level: level, module: module, items: items, callerFileID: callerFileID)
+    }
+
+    func log(_ level: IteoLoggerLevel, _ module: IteoLoggerModule, _ items: [Any?], callerFileID: String = #fileID) {
+        log(level: level, module: module, items: items, callerFileID: callerFileID)
     }
 
     /**
@@ -148,14 +152,14 @@ private extension IteoLogger {
         return logIndex
     }
 
-    private func log(level: IteoLoggerLevel, module: IteoLoggerModule, items: [Any?]) {
+    private func log(level: IteoLoggerLevel, module: IteoLoggerModule, items: [Any?], callerFileID: String) {
         let logItem = IteoLoggerItem(
             index: getIndex(),
             date: Date(),
             module: module,
             level: level,
             output: Self.toString(array: items),
-            framework: getOriginalFrameworkName()
+            framework: getOriginalFrameworkName(callerFileID: callerFileID)
         )
 
         for consumer in consumers {
@@ -223,63 +227,29 @@ private extension IteoLogger {
 }
 
 private extension IteoLogger {
-    private func getOriginalFrameworkName() -> String {
-        var loggerFrameworkName: String = (Bundle(for: Self.self).infoDictionary?["CFBundleName"] as? String) ?? "IteoLogger"
-        loggerFrameworkName = loggerFrameworkName.replacingOccurrences(of: "PackageProduct", with: "Package")
-        let stackList: [String] = Thread.callStackSymbols.compactMap { callStackLine in
-            let components = callStackLine.split(whereSeparator: \.isWhitespace)
-            guard components.count >= 2 else {
-                return nil
-            }
-
-            // Prefer a module name decoded from Swift mangled symbols.
-            // This survives mergeable libraries where the image name is often just the app binary.
-            if let symbolToken = components.dropFirst(3).first,
-               let moduleName = moduleName(fromSwiftMangledSymbol: String(symbolToken)) {
-                return moduleName
-            }
-
-            return String(components[1].split(separator: ".")[0])
-        }
-        return stackList
-            .filter {
-                $0 != "???" &&
-                    !$0.starts(with: loggerFrameworkName) &&
-                    !$0.contains("Logger")
-            }
-            .first ?? ""
+    private func getOriginalFrameworkName(callerFileID: String) -> String {
+        moduleName(fromFileID: callerFileID) ?? ""
     }
 
-    private func moduleName(fromSwiftMangledSymbol symbol: String) -> String? {
-        let normalizedSymbol: Substring
-        if symbol.hasPrefix("_$") {
-            normalizedSymbol = symbol.dropFirst()
-        } else {
-            normalizedSymbol = Substring(symbol)
-        }
-
-        guard normalizedSymbol.hasPrefix("$s") else {
+    private func moduleName(fromFileID fileID: String) -> String? {
+        let normalizedFileID = fileID.replacingOccurrences(of: "\\", with: "/")
+        guard !normalizedFileID.isEmpty else {
             return nil
         }
 
-        var index = normalizedSymbol.index(normalizedSymbol.startIndex, offsetBy: 2)
-        let digitsStart = index
-
-        while index < normalizedSymbol.endIndex, normalizedSymbol[index].isNumber {
-            index = normalizedSymbol.index(after: index)
+        if let firstSlashIndex = normalizedFileID.firstIndex(of: "/"),
+           firstSlashIndex > normalizedFileID.startIndex {
+            let moduleCandidate = String(normalizedFileID[..<firstSlashIndex])
+            return moduleCandidate.isEmpty ? nil : moduleCandidate
         }
 
-        guard index > digitsStart,
-              let moduleLength = Int(normalizedSymbol[digitsStart..<index]) else {
+        let pathComponents = normalizedFileID.split(separator: "/").map(String.init)
+        guard pathComponents.count >= 2 else {
             return nil
         }
 
-        guard moduleLength > 0,
-              normalizedSymbol.distance(from: index, to: normalizedSymbol.endIndex) >= moduleLength else {
-            return nil
-        }
-
-        let moduleEndIndex = normalizedSymbol.index(index, offsetBy: moduleLength)
-        return String(normalizedSymbol[index..<moduleEndIndex])
+        let parentFolder = pathComponents[pathComponents.count - 2]
+        return parentFolder.isEmpty ? nil : parentFolder
     }
+
 }
