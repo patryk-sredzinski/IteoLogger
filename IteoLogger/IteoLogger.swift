@@ -21,8 +21,8 @@ public extension IteoLogger {
      - Parameters:
      - items: items to be logged
      */
-    func log(_ items: Any?...) {
-        log(level: .info, module: .unknown, items: items)
+    func log(_ items: Any?..., callerFileID: String = #fileID) {
+        log(level: .info, module: .unknown, items: items, callerFileID: callerFileID)
     }
 
     /**
@@ -32,8 +32,8 @@ public extension IteoLogger {
      - module: one of default modules, or a custom one, used for filtering and grouping logs.
      - items: items to be logged
      */
-    func log(_ module: IteoLoggerModule, _ items: Any?...) {
-        log(level: .info, module: module, items: items)
+    func log(_ module: IteoLoggerModule, _ items: Any?..., callerFileID: String = #fileID) {
+        log(level: .info, module: module, items: items, callerFileID: callerFileID)
     }
 
     /**
@@ -43,8 +43,8 @@ public extension IteoLogger {
      - level: one of default levels (info, success, warning, error), used for filtering and grouping logs.
      - items: items to be logged
      */
-    func log(_ level: IteoLoggerLevel, _ items: Any?...) {
-        log(level: level, module: .unknown, items: items)
+    func log(_ level: IteoLoggerLevel, _ items: Any?..., callerFileID: String = #fileID) {
+        log(level: level, module: .unknown, items: items, callerFileID: callerFileID)
     }
 
     /**
@@ -55,8 +55,8 @@ public extension IteoLogger {
      - level: one of default levels (info, success, warning, error), used for filtering and grouping logs.
      - items: items to be logged
      */
-    func log(_ module: IteoLoggerModule, _ level: IteoLoggerLevel, _ items: Any?...) {
-        log(level: level, module: module, items: items)
+    func log(_ module: IteoLoggerModule, _ level: IteoLoggerLevel, _ items: Any?..., callerFileID: String = #fileID) {
+        log(level: level, module: module, items: items, callerFileID: callerFileID)
     }
 
     /**
@@ -67,8 +67,12 @@ public extension IteoLogger {
      - module: one of default modules, or a custom one, used for filtering and grouping logs.
      - items: items to be logged
      */
-    func log(_ level: IteoLoggerLevel, _ module: IteoLoggerModule, _ items: Any?...) {
-        log(level: level, module: module, items: items)
+    func log(_ level: IteoLoggerLevel, _ module: IteoLoggerModule, _ items: Any?..., callerFileID: String = #fileID) {
+        log(level: level, module: module, items: items, callerFileID: callerFileID)
+    }
+
+    func log(_ level: IteoLoggerLevel, _ module: IteoLoggerModule, _ items: [Any?], callerFileID: String = #fileID) {
+        log(level: level, module: module, items: items, callerFileID: callerFileID)
     }
 
     /**
@@ -148,14 +152,14 @@ private extension IteoLogger {
         return logIndex
     }
 
-    private func log(level: IteoLoggerLevel, module: IteoLoggerModule, items: [Any?]) {
+    private func log(level: IteoLoggerLevel, module: IteoLoggerModule, items: [Any?], callerFileID: String) {
         let logItem = IteoLoggerItem(
             index: getIndex(),
             date: Date(),
             module: module,
             level: level,
             output: Self.toString(array: items),
-            framework: getOriginalFrameworkName()
+            framework: getOriginalFrameworkName(callerFileID: callerFileID)
         )
 
         for consumer in consumers {
@@ -223,7 +227,12 @@ private extension IteoLogger {
 }
 
 private extension IteoLogger {
-    private func getOriginalFrameworkName() -> String {
+    private func getOriginalFrameworkName(callerFileID: String) -> String {
+        if let frameworkName = moduleName(fromFileID: callerFileID),
+           !isLoggerFrameworkName(frameworkName) {
+            return frameworkName
+        }
+
         var loggerFrameworkName: String = (Bundle(for: Self.self).infoDictionary?["CFBundleName"] as? String) ?? "IteoLogger"
         loggerFrameworkName = loggerFrameworkName.replacingOccurrences(of: "PackageProduct", with: "Package")
         let stackList: [String] = Thread.callStackSymbols.compactMap { callStackLine in
@@ -248,6 +257,31 @@ private extension IteoLogger {
                     !$0.contains("Logger")
             }
             .first ?? ""
+    }
+
+    private func isLoggerFrameworkName(_ frameworkName: String) -> Bool {
+        frameworkName == "IteoLogger" || frameworkName == "VLogger"
+    }
+
+    private func moduleName(fromFileID fileID: String) -> String? {
+        let normalizedFileID = fileID.replacingOccurrences(of: "\\", with: "/")
+        guard !normalizedFileID.isEmpty else {
+            return nil
+        }
+
+        if let firstSlashIndex = normalizedFileID.firstIndex(of: "/"),
+           firstSlashIndex > normalizedFileID.startIndex {
+            let moduleCandidate = String(normalizedFileID[..<firstSlashIndex])
+            return moduleCandidate.isEmpty ? nil : moduleCandidate
+        }
+
+        let pathComponents = normalizedFileID.split(separator: "/").map(String.init)
+        guard pathComponents.count >= 2 else {
+            return nil
+        }
+
+        let parentFolder = pathComponents[pathComponents.count - 2]
+        return parentFolder.isEmpty ? nil : parentFolder
     }
 
     private func moduleName(fromSwiftMangledSymbol symbol: String) -> String? {
